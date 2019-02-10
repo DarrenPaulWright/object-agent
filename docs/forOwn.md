@@ -8,11 +8,20 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="forOwn"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [set](docs/set.md)- [forown](docs/forOwn.md)
+## forOwn(object, callback)
+Iterates over own properties of an object.
 
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| object | <code>Object</code> | 
+| callback | <code>function</code> | 
+
+**Example**  
+``` javascriptimport { forOwn } from 'object-agent';const thing = {    a: 'b',    c: 'd};forOwn(thing, (value, key) => {    console.log(value, key);});// => 'b', 'a'// => 'd', 'c'```
 
 ## License
 
