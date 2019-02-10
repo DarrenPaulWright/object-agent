@@ -8,11 +8,19 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="isEmpty"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forOwn](docs/forOwn.md)- [traverse](docs/traverse.md)- [isEmpty](docs/isEmpty.md)
+## isEmpty(item) ⇒ <code>Boolean</code>
+Tests if an object or array has any set keys. The values of each key are not considered.
 
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| item | <code>\*</code> | 
+
+**Example**  
+``` javascriptimport { isEmpty } from 'object-agent';isEmpty(['a', 1, 'b']);// => falseisEmpty([]);// => trueisEmpty({ a: 'b' });// => falseisEmpty({});// => trueisEmpty(null);// => trueisEmpty(undefined);// => true```
 
 ## License
 

@@ -11,3 +11,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [unset](docs/unset.md)
 - [forOwn](docs/forOwn.md)
 - [traverse](docs/traverse.md)
+- [isEmpty](docs/isEmpty.md)

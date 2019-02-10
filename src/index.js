@@ -14,8 +14,9 @@
  * - [get](docs/get.md)
  * - [set](docs/set.md)
  * - [unset](docs/unset.md)
- * - [forown](docs/forOwn.md)
+ * - [forOwn](docs/forOwn.md)
  * - [traverse](docs/traverse.md)
+ * - [isEmpty](docs/isEmpty.md)
  *
  * @name Installation
  */
@@ -24,3 +25,4 @@ export { default as set } from './set';
 export { default as unset } from './unset';
 export { default as forOwn } from './forOwn';
 export { default as traverse } from './traverse';
+export { default as isEmpty } from './isEmpty';
