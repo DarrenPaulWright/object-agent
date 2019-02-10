@@ -12,7 +12,9 @@
  * ## Docs
  *
  * - [get](docs/get.md)
+ * - [set](docs/set.md)
  *
  * @name Installation
  */
 export { default as get } from './get';
+export { default as set } from './set';

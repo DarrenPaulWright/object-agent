@@ -8,11 +8,21 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="set"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [set](docs/set.md)
+## set(path, object, value) ⇒ <code>\*</code>
+Sets a nested value in an object.
 
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| path | <code>Array</code> | 
+| object | <code>Object</code> | 
+| value | <code>\*</code> | 
+
+**Example**  
+``` javascriptimport { set } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};set(['a', '1', 'b'], thing, 'e');console.log(thing);// => {//    a: [{//        b: 'c'//    }, {//        b: 'e'//    }]//}```
 
 ## License
 

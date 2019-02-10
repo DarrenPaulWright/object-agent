@@ -11,7 +11,8 @@
 		"major": "npm version major -m \"Increment major version to %s\"",
 		"docs-readme": "jsdoc2md src/index.js > README.md --template docs.hbs --partial scope.hbs",
 		"docs-get": "jsdoc2md src/get.js > docs/get.md --template docs.hbs",
-		"docs": "npm run docs-readme && npm run docs-get"
+		"docs-set": "jsdoc2md src/set.js > docs/set.md --template docs.hbs",
+		"docs": "npm run docs-readme && npm run docs-get && npm run docs-set"
 	},
 	"repository": {
 		"type": "git",
