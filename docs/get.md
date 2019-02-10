@@ -8,11 +8,20 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="get"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)
+## get(path, object) ⇒ <code>\*</code>
+Gets a nested value from an object.
 
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| path | <code>Array</code> | 
+| object | <code>Object</code> | 
+
+**Example**  
+``` javascriptimport { get } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};get(['a', 1, 'b'], thing);// => 'd'```
 
 ## License
 
