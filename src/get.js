@@ -19,12 +19,12 @@
  *
  * @function get
  *
- * @arg {Array} path
  * @arg {Object} object
+ * @arg {Array} path
  *
  * @returns {*}
  */
-export default (path, object) => {
+export default (object, path) => {
 	path.some((key) => !(object = object[key]));
 	return object;
 };

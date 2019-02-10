@@ -10,15 +10,15 @@ A javascript library for working with objects
 
 <a name="get"></a>
 
-## get(path, object) ⇒ <code>\*</code>
+## get(object, path) ⇒ <code>\*</code>
 Gets a nested value from an object.
 
 **Kind**: global function  
 
 | Param | Type |
 | --- | --- |
-| path | <code>Array</code> | 
 | object | <code>Object</code> | 
+| path | <code>Array</code> | 
 
 **Example**  
 ``` javascriptimport { get } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};get(['a', 1, 'b'], thing);// => 'd'```

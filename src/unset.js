@@ -1,4 +1,3 @@
-
 /**
  * Deletes a property from a nested object.
  *

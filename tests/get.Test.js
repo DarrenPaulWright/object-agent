@@ -7,7 +7,7 @@ describe('get', () => {
 			level1: 'something'
 		};
 
-		assert.equal(get(['level1'], object), 'something');
+		assert.equal(get(object, ['level1']), 'something');
 	});
 
 	it('should get the value of a second level key', () => {
@@ -17,7 +17,7 @@ describe('get', () => {
 			}
 		};
 
-		assert.equal(get(['level1', 'level2'], object), 'something');
+		assert.equal(get(object, ['level1', 'level2']), 'something');
 	});
 
 	it('should get the value of a second level key in an array', () => {
@@ -27,7 +27,7 @@ describe('get', () => {
 			}]
 		};
 
-		assert.equal(get(['level1', 0, 'level2'], object), 'something');
+		assert.equal(get(object, ['level1', 0, 'level2']), 'something');
 	});
 
 	it('should get the value of a second level key in an array with multiple items', () => {
@@ -45,7 +45,7 @@ describe('get', () => {
 			}]
 		};
 
-		assert.equal(get(['level1', '2', 'level2'], object), 'test 2');
+		assert.equal(get(object, ['level1', '2', 'level2']), 'test 2');
 	});
 
 	it('should get the value of a third level key in an array with multiple items', () => {
@@ -65,7 +65,7 @@ describe('get', () => {
 			}]
 		};
 
-		assert.equal(get(['level1', '2', 'level2', 'level3'], object), 'test 2');
+		assert.equal(get(object, ['level1', '2', 'level2', 'level3']), 'test 2');
 	});
 
 	it('should get undefined for a path that doesn\'t exist', () => {
@@ -85,6 +85,6 @@ describe('get', () => {
 			}]
 		};
 
-		assert.equal(get(['level1', '2', 'level3'], object), undefined);
+		assert.equal(get(object, ['level1', '2', 'level3']), undefined);
 	});
 });

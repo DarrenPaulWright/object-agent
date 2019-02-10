@@ -28,13 +28,11 @@ import { isNumber } from 'type-enforcer';
  *
  * @function set
  *
- * @arg {Array} path
  * @arg {Object} object
+ * @arg {Array} path
  * @arg {*} value
- *
- * @returns {*}
  */
-export default (path, object, value) => {
+export default (object, path, value) => {
 	const last = path.length - 1;
 
 	path.forEach((key, index) => {

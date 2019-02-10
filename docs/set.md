@@ -10,15 +10,15 @@ A javascript library for working with objects
 
 <a name="set"></a>
 
-## set(path, object, value) ⇒ <code>\*</code>
+## set(object, path, value)
 Sets a nested value in an object.
 
 **Kind**: global function  
 
 | Param | Type |
 | --- | --- |
-| path | <code>Array</code> | 
 | object | <code>Object</code> | 
+| path | <code>Array</code> | 
 | value | <code>\*</code> | 
 
 **Example**  
