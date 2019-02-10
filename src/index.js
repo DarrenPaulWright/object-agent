@@ -13,10 +13,12 @@
  *
  * - [get](docs/get.md)
  * - [set](docs/set.md)
+ * - [unset](docs/unset.md)
  * - [forown](docs/forOwn.md)
  *
  * @name Installation
  */
 export { default as get } from './get';
 export { default as set } from './set';
+export { default as unset } from './unset';
 export { default as forOwn } from './forOwn';

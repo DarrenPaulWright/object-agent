@@ -8,4 +8,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - [get](docs/get.md)
 - [set](docs/set.md)
+- [unset](docs/unset.md)
 - [forOwn](docs/forOwn.md)

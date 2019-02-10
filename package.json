@@ -12,8 +12,9 @@
 		"docs-readme": "jsdoc2md src/index.js > README.md --template docs.hbs --partial scope.hbs",
 		"docs-get": "jsdoc2md src/get.js > docs/get.md --template docs.hbs",
 		"docs-set": "jsdoc2md src/set.js > docs/set.md --template docs.hbs",
+		"docs-unset": "jsdoc2md src/unset.js > docs/unset.md --template docs.hbs",
 		"docs-forOwn": "jsdoc2md src/forOwn.js > docs/forOwn.md --template docs.hbs",
-		"docs": "npm run docs-readme && npm run docs-get && npm run docs-set && npm run docs-forown"
+		"docs": "npm run docs-readme && npm run docs-get && npm run docs-set && npm run docs-unset && npm run docs-forOwn"
 	},
 	"repository": {
 		"type": "git",

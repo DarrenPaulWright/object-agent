@@ -8,11 +8,20 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="unset"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forown](docs/forOwn.md)
+## unset(object, path)
+Deletes a property from a nested object.
 
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| object | <code>Object</code> | 
+| path | <code>Array</code> | 
+
+**Example**  
+``` javascriptimport { set } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};unset(thing, ['a', '1', 'b']);console.log(thing);// => {//    a: [{//        b: 'c'//    }, {}]//}```
 
 ## License
 
