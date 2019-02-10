@@ -2,6 +2,14 @@ import { assert } from 'chai';
 import { get } from '../src/';
 
 describe('get', () => {
+	it('should get the value of a first level key if astring is provided', () => {
+		const object = {
+			level1: 'something'
+		};
+
+		assert.equal(get(object, 'level1'), 'something');
+	});
+
 	it('should get the value of a first level key', () => {
 		const object = {
 			level1: 'something'

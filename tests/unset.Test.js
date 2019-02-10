@@ -2,6 +2,17 @@ import { assert } from 'chai';
 import { unset } from '../src/';
 
 describe('unset', () => {
+	it('should set the value of a first level key if a string is provided', () => {
+		const object = {
+			level1: 'something'
+		};
+		const compare = {};
+
+		unset(object, 'level1');
+
+		assert.deepEqual(object, compare);
+	});
+
 	it('should set the value of a first level key', () => {
 		const object = {
 			level1: 'something'

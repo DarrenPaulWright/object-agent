@@ -1,3 +1,5 @@
+import { castArray } from 'type-enforcer';
+
 /**
  * Deletes a property from a nested object.
  *
@@ -25,10 +27,10 @@
  * @function unset
  *
  * @arg {Object} object
- * @arg {Array} path
+ * @arg {Array|String} path - If a string, only applies to first level keys
  */
 export default (object, path) => {
-	path.some((key, index) => {
+	castArray(path).some((key, index, path) => {
 		if (index === path.length - 1) {
 			delete object[key];
 		}

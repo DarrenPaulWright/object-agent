@@ -1,3 +1,5 @@
+import { castArray } from 'type-enforcer';
+
 /**
  * Gets a nested value from an object.
  *
@@ -20,11 +22,11 @@
  * @function get
  *
  * @arg {Object} object
- * @arg {Array} path
+ * @arg {Array|String} path - If a string, only applies to first level keys
  *
  * @returns {*}
  */
 export default (object, path) => {
-	path.some((key) => !(object = object[key]));
+	castArray(path).some((key) => !(object = object[key]));
 	return object;
 };

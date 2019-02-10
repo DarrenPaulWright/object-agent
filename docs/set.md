@@ -15,11 +15,11 @@ Sets a nested value in an object.
 
 **Kind**: global function  
 
-| Param | Type |
-| --- | --- |
-| object | <code>Object</code> | 
-| path | <code>Array</code> | 
-| value | <code>\*</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| object | <code>Object</code> |  |
+| path | <code>Array</code> \| <code>String</code> | If a string, only applies to first level keys |
+| value | <code>\*</code> |  |
 
 **Example**  
 ``` javascriptimport { set } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};set(['a', '1', 'b'], thing, 'e');console.log(thing);// => {//    a: [{//        b: 'c'//    }, {//        b: 'e'//    }]//}```

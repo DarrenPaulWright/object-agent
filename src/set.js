@@ -1,4 +1,4 @@
-import { isNumber } from 'type-enforcer';
+import { castArray, isNumber } from 'type-enforcer';
 
 /**
  * Sets a nested value in an object.
@@ -29,10 +29,11 @@ import { isNumber } from 'type-enforcer';
  * @function set
  *
  * @arg {Object} object
- * @arg {Array} path
+ * @arg {Array|String} path - If a string, only applies to first level keys
  * @arg {*} value
  */
 export default (object, path, value) => {
+	path = castArray(path);
 	const last = path.length - 1;
 
 	path.forEach((key, index) => {

@@ -2,6 +2,19 @@ import { assert } from 'chai';
 import { set } from '../src/';
 
 describe('set', () => {
+	it('should set the value of a first level key if a string is provided', () => {
+		const object = {
+			level1: 'something'
+		};
+		const compare = {
+			level1: 'meh'
+		};
+
+		set(object, 'level1', 'meh');
+
+		assert.deepEqual(object, compare);
+	});
+
 	it('should set the value of a first level key', () => {
 		const object = {
 			level1: 'something'
@@ -129,7 +142,7 @@ describe('set', () => {
 			}]
 		};
 
-		set(object, 'level1', 2, 'level2', 'level3'], 'meh');
+		set(object, ['level1', 2, 'level2', 'level3'], 'meh');
 
 		assert.deepEqual(object, compare);
 	});

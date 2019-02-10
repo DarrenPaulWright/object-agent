@@ -15,10 +15,10 @@ Gets a nested value from an object.
 
 **Kind**: global function  
 
-| Param | Type |
-| --- | --- |
-| object | <code>Object</code> | 
-| path | <code>Array</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| object | <code>Object</code> |  |
+| path | <code>Array</code> \| <code>String</code> | If a string, only applies to first level keys |
 
 **Example**  
 ``` javascriptimport { get } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};get(['a', 1, 'b'], thing);// => 'd'```
