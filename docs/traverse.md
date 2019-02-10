@@ -8,11 +8,20 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="traverse"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forown](docs/forOwn.md)- [traverse](docs/traverse.md)
+## traverse(object, callback)
+Traverses a nested object.
 
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| object | <code>Object</code> | 
+| callback | <code>function</code> | 
+
+**Example**  
+``` javascriptimport { traverse } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }],    e: 'f};traverse(thing, (path, value) => {    console.log(path, value);});// => ['a'], [{ b: 'c' }, { b: 'd' }]// => ['a', 0], { b: 'c' }// => ['a', 0, 'b'], 'c'// => ['a', 1], { b: 'd' }// => ['a', 1, 'b'], 'd'// => ['e'], 'f'```
 
 ## License
 

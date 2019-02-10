@@ -14,7 +14,8 @@
 		"docs-set": "jsdoc2md src/set.js > docs/set.md --template docs.hbs",
 		"docs-unset": "jsdoc2md src/unset.js > docs/unset.md --template docs.hbs",
 		"docs-forOwn": "jsdoc2md src/forOwn.js > docs/forOwn.md --template docs.hbs",
-		"docs": "npm run docs-readme && npm run docs-get && npm run docs-set && npm run docs-unset && npm run docs-forOwn"
+		"docs-traverse": "jsdoc2md src/traverse.js > docs/traverse.md --template docs.hbs",
+		"docs": "npm run docs-readme && npm run docs-get && npm run docs-set && npm run docs-unset && npm run docs-forOwn && npm run docs-traverse"
 	},
 	"repository": {
 		"type": "git",

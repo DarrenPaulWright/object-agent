@@ -15,6 +15,7 @@
  * - [set](docs/set.md)
  * - [unset](docs/unset.md)
  * - [forown](docs/forOwn.md)
+ * - [traverse](docs/traverse.md)
  *
  * @name Installation
  */
@@ -22,3 +23,4 @@ export { default as get } from './get';
 export { default as set } from './set';
 export { default as unset } from './unset';
 export { default as forOwn } from './forOwn';
+export { default as traverse } from './traverse';
