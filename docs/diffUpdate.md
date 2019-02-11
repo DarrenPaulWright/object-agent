@@ -8,11 +8,20 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="diffUpdate"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forOwn](docs/forOwn.md)- [traverse](docs/traverse.md)- [isEmpty](docs/isEmpty.md)- [deepEqual](docs/deepEqual.md)- [diffUpdate](docs/diffUpdate.md)
+## diffUpdate(object1, object2) ⇒ <code>Object</code>
+Performs a deep comparison of two objects, returns a new object with only the first level values that have been changed or added on the second object
 
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| object1 | <code>Object</code> | 
+| object2 | <code>Object</code> | 
+
+**Example**  
+``` javascriptimport { diffUpdate } from 'object-agent';const item1 = {    a: ['b'],    c: 'd',    e: null}const item2 = {    a: ['b'],    c: null,    e: null,    f: 'g'}diffUpdate(item1, item2);// => { c: null, f: 'g' }```
 
 ## License
 

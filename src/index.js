@@ -18,6 +18,7 @@
  * - [traverse](docs/traverse.md)
  * - [isEmpty](docs/isEmpty.md)
  * - [deepEqual](docs/deepEqual.md)
+ * - [diffUpdate](docs/diffUpdate.md)
  *
  * @name Installation
  */
@@ -28,3 +29,4 @@ export { default as forOwn } from './forOwn';
 export { default as traverse } from './traverse';
 export { default as isEmpty } from './isEmpty';
 export { default as deepEqual } from './deepEqual';
+export { default as diffUpdate } from './diffUpdate';
