@@ -8,11 +8,20 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="deepEqual"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forOwn](docs/forOwn.md)- [traverse](docs/traverse.md)- [isEmpty](docs/isEmpty.md)- [deepEqual](docs/deepEqual.md)
+## deepEqual(item1, item2) ⇒ <code>Boolean</code>
+Deeply compares two items.
 
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| item1 | <code>\*</code> | 
+| item2 | <code>\*</code> | 
+
+**Example**  
+``` javascriptimport { deepEqual } from 'object-agent';deepEqual(null, undefined);// => falseconst item1 = {    a: ['b']}const item2 = {    a: ['c']}deepEqual(item1, item2);// => false```
 
 ## License
 

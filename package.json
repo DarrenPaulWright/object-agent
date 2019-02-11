@@ -16,7 +16,8 @@
 		"docs-forOwn": "jsdoc2md src/forOwn.js > docs/forOwn.md --template docs.hbs",
 		"docs-traverse": "jsdoc2md src/traverse.js > docs/traverse.md --template docs.hbs",
 		"docs-isEmpty": "jsdoc2md src/isEmpty.js > docs/isEmpty.md --template docs.hbs",
-		"docs": "npm run docs-readme && npm run docs-get && npm run docs-set && npm run docs-unset && npm run docs-forOwn && npm run docs-traverse && npm run docs-isEmpty"
+		"docs-deepEqual": "jsdoc2md src/deepEqual.js > docs/deepEqual.md --template docs.hbs",
+		"docs": "npm run docs-readme && npm run docs-get && npm run docs-set && npm run docs-unset && npm run docs-forOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-deepEqual"
 	},
 	"repository": {
 		"type": "git",
@@ -38,7 +39,7 @@
 	},
 	"homepage": "https://github.com/DarrenPaulWright/object-agent#readme",
 	"dependencies": {
-		"deep-equal": "^1.0.1",
+		"clone": "^2.1.2",
 		"type-enforcer": "^0.3.1"
 	},
 	"devDependencies": {

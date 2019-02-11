@@ -12,3 +12,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [forOwn](docs/forOwn.md)
 - [traverse](docs/traverse.md)
 - [isEmpty](docs/isEmpty.md)
+- [deepEqual](docs/deepEqual.md)

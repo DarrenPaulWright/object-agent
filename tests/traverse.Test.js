@@ -1,6 +1,5 @@
 import { assert } from 'chai';
-import deepEqual from 'deep-equal';
-import { traverse } from '../src/';
+import { deepEqual, traverse } from '../src/';
 
 describe('traverse', () => {
 	it('should call the callback for all paths and return true', () => {
