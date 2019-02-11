@@ -8,11 +8,20 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="pull"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forOwn](docs/forOwn.md)- [traverse](docs/traverse.md)- [isEmpty](docs/isEmpty.md)- [pull](docs/pull.md)- [deepEqual](docs/deepEqual.md)- [diffUpdate](docs/diffUpdate.md)
+## pull(array, path) ⇒ <code>Array</code>
+Pulls values from an array of objects into a new array.
 
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>Array</code> |  |
+| path | <code>Array</code> \| <code>String</code> | If a string, only applies to first level keys |
+
+**Example**  
+``` javascriptimport { pull } from 'object-agent';const array = [{    a: { b: [1, 2, 3] }}, {    a: { b: [4, 5, 6] }}];pull(array, ['a', 'b', 1]); // => [2, 5]```
 
 ## License
 
