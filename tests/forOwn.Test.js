@@ -11,7 +11,7 @@ describe('get', () => {
 			key3: 'something3'
 		};
 
-		forOwn(object, (value, key) => {
+		const isCanceled = forOwn(object, (value, key) => {
 			total++;
 			if (key === 'key1' && value === 'something1') {
 				testVar++;
@@ -26,6 +26,7 @@ describe('get', () => {
 
 		assert.equal(total, 3);
 		assert.equal(testVar, 3);
+		assert.isFalse(isCanceled);
 	});
 
 	it('should stop calling the callbacks if true is returned', () => {
@@ -37,7 +38,7 @@ describe('get', () => {
 			key3: 'something3'
 		};
 
-		forOwn(object, (value, key) => {
+		const isCanceled = forOwn(object, (value, key) => {
 			total++;
 			if (key === 'key1' && value === 'something1') {
 				testVar++;
@@ -50,6 +51,7 @@ describe('get', () => {
 
 		assert.equal(total, 2);
 		assert.equal(testVar, 2);
+		assert.isTrue(isCanceled);
 	});
 
 	it('should not call the callback for inherited properties', () => {
@@ -61,7 +63,7 @@ describe('get', () => {
 		Thing.prototype.key2 = 'something2';
 		const object = new Thing();
 
-		forOwn(object, (value, key) => {
+		const isCanceled = forOwn(object, (value, key) => {
 			total++;
 			if (key === 'key1' && value === 'something1') {
 				testVar++;
@@ -70,16 +72,18 @@ describe('get', () => {
 
 		assert.equal(total, 1);
 		assert.equal(testVar, 1);
+		assert.isFalse(isCanceled);
 	});
 
 	it('should not call the callback if object is undefined', () => {
 		let total = 0;
 		let object;
 
-		forOwn(object, () => {
+		const isCanceled = forOwn(object, () => {
 			total++;
 		});
 
 		assert.equal(total, 0);
+		assert.isFalse(isCanceled);
 	});
 });

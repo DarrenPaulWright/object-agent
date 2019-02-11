@@ -10,10 +10,11 @@ A javascript library for working with objects
 
 <a name="forOwn"></a>
 
-## forOwn(object, callback)
-Iterates over own properties of an object.
+## forOwn(object, callback) ⇒ <code>Boolean</code>
+Iterates over own properties of an object. Stops iterating as soon as the callback returns a truthy value.
 
 **Kind**: global function  
+**Returns**: <code>Boolean</code> - true if the callback function returns a truthy value for any key; otherwise, false.  
 
 | Param | Type |
 | --- | --- |

@@ -2,7 +2,7 @@ import { isArray, isObject } from 'type-enforcer';
 import forOwn from './forOwn';
 
 /**
- * Traverses a nested object.
+ * Traverses a nested object. The traversal stops as soon as the callback returns a truthy value.
  *
  * @example
  * ``` javascript
@@ -32,18 +32,21 @@ import forOwn from './forOwn';
  *
  * @arg {Object} object
  * @arg {Function} callback
+ *
+ * @returns {Boolean} true if the callback function returns a truthy value for any path; otherwise, false.
  */
 export default (object, callback) => {
 	const processValue = (path, value) => {
-		if (!path.length || callback(path, value) !== true) {
-			if (isArray(value)) {
-				value.forEach((value, key) => processValue(path.concat(key), value));
-			}
-			else if (isObject(value)) {
-				forOwn(value, (value, key) => processValue(path.concat(key), value));
-			}
+		if (path.length && callback(path, value)) {
+			return true;
+		}
+		if (isArray(value)) {
+			return value.some((value, key) => processValue(path.concat(key), value));
+		}
+		if (isObject(value)) {
+			return forOwn(value, (value, key) => processValue(path.concat(key), value));
 		}
 	};
 
-	processValue([], object);
+	return processValue([], object);
 };

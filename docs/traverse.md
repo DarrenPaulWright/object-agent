@@ -10,10 +10,11 @@ A javascript library for working with objects
 
 <a name="traverse"></a>
 
-## traverse(object, callback)
-Traverses a nested object.
+## traverse(object, callback) ⇒ <code>Boolean</code>
+Traverses a nested object. The traversal stops as soon as the callback returns a truthy value.
 
 **Kind**: global function  
+**Returns**: <code>Boolean</code> - true if the callback function returns a truthy value for any path; otherwise, false.  
 
 | Param | Type |
 | --- | --- |
