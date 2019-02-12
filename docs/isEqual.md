@@ -8,32 +8,19 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="isEqual"></a>
 
-## Installation
-With npm
-```
-npm install object-agent
-```
+## isEqual() ⇒ <code>Boolean</code>
+Shallow compares two or more items. All items are compared with strict equality except Dates and RegExps which compare their _values_ with strict equality.
 
-## Compatibility
+**Kind**: global function  
 
-Requires:
-- Babel >= 7.2
+| Type | Description |
+| --- | --- |
+| <code>\*</code> \| <code>Array</code> | Can be an array of items or multiple args of items. |
 
-## Docs
-
-- [get](docs/get.md)
-- [set](docs/set.md)
-- [unset](docs/unset.md)
-- [forOwn](docs/forOwn.md)
-- [traverse](docs/traverse.md)
-- [isEmpty](docs/isEmpty.md)
-- [pull](docs/pull.md)
-- [isEqual](docs/isEqual.md)
-- [deepEqual](docs/deepEqual.md)
-- [diffUpdate](docs/diffUpdate.md)
-
+**Example**  
+``` javascriptimport { isEqual } from 'object-agent';isEqual(null, undefined);// => falseisEqual('a', 'a', 'a');// => trueisEqual('a', 'a', 'a', null);// => false```
 
 ## License
 

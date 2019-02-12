@@ -1,5 +1,6 @@
-import { isArray, isDate, isObject, isRegExp } from 'type-enforcer';
+import { isArray, isObject } from 'type-enforcer';
 import get from './get';
+import isEqual from './isEqual';
 import traverse from './traverse';
 
 const diff = (value1, value2) => {
@@ -9,13 +10,7 @@ const diff = (value1, value2) => {
 	else if (isArray(value1)) {
 		return !isArray(value2) || value1.length !== value2.length;
 	}
-	else if (isDate(value1)) {
-		return !isDate(value2) || value1.toString() !== value2.toString();
-	}
-	else if (isRegExp(value1)) {
-		return !isRegExp(value2) || String(value1) !== String(value2);
-	}
-	return value1 !== value2;
+	return !isEqual(value1, value2);
 };
 
 /**

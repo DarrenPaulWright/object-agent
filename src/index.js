@@ -18,6 +18,7 @@
  * - [traverse](docs/traverse.md)
  * - [isEmpty](docs/isEmpty.md)
  * - [pull](docs/pull.md)
+ * - [isEqual](docs/isEqual.md)
  * - [deepEqual](docs/deepEqual.md)
  * - [diffUpdate](docs/diffUpdate.md)
  *
@@ -30,5 +31,6 @@ export { default as forOwn } from './forOwn';
 export { default as traverse } from './traverse';
 export { default as isEmpty } from './isEmpty';
 export { default as pull } from './pull';
+export { default as isEqual } from './isEqual';
 export { default as deepEqual } from './deepEqual';
 export { default as diffUpdate } from './diffUpdate';

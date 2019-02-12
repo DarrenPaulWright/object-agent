@@ -13,5 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [traverse](docs/traverse.md)
 - [isEmpty](docs/isEmpty.md)
 - [pull](docs/pull.md)
+- [isEqual](docs/isEqual.md)
 - [deepEqual](docs/deepEqual.md)
 - [diffUpdate](docs/diffUpdate.md)
