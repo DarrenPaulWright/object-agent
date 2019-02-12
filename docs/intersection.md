@@ -8,11 +8,19 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="intersection"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forOwn](docs/forOwn.md)- [traverse](docs/traverse.md)- [isEmpty](docs/isEmpty.md)- [pull](docs/pull.md)- [isEqual](docs/isEqual.md)- [deepEqual](docs/deepEqual.md)- [diffUpdate](docs/diffUpdate.md)- [intersection](docs/intersection.md)
+## intersection() ⇒ <code>Object</code>
+Performs a deep comparison of objects and returns a new object of values that are equal in all given objects.
 
+**Kind**: global function  
+
+| Type |
+| --- |
+| <code>\*</code> \| <code>Array</code> | 
+
+**Example**  
+``` javascriptimport { intersection } from 'object-agent';intersection([1, 2, 3], [2, 3, 4], [5, 6, 2, 3]); // => [2, 3]intersection({    a: 'b',    c: [1, 2, 3],    d: null}, {    a: 'b',    c: [1, 3, 4]})// => { a: 'b', c: [1, 3] }```
 
 ## License
 

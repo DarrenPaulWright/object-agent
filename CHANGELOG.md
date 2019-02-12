@@ -16,3 +16,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [isEqual](docs/isEqual.md)
 - [deepEqual](docs/deepEqual.md)
 - [diffUpdate](docs/diffUpdate.md)
+- [intersection](docs/intersection.md)

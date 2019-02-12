@@ -20,7 +20,8 @@
 		"docs-isEqual": "jsdoc2md src/isEqual.js > docs/isEqual.md --template docs.hbs",
 		"docs-deepEqual": "jsdoc2md src/deepEqual.js > docs/deepEqual.md --template docs.hbs",
 		"docs-diffUpdate": "jsdoc2md src/diffUpdate.js > docs/diffUpdate.md --template docs.hbs",
-		"docs": "npm run docs-readme && npm run docs-get && npm run docs-set && npm run docs-unset && npm run docs-forOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-isEqual && npm run docs-deepEqual && npm run docs-diffUpdate && npm run docs-pull"
+		"docs-intersection": "jsdoc2md src/intersection.js > docs/intersection.md --template docs.hbs",
+		"docs": "npm run docs-readme && npm run docs-get && npm run docs-set && npm run docs-unset && npm run docs-forOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-isEqual && npm run docs-deepEqual && npm run docs-diffUpdate && npm run docs-pull && npm run docs-intersection"
 	},
 	"repository": {
 		"type": "git",

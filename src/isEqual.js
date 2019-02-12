@@ -1,4 +1,5 @@
 import { isDate, isRegExp } from 'type-enforcer';
+import multiArgs from './utility/multiArgs';
 
 /**
  * Shallow compares two or more items. All items are compared with strict equality except Dates and RegExps which compare their _values_ with strict equality.
@@ -24,9 +25,7 @@ import { isDate, isRegExp } from 'type-enforcer';
  * @returns {Boolean}
  */
 export default (...args) => {
-	if (args.length === 1) {
-		args = args[0];
-	}
+	args = multiArgs(args)
 	const base = args.shift();
 	const isBaseDate = isDate(base);
 	const isBaseRegExp = isRegExp(base);

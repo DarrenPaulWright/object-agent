@@ -1,7 +1,7 @@
 module.exports = [{
 	type: 'src',
 	files: [
-		'src/*.js'
+		'src/**/*.js'
 	]
 }, {
 	type: 'specs',
