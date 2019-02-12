@@ -22,7 +22,7 @@ Iterates over own properties of an object. Stops iterating as soon as the callba
 | callback | <code>function</code> | 
 
 **Example**  
-``` javascriptimport { forOwn } from 'object-agent';const thing = {    a: 'b',    c: 'd};forOwn(thing, (value, key) => {    console.log(value, key);});// => 'b', 'a'// => 'd', 'c'```
+``` javascriptimport { forOwn } from 'object-agent';const thing = {    a: 'b',    c: 'd'};forOwn(thing, (value, key) => {    console.log(value, key);});// => 'b', 'a'// => 'd', 'c'```
 
 ## License
 

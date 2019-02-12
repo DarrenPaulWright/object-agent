@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { pull } from '../src/';
 
-describe('set', () => {
+describe('pull', () => {
 	it('should pull the values from an array of objects', () => {
 		const input = [{
 			level1: 'something'

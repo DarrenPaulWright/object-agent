@@ -7,7 +7,7 @@
  *
  * const thing = {
  *     a: 'b',
- *     c: 'd
+ *     c: 'd'
  * };
  *
  * forOwn(thing, (value, key) => {

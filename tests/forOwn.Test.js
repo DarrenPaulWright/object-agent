@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { forOwn } from '../src/';
 
-describe('get', () => {
+describe('forOwn', () => {
 	it('should call the callback for each key', () => {
 		let total = 0;
 		let testVar = 0;
