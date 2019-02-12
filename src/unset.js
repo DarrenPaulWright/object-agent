@@ -1,4 +1,4 @@
-import { castArray } from 'type-enforcer';
+import parsePath from './utility/parsePath';
 
 /**
  * Deletes a property from a nested object.
@@ -27,10 +27,10 @@ import { castArray } from 'type-enforcer';
  * @function unset
  *
  * @arg {Object} object
- * @arg {Array|String} path - If a string, only applies to first level keys
+ * @arg {Array|String} path - If a string, gets split on '.'
  */
 export default (object, path) => {
-	castArray(path).some((key, index, path) => {
+	parsePath(path).some((key, index, path) => {
 		if (index === path.length - 1) {
 			delete object[key];
 		}

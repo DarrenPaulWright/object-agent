@@ -1,4 +1,4 @@
-import { castArray } from 'type-enforcer';
+import parsePath from './utility/parsePath';
 
 /**
  * Gets a nested value from an object.
@@ -22,11 +22,11 @@ import { castArray } from 'type-enforcer';
  * @function get
  *
  * @arg {Object} object
- * @arg {Array|String} path - If a string, only applies to first level keys
+ * @arg {Array|String} path - If a string, gets split on '.'
  *
  * @returns {*}
  */
 export default (object, path) => {
-	castArray(path).some((key) => !(object = object[key]));
+	parsePath(path).some((key) => !(object = object[key]));
 	return object;
 };

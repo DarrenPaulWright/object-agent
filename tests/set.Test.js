@@ -135,7 +135,7 @@ describe('set', () => {
 	it('should create objects and arrays then set the value', () => {
 		const object = {};
 		const compare = {
-			level1: [, , {
+			level1: [, , { // eslint-disable-line no-sparse-arrays
 				level2: {
 					level3: 'meh'
 				}

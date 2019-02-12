@@ -25,7 +25,7 @@ import multiArgs from './utility/multiArgs';
  * @returns {Boolean}
  */
 export default (...args) => {
-	args = multiArgs(args)
+	args = multiArgs(args);
 	const base = args.shift();
 	const isBaseDate = isDate(base);
 	const isBaseRegExp = isRegExp(base);

@@ -18,7 +18,7 @@ Gets a nested value from an object.
 | Param | Type | Description |
 | --- | --- | --- |
 | object | <code>Object</code> |  |
-| path | <code>Array</code> \| <code>String</code> | If a string, only applies to first level keys |
+| path | <code>Array</code> \| <code>String</code> | If a string, gets split on '.' |
 
 **Example**  
 ``` javascriptimport { get } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};get(['a', 1, 'b'], thing);// => 'd'```

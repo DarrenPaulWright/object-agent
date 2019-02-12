@@ -18,7 +18,7 @@ Sets a nested value in an object.
 | Param | Type | Description |
 | --- | --- | --- |
 | object | <code>Object</code> |  |
-| path | <code>Array</code> \| <code>String</code> | If a string, only applies to first level keys |
+| path | <code>Array</code> \| <code>String</code> | If a string, gets split on '.' |
 | value | <code>\*</code> |  |
 
 **Example**  

@@ -18,7 +18,7 @@ Pulls values from an array of objects into a new array.
 | Param | Type | Description |
 | --- | --- | --- |
 | array | <code>Array</code> |  |
-| path | <code>Array</code> \| <code>String</code> | If a string, only applies to first level keys |
+| path | <code>Array</code> \| <code>String</code> | If a string, gets split on '.' |
 
 **Example**  
 ``` javascriptimport { pull } from 'object-agent';const array = [{    a: { b: [1, 2, 3] }}, {    a: { b: [4, 5, 6] }}];pull(array, ['a', 'b', 1]); // => [2, 5]```

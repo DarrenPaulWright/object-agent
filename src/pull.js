@@ -1,5 +1,5 @@
-import { castArray } from 'type-enforcer';
 import get from './get';
+import parsePath from './utility/parsePath';
 
 /**
  * Pulls values from an array of objects into a new array.
@@ -20,11 +20,11 @@ import get from './get';
  * @function pull
  *
  * @arg {Array} array
- * @arg {Array|String} path - If a string, only applies to first level keys
+ * @arg {Array|String} path - If a string, gets split on '.'
  *
  * @returns {Array}
  */
 export default (array, path) => {
-	path = castArray(path);
+	path = parsePath(path);
 	return array.map((item) => item ? get(item, path) : undefined);
 };
