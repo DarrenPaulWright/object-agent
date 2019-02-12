@@ -15,6 +15,7 @@
  * - [set](docs/set.md)
  * - [unset](docs/unset.md)
  * - [forOwn](docs/forOwn.md)
+ * - [mapOwn](docs/mapOwn.md)
  * - [traverse](docs/traverse.md)
  * - [isEmpty](docs/isEmpty.md)
  * - [pull](docs/pull.md)
@@ -29,6 +30,7 @@ export { default as get } from './get';
 export { default as set } from './set';
 export { default as unset } from './unset';
 export { default as forOwn } from './forOwn';
+export { default as mapOwn } from './mapOwn';
 export { default as traverse } from './traverse';
 export { default as isEmpty } from './isEmpty';
 export { default as pull } from './pull';

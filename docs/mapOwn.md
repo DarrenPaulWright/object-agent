@@ -8,11 +8,21 @@
 
 A javascript library for working with objects
 
-<a name="Installation"></a>
+<a name="mapOwn"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forOwn](docs/forOwn.md)- [mapOwn](docs/mapOwn.md)- [traverse](docs/traverse.md)- [isEmpty](docs/isEmpty.md)- [pull](docs/pull.md)- [isEqual](docs/isEqual.md)- [deepEqual](docs/deepEqual.md)- [diffUpdate](docs/diffUpdate.md)- [intersection](docs/intersection.md)
+## mapOwn(object, callback) ⇒ <code>Object</code> \| <code>\*</code>
+Builds a new object by iterating over own properties of an object.
 
+**Kind**: global function  
+**Returns**: <code>Object</code> \| <code>\*</code> - If null or undefined are passed in then the same is returned, otherwise a new object  
+
+| Param | Type |
+| --- | --- |
+| object | <code>Object</code> | 
+| callback | <code>function</code> | 
+
+**Example**  
+``` javascriptimport { mapOwn } from 'object-agent';const thing = {    a: 'b',    c: 'd'};mapOwn(thing, (value, key) => value + ' ' + key);// => { a: 'b a', c: 'd c' }```
 
 ## License
 
