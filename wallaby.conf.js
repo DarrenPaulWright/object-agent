@@ -3,6 +3,9 @@ const testRunnerConfig = require('test-runner-config');
 const config = require('./testRunner.config.js');
 
 const files = testRunnerConfig.getWallabyFiles(config, {
+	helper: (file) => {
+		return {pattern: file, instrument: false, load: false};
+	},
 	src: (file) => {
 		return {pattern: file, instrument: true, load: false};
 	},
