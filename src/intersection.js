@@ -6,33 +6,33 @@ import pull from './pull';
 import set from './set';
 import multiArgs from './utility/multiArgs';
 
-const diffValue = (values) => {
+const intersectionValues = (values) => {
 	if (isArray(values[0])) {
-		return diffArray(values);
+		return intersectionArrays(values);
 	}
 	else if (isObject(values[0])) {
-		return diffObject(values);
+		return intersectionObjects(values);
 	}
 
-	return diffOther(values);
+	return intersectionOther(values);
 };
 
-const diffOther = (args) => {
+const intersectionOther = (args) => {
 	return isEqual(args) ? args[0] : undefined;
 };
 
-const diffArray = (args) => {
+const intersectionArrays = (args) => {
 	const array1 = args.shift();
-	let diffArrays = [].concat(...args);
-	return array1.filter((item) => diffArrays.findIndex((diffItem) => isEqual(diffItem, item)) !== -1);
+	let otherArrays = [].concat(...args);
+	return array1.filter((item) => otherArrays.findIndex((diffItem) => isEqual(diffItem, item)) !== -1);
 };
 
-const diffObject = (args) => {
+const intersectionObjects = (args) => {
 	const output = {};
 	let diff;
 
 	forOwn(args[0], (value, key) => {
-		diff = diffValue(pull(args, key));
+		diff = intersectionValues(pull(args, key));
 
 		if (!isEmpty(diff) || diff === null) {
 			set(output, key, diff);
@@ -68,4 +68,4 @@ const diffObject = (args) => {
  *
  * @returns {Object}
  */
-export default (...args) => diffValue(multiArgs(args));
+export default (...args) => intersectionValues(multiArgs(args));
