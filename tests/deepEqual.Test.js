@@ -1,6 +1,5 @@
 import { assert } from 'chai';
-import clone from 'clone';
-import { deepEqual } from '../src/';
+import { clone, deepEqual } from '../src/';
 import { testValues } from './testValues';
 
 describe('deepEqual', () => {

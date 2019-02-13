@@ -44,7 +44,6 @@
 	},
 	"homepage": "https://github.com/DarrenPaulWright/object-agent#readme",
 	"dependencies": {
-		"clone": "^2.1.2",
 		"type-enforcer": "^0.3.1"
 	},
 	"devDependencies": {

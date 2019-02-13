@@ -23,6 +23,7 @@
  * - [deepEqual](docs/deepEqual.md)
  * - [diffUpdate](docs/diffUpdate.md)
  * - [intersection](docs/intersection.md)
+ * - [clone](docs/clone.md)
  *
  * @name Installation
  */
@@ -38,3 +39,4 @@ export { default as isEqual } from './isEqual';
 export { default as deepEqual } from './deepEqual';
 export { default as diffUpdate } from './diffUpdate';
 export { default as intersection } from './intersection';
+export { default as clone } from './clone';

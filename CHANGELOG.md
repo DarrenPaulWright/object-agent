@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - [mapOwn](docs/mapOwn.md)
+- [clone](docs/clone.md)
 
 ## 0.1.0 - 2019-2-12
 ### Added

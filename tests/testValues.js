@@ -3,7 +3,7 @@ export const testValues = [
 	null,
 	{},
 	[],
-	/test/,
+	/test/g,
 	new RegExp('something'),
 	3,
 	true,
