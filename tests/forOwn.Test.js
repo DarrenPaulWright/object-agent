@@ -54,6 +54,31 @@ describe('forOwn', () => {
 		assert.isTrue(isCanceled);
 	});
 
+	it('should NOT call the callback for keys that are deleted in a previous callback', () => {
+		let total = 0;
+		let testVar = 0;
+		const object = {
+			key1: 'something1',
+			key2: 'something2',
+			key3: 'something3'
+		};
+
+		const isCanceled = forOwn(object, (value, key) => {
+			total++;
+			if (key === 'key1' && value === 'something1') {
+				testVar++;
+			}
+			if (key === 'key2' && value === 'something2') {
+				testVar++;
+				delete object.key3;
+			}
+		});
+
+		assert.equal(total, 2);
+		assert.equal(testVar, 2);
+		assert.isFalse(isCanceled);
+	});
+
 	it('should not call the callback for inherited properties', () => {
 		let total = 0;
 		let testVar = 0;
