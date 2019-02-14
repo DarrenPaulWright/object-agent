@@ -24,4 +24,5 @@
  *
  * @returns {Boolean} true if the callback function returns a truthy value for any key; otherwise, false.
  */
-export default (object, callback) => !(!object || !Object.entries(object).some((data) => callback(data[1], data[0])));
+export default (object, callback) => !(!object || !Object.keys(object)
+	.some((key) => key in object ? callback(object[key], key) : false));
