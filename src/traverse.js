@@ -20,6 +20,7 @@ import forOwn from './forOwn';
  * traverse(thing, (path, value) => {
  *     console.log(path, value);
  * });
+ * // => [], { a: [{ b: 'c' }, { b: 'd' }] }
  * // => ['a'], [{ b: 'c' }, { b: 'd' }]
  * // => ['a', 0], { b: 'c' }
  * // => ['a', 0, 'b'], 'c'
@@ -37,7 +38,7 @@ import forOwn from './forOwn';
  */
 export default (object, callback) => {
 	const processValue = (path, value) => {
-		if (path.length && callback(path, value)) {
+		if (callback(path, value)) {
 			return true;
 		}
 		if (isArray(value)) {

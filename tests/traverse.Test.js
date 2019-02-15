@@ -17,6 +17,9 @@ describe('traverse', () => {
 		const isCanceled = traverse(testObject, (path, value) => {
 			total++;
 
+			if (deepEqual(path, [])) {
+				testVar++;
+			}
 			if (deepEqual(path, ['test'])) {
 				testVar++;
 			}
@@ -40,8 +43,8 @@ describe('traverse', () => {
 			}
 		});
 
-		assert.equal(total, 7);
-		assert.equal(testVar, 7);
+		assert.equal(total, 8);
+		assert.equal(testVar, 8);
 		assert.isFalse(isCanceled);
 	});
 
@@ -60,6 +63,9 @@ describe('traverse', () => {
 		const isCanceled = traverse(testObject, (path, value) => {
 			total++;
 
+			if (deepEqual(path, [])) {
+				testVar++;
+			}
 			if (deepEqual(path, ['test'])) {
 				testVar++;
 			}
@@ -84,8 +90,8 @@ describe('traverse', () => {
 			}
 		});
 
-		assert.equal(total, 3);
-		assert.equal(testVar, 3);
+		assert.equal(total, 4);
+		assert.equal(testVar, 4);
 		assert.isTrue(isCanceled);
 	});
 
@@ -104,6 +110,9 @@ describe('traverse', () => {
 		const isCanceled = traverse(testObject, (path, value) => {
 			total++;
 
+			if (deepEqual(path, [])) {
+				testVar++;
+			}
 			if (deepEqual(path, ['test'])) {
 				testVar++;
 			}
@@ -128,8 +137,8 @@ describe('traverse', () => {
 			}
 		});
 
-		assert.equal(total, 5);
-		assert.equal(testVar, 5);
+		assert.equal(total, 6);
+		assert.equal(testVar, 6);
 		assert.isTrue(isCanceled);
 	});
 });
