@@ -42,5 +42,5 @@ const diff = (value1, value2) => {
  * @returns {Boolean}
  */
 export default (item1, item2) => {
-	return !(diff(item1, item2) || traverse(item1, (path, value1) => diff(value1, get(item2, path))));
+	return !traverse(item1, (path, value1) => diff(value1, get(item2, path)));
 }
