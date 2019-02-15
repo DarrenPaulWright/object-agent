@@ -93,6 +93,6 @@ describe('get', () => {
 			}]
 		};
 
-		assert.equal(get(object, ['level1', '2', 'level3']), undefined);
+		assert.equal(get(object, ['level1', '2', 'level3', 'level4']), undefined);
 	});
 });
