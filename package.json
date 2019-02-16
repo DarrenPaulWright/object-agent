@@ -1,6 +1,6 @@
 {
 	"name": "object-agent",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"description": "A javascript library for working with objects",
 	"main": "src/index.js",
 	"scripts": {
@@ -44,7 +44,7 @@
 	},
 	"homepage": "https://github.com/DarrenPaulWright/object-agent#readme",
 	"dependencies": {
-		"type-enforcer": "^0.3.1"
+		"type-enforcer": "^0.3.3"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
