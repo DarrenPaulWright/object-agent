@@ -10,16 +10,17 @@ A javascript library for working with objects
 
 <a name="traverse"></a>
 
-## traverse(object, callback) ⇒ <code>Boolean</code>
-Traverses a nested object. The traversal stops as soon as the callback returns a truthy value.
+## traverse(object, callback, [isOptimistic]) ⇒ <code>Boolean</code>
+Traverses a nested object.
 
 **Kind**: global function  
 **Returns**: <code>Boolean</code> - true if the callback function returns a truthy value for any path; otherwise, false.  
 
-| Param | Type |
-| --- | --- |
-| object | <code>Object</code> | 
-| callback | <code>function</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| object | <code>Object</code> |  |  |
+| callback | <code>function</code> |  | Provides two args, path and value. If true is returned then stop traversing and return true. |
+| [isOptimistic] | <code>Boolean</code> | <code>false</code> | If true then returning true in the callback will prevent going deeper down that branch, but will otherwise continue traversing. |
 
 **Example**  
 ``` javascriptimport { traverse } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }],    e: 'f};traverse(thing, (path, value) => {    console.log(path, value);});// => [], { a: [{ b: 'c' }, { b: 'd' }] }// => ['a'], [{ b: 'c' }, { b: 'd' }]// => ['a', 0], { b: 'c' }// => ['a', 0, 'b'], 'c'// => ['a', 1], { b: 'd' }// => ['a', 1, 'b'], 'd'// => ['e'], 'f'```
