@@ -2,7 +2,7 @@ import { isArray, isObject } from 'type-enforcer';
 import forOwn from './forOwn';
 
 /**
- * Traverses a nested object. The traversal stops as soon as the callback returns a truthy value.
+ * Traverses a nested object.
  *
  * @example
  * ``` javascript
@@ -32,11 +32,12 @@ import forOwn from './forOwn';
  * @function traverse
  *
  * @arg {Object} object
- * @arg {Function} callback
+ * @arg {Function} callback - Provides two args, path and value. If true is returned then stop traversing and return true.
+ * @arg {Boolean} [isOptimistic=false] - If true then returning true in the callback will prevent going deeper down that branch, but will otherwise continue traversing.
  *
  * @returns {Boolean} true if the callback function returns a truthy value for any path; otherwise, false.
  */
-export default (object, callback) => {
+export default (object, callback, isOptimistic) => {
 	const processValue = (path, value) => {
 		if (callback(path, value)) {
 			return true;
@@ -49,5 +50,27 @@ export default (object, callback) => {
 		}
 	};
 
-	return processValue([], object);
+	const processValueOptimistic = (path, value) => {
+		let isCanceled = false;
+
+		const loopCallback = (value, key) => {
+			if (processValueOptimistic(path.concat(key), value)) {
+				isCanceled = true;
+			}
+		};
+
+		if (callback(path, value)) {
+			isCanceled = true;
+		}
+		else if (isArray(value)) {
+			value.some(loopCallback);
+		}
+		else if (isObject(value)) {
+			forOwn(value, loopCallback);
+		}
+
+		return isCanceled;
+	};
+
+	return isOptimistic ? processValueOptimistic([], object) : processValue([], object);
 };
