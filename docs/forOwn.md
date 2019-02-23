@@ -16,10 +16,10 @@ Iterates over own properties of an object. Stops iterating as soon as the callba
 **Kind**: global function  
 **Returns**: <code>Boolean</code> - true if the callback function returns a truthy value for any key; otherwise, false.  
 
-| Param | Type |
-| --- | --- |
-| object | <code>Object</code> | 
-| callback | <code>function</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| object | <code>Object</code> |  |
+| callback | <code>function</code> | Provides two args: value and key |
 
 **Example**  
 ``` javascriptimport { forOwn } from 'object-agent';const thing = {    a: 'b',    c: 'd'};forOwn(thing, (value, key) => {    console.log(value, key);});// => 'b', 'a'// => 'd', 'c'```

@@ -20,7 +20,7 @@
  * @function forOwn
  *
  * @arg {Object} object
- * @arg {Function} callback
+ * @arg {Function} callback - Provides two args: value and key
  *
  * @returns {Boolean} true if the callback function returns a truthy value for any key; otherwise, false.
  */
