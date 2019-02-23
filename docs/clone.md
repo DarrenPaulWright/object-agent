@@ -11,11 +11,20 @@ A javascript library for working with objects
 
 ---
 
-<a name="Installation"></a>
+<a name="clone"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forOwn](docs/forOwn.md)- [mapOwn](docs/mapOwn.md)- [traverse](docs/traverse.md)- [isEmpty](docs/isEmpty.md)- [pull](docs/pull.md)- [isEqual](docs/isEqual.md)- [deepEqual](docs/deepEqual.md)- [diffUpdate](docs/diffUpdate.md)- [intersection](docs/intersection.md)- [clone](docs/clone.md)
+## clone(value, [ignoreKeys]) ⇒ <code>\*</code>
+Deep clone a value.
 
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>\*</code> |  |
+| [ignoreKeys] | <code>Array</code> \| <code>String</code> | Any keys in this array will not be cloned |
+
+**Example**  
+``` javascriptimport { clone } from 'object-agent';clone({ a: 'b', c: 'd' });// => { a: 'b', c: 'd' }```
 
 ## License
 
