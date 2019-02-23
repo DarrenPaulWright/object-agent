@@ -28,6 +28,20 @@ describe('clone', () => {
 		assert.deepEqual(clone(object), object);
 	});
 
+	it('should ignore keys in the ignoreKeys arg', () => {
+		const object = {
+			key1: 'something',
+			key2: {
+				key3: 'another'
+			}
+		};
+		const output = {
+			key1: 'something'
+		};
+
+		assert.deepEqual(clone(object, ['key2']), output);
+	});
+
 	it('should clone a reference to an instance of a class', () => {
 		class Thing {
 			doSomething() {

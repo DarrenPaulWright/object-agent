@@ -17,10 +17,11 @@ import set from './set';
  * @function clone
  *
  * @arg {*} value
+ * @arg {Array|String} [ignoreKeys] - Any keys in this array will not be cloned
  *
  * @returns {*}
  */
-export default function clone(item) {
+export default function clone(item, ignoreKeys = []) {
 	const objectRefs = [];
 	const circularRefs = [];
 
@@ -33,7 +34,7 @@ export default function clone(item) {
 			}
 			objectRefs.push([item, path]);
 
-			return mapOwn(item, (value, key) => doClone(value, path.concat(key)));
+			return mapOwn(item, (value, key) => doClone(value, path.concat(key)), ignoreKeys);
 		}
 		if (isArray(item)) {
 			return item.map((value, index) => doClone(value, path.concat(index)));
@@ -51,5 +52,5 @@ export default function clone(item) {
 
 	circularRefs.forEach((ref) => set(result, ref[0], get(result, ref[1])));
 
-	return result
+	return result;
 }
