@@ -68,6 +68,7 @@
 		"karma-mocha": "^1.3.0",
 		"karma-webpack": "^3.0.5",
 		"mocha": "^5.2.0",
+		"on-change": "^1.0.0",
 		"test-runner-config": "^0.5.0",
 		"wallaby-webpack": "^3.9.13",
 		"webpack": "^4.29.3",
