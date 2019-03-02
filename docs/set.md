@@ -14,7 +14,7 @@ A javascript library for working with objects
 <a name="set"></a>
 
 ## set(object, path, value)
-Sets a nested value in an object.
+Sets a nested value in an object. Keys in the path that don't exist at any point in the object will be created and added to the object once.
 
 **Kind**: global function  
 
