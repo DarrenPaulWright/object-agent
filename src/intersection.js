@@ -1,13 +1,13 @@
-import { isArray, isObject } from 'type-enforcer';
 import forOwn from './forOwn';
 import isEmpty from './isEmpty';
 import isEqual from './isEqual';
 import pull from './pull';
 import set from './set';
+import isObject from './utility/isObject';
 import multiArgs from './utility/multiArgs';
 
 const intersectionValues = (values) => {
-	if (isArray(values[0])) {
+	if (Array.isArray(values[0])) {
 		return intersectionArrays(values);
 	}
 	else if (isObject(values[0])) {

@@ -44,9 +44,6 @@
 		"url": "https://github.com/DarrenPaulWright/object-agent/issues"
 	},
 	"homepage": "https://github.com/DarrenPaulWright/object-agent#readme",
-	"dependencies": {
-		"type-enforcer": "^0.3.3"
-	},
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
 		"@babel/preset-env": "^7.3.1",

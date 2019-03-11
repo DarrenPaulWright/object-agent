@@ -1,4 +1,3 @@
-import { isInteger } from 'type-enforcer';
 import parsePath from './utility/parsePath';
 
 /**
@@ -36,7 +35,7 @@ import parsePath from './utility/parsePath';
 export default (object, path, value) => {
 	path = parsePath(path);
 	const last = path.length - 1;
-	const buildNew = (index) => isInteger(path[index + 1], true) ? [] : {};
+	const buildNew = (index) => !isNaN(path[index + 1] - 0) ? [] : {};
 	let baseItem;
 	let baseKey;
 	let baseValue;

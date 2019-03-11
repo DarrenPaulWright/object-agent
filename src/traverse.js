@@ -1,5 +1,5 @@
-import { isArray, isObject } from 'type-enforcer';
 import forOwn from './forOwn';
+import isObject from './utility/isObject';
 
 /**
  * Traverses a nested object.
@@ -42,7 +42,7 @@ export default (object, callback, isOptimistic) => {
 		if (callback(path, value)) {
 			return true;
 		}
-		if (isArray(value)) {
+		if (Array.isArray(value)) {
 			return value.some((value, key) => processValue(path.concat(key), value));
 		}
 		if (isObject(value)) {
@@ -62,7 +62,7 @@ export default (object, callback, isOptimistic) => {
 		if (callback(path, value)) {
 			isCanceled = true;
 		}
-		else if (isArray(value)) {
+		else if (Array.isArray(value)) {
 			value.some(loopCallback);
 		}
 		else if (isObject(value)) {

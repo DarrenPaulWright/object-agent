@@ -1,4 +1,3 @@
-import { isDate, isRegExp } from 'type-enforcer';
 import multiArgs from './utility/multiArgs';
 
 /**
@@ -27,15 +26,19 @@ import multiArgs from './utility/multiArgs';
 export default (...args) => {
 	args = multiArgs(args);
 	const base = args.shift();
-	const isBaseDate = isDate(base);
-	const isBaseRegExp = isRegExp(base);
+	const isBaseDate = base instanceof Date;
+	const isBaseRegExp = base instanceof RegExp;
+	const isBaseNaN = base !== base;
 
 	return args.every((item) => {
+		if (isBaseNaN) {
+			return item !== item;
+		}
 		if (isBaseDate) {
-			return isDate(item) && item.getTime() === base.getTime();
+			return item instanceof Date && item.getTime() === base.getTime();
 		}
 		if (isBaseRegExp) {
-			return isRegExp(item) && String(item) === String(base);
+			return item instanceof RegExp && String(item) === String(base);
 		}
 		return item === base;
 	});
