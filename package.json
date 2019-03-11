@@ -35,10 +35,17 @@
 		"object",
 		"get",
 		"set",
+		"has",
 		"unset",
 		"diff",
+		"forIn",
+		"forOwn",
 		"same",
-		"traverse"
+		"traverse",
+		"isEmpty",
+		"isEqual",
+		"deepEqual",
+		"intersection"
 	],
 	"author": "Darren Paul Wright <Darren@DarrenPaulWright.com>",
 	"license": "MIT",
