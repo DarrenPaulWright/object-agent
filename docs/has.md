@@ -11,11 +11,20 @@ A javascript library for working with objects
 
 ---
 
-<a name="Installation"></a>
+<a name="has"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [get](docs/has.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forIn](docs/forIn.md)- [forOwn](docs/forOwn.md)- [mapOwn](docs/mapOwn.md)- [traverse](docs/traverse.md)- [isEmpty](docs/isEmpty.md)- [pull](docs/pull.md)- [isEqual](docs/isEqual.md)- [deepEqual](docs/deepEqual.md)- [diffUpdate](docs/diffUpdate.md)- [intersection](docs/intersection.md)- [clone](docs/clone.md)
+## has(object, path) ⇒ <code>\*</code>
+Determines if a nested value is defined
 
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| object | <code>Object</code> |  |
+| path | <code>Array</code> \| <code>String</code> | If a string, gets split on '.' |
+
+**Example**  
+``` javascriptimport { has } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};has(['a', 1, 'b'], thing);// => true```
 
 ## License
 
