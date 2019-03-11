@@ -11,11 +11,21 @@ A javascript library for working with objects
 
 ---
 
-<a name="Installation"></a>
+<a name="forIn"></a>
 
-## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [get](docs/has.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forIn](docs/forIn.md)- [forOwn](docs/forOwn.md)- [mapOwn](docs/mapOwn.md)- [traverse](docs/traverse.md)- [isEmpty](docs/isEmpty.md)- [pull](docs/pull.md)- [isEqual](docs/isEqual.md)- [deepEqual](docs/deepEqual.md)- [diffUpdate](docs/diffUpdate.md)- [intersection](docs/intersection.md)- [clone](docs/clone.md)
+## forIn(object, callback) ⇒ <code>Boolean</code>
+Iterates over own and inherited properties of an object. Stops iterating as soon as the callback returns a truthy value.
 
+**Kind**: global function  
+**Returns**: <code>Boolean</code> - true if the callback function returns a truthy value for any key; otherwise, false.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| object | <code>Object</code> |  |
+| callback | <code>function</code> | Provides two args: value and key |
+
+**Example**  
+``` javascriptimport { forIn } from 'object-agent';const Thing = {    this.a = 'b';};Thing.prototype.c = 'd';forIn(new Thing(), (value, key) => {    console.log(value, key);});// => 'b', 'a'// => 'd', 'c'```
 
 ## License
 

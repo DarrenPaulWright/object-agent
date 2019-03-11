@@ -1,7 +1,7 @@
-import { isArray, isDate, isObject, isRegExp } from 'type-enforcer';
 import get from './get';
 import mapOwn from './mapOwn';
 import set from './set';
+import isObject from './utility/isObject';
 
 /**
  * Deep clone a value.
@@ -36,13 +36,13 @@ export default function clone(item, ignoreKeys = []) {
 
 			return mapOwn(item, (value, key) => doClone(value, path.concat(key)), ignoreKeys);
 		}
-		if (isArray(item)) {
+		if (Array.isArray(item)) {
 			return item.map((value, index) => doClone(value, path.concat(index)));
 		}
-		if (isDate(item)) {
+		if (item instanceof Date) {
 			return new Date(item.valueOf());
 		}
-		if (isRegExp(item)) {
+		if (item instanceof RegExp) {
 			return new RegExp(item);
 		}
 		return item;

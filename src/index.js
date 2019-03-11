@@ -12,8 +12,10 @@
  * ## Docs
  *
  * - [get](docs/get.md)
+ * - [get](docs/has.md)
  * - [set](docs/set.md)
  * - [unset](docs/unset.md)
+ * - [forIn](docs/forIn.md)
  * - [forOwn](docs/forOwn.md)
  * - [mapOwn](docs/mapOwn.md)
  * - [traverse](docs/traverse.md)
@@ -28,8 +30,10 @@
  * @name Installation
  */
 export { default as get } from './get';
+export { default as has } from './has';
 export { default as set } from './set';
 export { default as unset } from './unset';
+export { default as forIn } from './forIn';
 export { default as forOwn } from './forOwn';
 export { default as mapOwn } from './mapOwn';
 export { default as traverse } from './traverse';

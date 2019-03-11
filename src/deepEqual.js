@@ -1,17 +1,6 @@
-import { isArray, isObject } from 'type-enforcer';
 import get from './get';
 import isEqual from './isEqual';
 import traverse from './traverse';
-
-const diff = (value1, value2) => {
-	if (isObject(value1)) {
-		return !isObject(value2) || Object.keys(value1).length !== Object.keys(value2).length;
-	}
-	else if (isArray(value1)) {
-		return !isArray(value2) || value1.length !== value2.length;
-	}
-	return !isEqual(value1, value2);
-};
 
 /**
  * Deeply compares two items.
@@ -42,5 +31,5 @@ const diff = (value1, value2) => {
  * @returns {Boolean}
  */
 export default (item1, item2) => {
-	return !traverse(item1, (path, value1) => diff(value1, get(item2, path)));
-}
+	return item1 === item2 || !traverse(item1, (path, value1) => !isEqual(value1, get(item2, path)));
+};

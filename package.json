@@ -1,6 +1,6 @@
 {
 	"name": "object-agent",
-	"version": "0.2.7",
+	"version": "0.3.0",
 	"description": "A javascript library for working with objects",
 	"main": "src/index.js",
 	"scripts": {
@@ -11,8 +11,10 @@
 		"major": "npm version major -m \"Increment major version to %s\"",
 		"docs-readme": "jsdoc2md src/index.js > README.md --template docs.hbs --partial scope.hbs",
 		"docs-get": "jsdoc2md src/get.js > docs/get.md --template docs.hbs",
+		"docs-has": "jsdoc2md src/has.js > docs/has.md --template docs.hbs",
 		"docs-set": "jsdoc2md src/set.js > docs/set.md --template docs.hbs",
 		"docs-unset": "jsdoc2md src/unset.js > docs/unset.md --template docs.hbs",
+		"docs-forIn": "jsdoc2md src/forIn.js > docs/forIn.md --template docs.hbs",
 		"docs-forOwn": "jsdoc2md src/forOwn.js > docs/forOwn.md --template docs.hbs",
 		"docs-mapOwn": "jsdoc2md src/mapOwn.js > docs/mapOwn.md --template docs.hbs",
 		"docs-traverse": "jsdoc2md src/traverse.js > docs/traverse.md --template docs.hbs",
@@ -23,7 +25,7 @@
 		"docs-diffUpdate": "jsdoc2md src/diffUpdate.js > docs/diffUpdate.md --template docs.hbs",
 		"docs-intersection": "jsdoc2md src/intersection.js > docs/intersection.md --template docs.hbs",
 		"docs-clone": "jsdoc2md src/clone.js > docs/clone.md --template docs.hbs",
-		"docs": "npm run docs-readme && npm run docs-get && npm run docs-set && npm run docs-unset && npm run docs-forOwn && npm run docs-mapOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-isEqual && npm run docs-deepEqual && npm run docs-diffUpdate && npm run docs-pull && npm run docs-intersection && npm run docs-clone"
+		"docs": "npm run docs-readme && npm run docs-get && npm run docs-has && npm run docs-set && npm run docs-unset && npm run docs-forIn && npm run docs-forOwn && npm run docs-mapOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-isEqual && npm run docs-deepEqual && npm run docs-diffUpdate && npm run docs-pull && npm run docs-intersection && npm run docs-clone"
 	},
 	"repository": {
 		"type": "git",
@@ -33,10 +35,17 @@
 		"object",
 		"get",
 		"set",
+		"has",
 		"unset",
 		"diff",
+		"forIn",
+		"forOwn",
 		"same",
-		"traverse"
+		"traverse",
+		"isEmpty",
+		"isEqual",
+		"deepEqual",
+		"intersection"
 	],
 	"author": "Darren Paul Wright <Darren@DarrenPaulWright.com>",
 	"license": "MIT",
@@ -44,9 +53,6 @@
 		"url": "https://github.com/DarrenPaulWright/object-agent/issues"
 	},
 	"homepage": "https://github.com/DarrenPaulWright/object-agent#readme",
-	"dependencies": {
-		"type-enforcer": "^0.3.3"
-	},
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
 		"@babel/preset-env": "^7.3.1",
