@@ -1,17 +1,23 @@
-export const testValues = [
+export const testSimpleValues = [
 	undefined,
 	null,
-	{},
-	[],
+	NaN,
+	'test',
+	'3',
 	/test/g,
-	new RegExp('something'),
+	/test/gi,
+	/test/gim,
+	new RegExp('test'),
 	3,
+	10,
 	true,
 	false,
 	new Date(),
+	new Date('01/01/2000'),
 	() => {
 	},
-	['test1', 'test2', 'test3'],
+	{},
+	[],
 	['test3', 'test1', 'test2'],
 	{
 		key1: 'test1'
@@ -19,7 +25,10 @@ export const testValues = [
 	{
 		key1: 'test1',
 		key2: 'test2'
-	},
+	}
+];
+export const testValues = testSimpleValues.concat([
+	['test1', 'test2', 'test3'],
 	{
 		one: 'something',
 		two: null,
@@ -60,4 +69,4 @@ export const testValues = [
 			sub: null
 		}
 	}
-];
+]);

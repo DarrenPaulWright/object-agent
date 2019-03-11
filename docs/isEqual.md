@@ -14,7 +14,7 @@ A javascript library for working with objects
 <a name="isEqual"></a>
 
 ## isEqual() ⇒ <code>Boolean</code>
-Shallow compares two or more items. All items are compared with strict equality except Dates and RegExps which compare their _values_ with strict equality.
+Shallow compares two or more items. All items are compared with strict equality except Dates and RegExps which compare their _values_ with strict equality and Objects and Arrays which compare key lengths.
 
 **Kind**: global function  
 

@@ -1,7 +1,8 @@
+import isObject from './utility/isObject';
 import multiArgs from './utility/multiArgs';
 
 /**
- * Shallow compares two or more items. All items are compared with strict equality except Dates and RegExps which compare their _values_ with strict equality.
+ * Shallow compares two or more items. All items are compared with strict equality except Dates and RegExps which compare their _values_ with strict equality and Objects and Arrays which compare key lengths.
  *
  * @example
  * ``` javascript
@@ -26,18 +27,38 @@ import multiArgs from './utility/multiArgs';
 export default (...args) => {
 	args = multiArgs(args);
 	const base = args.shift();
-	const isBaseDate = base instanceof Date;
-	const isBaseRegExp = base instanceof RegExp;
-	const isBaseNaN = base !== base;
+	let baseType = '';
+
+	if (isObject(base)) {
+		baseType = 'Object';
+	}
+	else if (Array.isArray(base)) {
+		baseType = 'Array';
+	}
+	else if (base instanceof Date) {
+		baseType = 'Date';
+	}
+	else if (base instanceof RegExp) {
+		baseType = 'RegExp';
+	}
+	else if (base !== base) {
+		baseType = 'NaN';
+	}
 
 	return args.every((item) => {
-		if (isBaseNaN) {
+		if (baseType === 'Object') {
+			return isObject(item) && Object.keys(base).length === Object.keys(item).length;
+		}
+		if (baseType === 'Array') {
+			return Array.isArray(item) && base.length === item.length;
+		}
+		if (baseType === 'NaN') {
 			return item !== item;
 		}
-		if (isBaseDate) {
+		if (baseType === 'Date') {
 			return item instanceof Date && item.getTime() === base.getTime();
 		}
-		if (isBaseRegExp) {
+		if (baseType === 'RegExp') {
 			return item instanceof RegExp && String(item) === String(base);
 		}
 		return item === base;

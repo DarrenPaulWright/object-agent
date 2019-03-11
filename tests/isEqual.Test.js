@@ -1,36 +1,36 @@
 import { assert } from 'chai';
-import { isEqual } from '../src/';
+import { clone, isEqual } from '../src/';
+import { testSimpleValues } from './testValues';
 
 describe('isEqual', () => {
-	it('should accept an array of values', () => {
-		assert.isTrue(isEqual(['test', 'test', 'test']));
-	});
+	testSimpleValues.forEach((value1, index1) => {
+		clone(testSimpleValues).forEach((value2, index2) => {
+			if (index1 !== index2) {
+				it(`should return false for ${value1} [${index1}] and ${value2} [${index2}]`, () => {
+					assert.isFalse(isEqual(value1, value2));
+				});
 
-	it('should return true if all the args are the same', () => {
-		assert.isTrue(isEqual('test', 'test', 'test'));
-	});
+				it(`should return false for two instances of ${value1} [${index1}] and ${value2} [${index2}]`, () => {
+					assert.isFalse(isEqual(value1, clone(value1), value2));
+				});
 
-	it('should return true if all the args are null', () => {
-		assert.isTrue(isEqual(null, null, null));
-	});
+				it(`should return false for two instances of ${value1} [${index1}] and ${value2} [${index2}] in an array`, () => {
+					assert.isFalse(isEqual([value1, clone(value1), value2]));
+				});
+			}
+			else {
+				it(`should return true for ${value1} [${index1}] and ${value2} [${index2}]`, () => {
+					assert.isTrue(isEqual(value1, value2));
+				});
 
-	it('should return true if all the args are the same date', () => {
-		assert.isTrue(isEqual(new Date('2007/3/15'), new Date('2007/3/15'), new Date('2007/3/15')));
-	});
+				it(`should return true for three instances of ${value1} [${index1}]`, () => {
+					assert.isTrue(isEqual(value1, value2, clone(value2)));
+				});
 
-	it('should return true if all the args are the same RegExp', () => {
-		assert.isTrue(isEqual(/test/, /test/, /test/));
-	});
-
-	it('should return false if all the args are NOT the same', () => {
-		assert.isFalse(isEqual('test', 'test2', 'test'));
-	});
-
-	it('should return false if all the args are the same date', () => {
-		assert.isFalse(isEqual(new Date('2007/3/15'), null, new Date('2007/3/15')));
-	});
-
-	it('should return false if all the args are the same RegExp', () => {
-		assert.isFalse(isEqual(/test/, null, /test/));
+				it(`should return true for three instances of ${value1} [${index1}] in an array`, () => {
+					assert.isTrue(isEqual([value1, value2, clone(value2)]));
+				});
+			}
+		});
 	});
 });

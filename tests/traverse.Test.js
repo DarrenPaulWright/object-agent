@@ -207,7 +207,6 @@ describe('traverse', () => {
 			const isCanceled = traverse(testObject, (path, value) => {
 				total++;
 
-				console.log('path: ', path);
 				if (deepEqual(path, [])) {
 					testVar++;
 				}

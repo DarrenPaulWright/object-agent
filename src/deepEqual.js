@@ -1,7 +1,6 @@
 import get from './get';
 import isEqual from './isEqual';
 import traverse from './traverse';
-import isObject from './utility/isObject';
 
 /**
  * Deeply compares two items.
@@ -32,15 +31,5 @@ import isObject from './utility/isObject';
  * @returns {Boolean}
  */
 export default (item1, item2) => {
-	return !traverse(item1, (path, value1) => {
-		const value2 = get(item2, path);
-
-		if (isObject(value1)) {
-			return !isObject(value2) || Object.keys(value1).length !== Object.keys(value2).length;
-		}
-		else if (Array.isArray(value1)) {
-			return !Array.isArray(value2) || value1.length !== value2.length;
-		}
-		return !isEqual(value1, value2);
-	});
-}
+	return item1 === item2 || !traverse(item1, (path, value1) => !isEqual(value1, get(item2, path)));
+};
