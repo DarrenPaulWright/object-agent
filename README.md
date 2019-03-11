@@ -14,7 +14,7 @@ A javascript library for working with objects
 <a name="Installation"></a>
 
 ## Installation
-With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [get](docs/has.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forIn](docs/forIn.md)- [forOwn](docs/forOwn.md)- [mapOwn](docs/mapOwn.md)- [traverse](docs/traverse.md)- [isEmpty](docs/isEmpty.md)- [pull](docs/pull.md)- [isEqual](docs/isEqual.md)- [deepEqual](docs/deepEqual.md)- [diffUpdate](docs/diffUpdate.md)- [intersection](docs/intersection.md)- [clone](docs/clone.md)
+With npm```npm install object-agent```## CompatibilityRequires:- Babel >= 7.2## Docs- [get](docs/get.md)- [has](docs/has.md)- [set](docs/set.md)- [unset](docs/unset.md)- [forIn](docs/forIn.md)- [forOwn](docs/forOwn.md)- [mapOwn](docs/mapOwn.md)- [traverse](docs/traverse.md)- [isEmpty](docs/isEmpty.md)- [pull](docs/pull.md)- [isEqual](docs/isEqual.md)- [deepEqual](docs/deepEqual.md)- [diffUpdate](docs/diffUpdate.md)- [intersection](docs/intersection.md)- [clone](docs/clone.md)
 
 
 ## License

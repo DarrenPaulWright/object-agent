@@ -15,7 +15,7 @@ import parsePath from './utility/parsePath';
  *     }]
  * };
  *
- * has(['a', 1, 'b'], thing);
+ * has(thing, ['a', 1, 'b']);
  * // => true
  * ```
  *

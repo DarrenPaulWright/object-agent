@@ -24,7 +24,7 @@ Determines if a nested value is defined
 | path | <code>Array</code> \| <code>String</code> | If a string, gets split on '.' |
 
 **Example**  
-``` javascriptimport { has } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};has(['a', 1, 'b'], thing);// => true```
+``` javascriptimport { has } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};has(thing, ['a', 1, 'b']);// => true```
 
 ## License
 

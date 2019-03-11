@@ -25,7 +25,7 @@ Sets a nested value in an object. Keys in the path that don't exist at any point
 | value | <code>\*</code> |  |
 
 **Example**  
-``` javascriptimport { set } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};set(['a', '1', 'b'], thing, 'e');console.log(thing);// => {//    a: [{//        b: 'c'//    }, {//        b: 'e'//    }]//}```
+``` javascriptimport { set } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};set(thing, ['a', '1', 'b'], 'e');console.log(thing);// => {//    a: [{//        b: 'c'//    }, {//        b: 'e'//    }]//}```
 
 ## License
 

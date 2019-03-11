@@ -12,7 +12,7 @@
  * ## Docs
  *
  * - [get](docs/get.md)
- * - [get](docs/has.md)
+ * - [has](docs/has.md)
  * - [set](docs/set.md)
  * - [unset](docs/unset.md)
  * - [forIn](docs/forIn.md)

@@ -15,7 +15,7 @@ import parsePath from './utility/parsePath';
  *     }]
  * };
  *
- * set(['a', '1', 'b'], thing, 'e');
+ * set(thing, ['a', '1', 'b'], 'e');
  * console.log(thing);
  * // => {
  * //    a: [{

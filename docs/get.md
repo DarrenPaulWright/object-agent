@@ -24,7 +24,7 @@ Gets a nested value from an object.
 | path | <code>Array</code> \| <code>String</code> | If a string, gets split on '.' |
 
 **Example**  
-``` javascriptimport { get } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};get(['a', 1, 'b'], thing);// => 'd'```
+``` javascriptimport { get } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};get(thing, ['a', 1, 'b']);// => 'd'```
 
 ## License
 

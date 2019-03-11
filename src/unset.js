@@ -5,7 +5,7 @@ import parsePath from './utility/parsePath';
  *
  * @example
  * ``` javascript
- * import { set } from 'object-agent';
+ * import { unset } from 'object-agent';
  *
  * const thing = {
  *     a: [{

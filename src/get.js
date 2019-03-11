@@ -15,7 +15,7 @@ import parsePath from './utility/parsePath';
  *     }]
  * };
  *
- * get(['a', 1, 'b'], thing);
+ * get(thing, ['a', 1, 'b']);
  * // => 'd'
  * ```
  *

@@ -24,7 +24,7 @@ Deletes a property from a nested object.
 | path | <code>Array</code> \| <code>String</code> | If a string, gets split on '.' |
 
 **Example**  
-``` javascriptimport { set } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};unset(thing, ['a', '1', 'b']);console.log(thing);// => {//    a: [{//        b: 'c'//    }, {}]//}```
+``` javascriptimport { unset } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};unset(thing, ['a', '1', 'b']);console.log(thing);// => {//    a: [{//        b: 'c'//    }, {}]//}```
 
 ## License
 
