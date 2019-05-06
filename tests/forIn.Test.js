@@ -79,27 +79,68 @@ describe('forIn', () => {
 		assert.isFalse(isCanceled);
 	});
 
-	it('should call the callback for inherited properties', () => {
+	it('should call the callback for traditionally inherited properties and methods', () => {
 		let total = 0;
 		let testVar = 0;
-		const Thing = function() {
-			this.key1 = 'something1';
-		};
-		Thing.prototype.key2 = 'something2';
-		const object = new Thing();
 
-		const isCanceled = forIn(object, (value, key) => {
+		const inherit = function(target, source) {
+			target.prototype = Object.create(source.prototype);
+			target.prototype.constructor = target;
+		};
+
+		const Base = function() {
+			this.prop1 = '1';
+		};
+		Base.prototype.method1 = function() {
+			return this.prop1;
+		};
+
+		const InheritedThing = function() {
+			Base.call(this);
+			this.prop2 = '2';
+		};
+		inherit(InheritedThing, Base);
+		InheritedThing.prototype.method1 = function() {
+			return this.prop2;
+		};
+
+		const Thing = function() {
+			InheritedThing.call(this);
+			this.prop2 = '3';
+		};
+		inherit(Thing, InheritedThing);
+		Thing.prototype.method2 = function() {
+			return this.prop2;
+		};
+
+		const thing = new Thing();
+
+		InheritedThing.prototype.method3 = function() {
+			return this.prop1 + this.prop2;
+		};
+
+		const isCanceled = forIn(thing, (value, key) => {
 			total++;
-			if (key === 'key1' && value === 'something1') {
+
+			if (key === 'prop1' && value === '1') {
 				testVar++;
 			}
-			if (key === 'key2' && value === 'something2') {
+			if (key === 'prop2' && value === '3') {
+				testVar++;
+			}
+			if (key === 'method1' && typeof value === 'function' && thing[key]() === '3') {
+				testVar++;
+			}
+			if (key === 'method2' && typeof value === 'function' && thing[key]() === '3') {
+				testVar++;
+			}
+			if (key === 'method3' && typeof value === 'function' && thing[key]() === '13') {
 				testVar++;
 			}
 		});
 
-		assert.equal(total, 2);
-		assert.equal(testVar, 2);
+		assert.equal(total, 5);
+		assert.equal(testVar, 5);
 		assert.isFalse(isCanceled);
 	});
 

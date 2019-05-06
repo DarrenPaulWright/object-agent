@@ -26,14 +26,11 @@
  * @returns {Boolean} true if the callback function returns a truthy value for any key; otherwise, false.
  */
 export default (object, callback) => {
-	let isCancelled = false;
-
 	for (let key in object) {
-		if (callback(object[key], key)) {
-			isCancelled = true;
-			break;
+		if (key !== 'constructor' && callback(object[key], key)) {
+			return true;
 		}
 	}
 
-	return isCancelled;
+	return false;
 }
