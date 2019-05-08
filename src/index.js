@@ -26,6 +26,10 @@
  * - [diffUpdate](docs/diffUpdate.md)
  * - [intersection](docs/intersection.md)
  * - [clone](docs/clone.md)
+ * - [combo](docs/combo.md)
+ * - [mix](docs/mix.md)
+ * - [powerset](docs/powerset.md)
+ * - [nestedEach](docs/nestedEach.md)
  *
  * @name Installation
  */
@@ -44,3 +48,7 @@ export { default as deepEqual } from './deepEqual';
 export { default as diffUpdate } from './diffUpdate';
 export { default as intersection } from './intersection';
 export { default as clone } from './clone';
+export { default as combo } from './combo';
+export { default as mix } from './mix';
+export { default as powerset } from './powerset';
+export { default as nestedEach } from './nestedEach';
