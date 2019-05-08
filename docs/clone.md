@@ -1,40 +1,46 @@
-# object-agent
+# Object Agent
 
-A javascript library for working with objects
-
-[![npm][npm]][npm-url]
+> A javascript library for working with objects
+>
+> [![npm][npm]][npm-url]
 [![build][build]][build-url]
-[![Coverage Status](https://coveralls.io/repos/github/DarrenPaulWright/object-agent/badge.svg?branch=master)](https://coveralls.io/github/DarrenPaulWright/object-agent?branch=master)
+[![coverage][coverage]][coverage-url]
 [![deps][deps]][deps-url]
 [![size][size]][size-url]
-[![Known Vulnerabilities](https://snyk.io/test/github/DarrenPaulWright/object-agent/badge.svg?targetFile=package.json)](https://snyk.io/test/github/DarrenPaulWright/object-agent?targetFile=package.json)
+[![vulnerabilities][vulnerabilities]][vulnerabilities-url]
+[![license][license]][license-url]
 
----
 
-<a name="clone"></a>
+<br><a name="clone"></a>
 
-## clone(value, [ignoreKeys]) ⇒ <code>\*</code>
-Deep clone a value.
+### clone(value, [ignoreKeys]) ⇒ <code>\*</code>
+> Deep clone a value.
 
-**Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | value | <code>\*</code> |  |
-| [ignoreKeys] | <code>Array</code> \| <code>String</code> | Any keys in this array will not be cloned |
+| [ignoreKeys] | <code>Array</code>, <code>String</code> | Any keys in this array will not be cloned |
 
 **Example**  
-``` javascriptimport { clone } from 'object-agent';clone({ a: 'b', c: 'd' });// => { a: 'b', c: 'd' }```
+``` javascript
+import { clone } from 'object-agent';
 
-## License
-
-[MIT](LICENSE.md)
+clone({ a: 'b', c: 'd' });
+// => { a: 'b', c: 'd' }
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent
-[build]: https://travis-ci.org/DarrenPaulWright/object-agent.svg?branch=master
+[build]: https://travis-ci.org/DarrenPaulWright/object-agent.svg?branch&#x3D;master
 [build-url]: https://travis-ci.org/DarrenPaulWright/object-agent
+[coverage]: https://coveralls.io/repos/github/DarrenPaulWright/object-agent/badge.svg?branch&#x3D;master
+[coverage-url]: https://coveralls.io/github/DarrenPaulWright/object-agent?branch&#x3D;master
 [deps]: https://david-dm.org/darrenpaulwright/object-agent.svg
 [deps-url]: https://david-dm.org/darrenpaulwright/object-agent
-[size]: https://packagephobia.now.sh/badge?p=object-agent
-[size-url]: https://packagephobia.now.sh/result?p=object-agent
+[size]: https://packagephobia.now.sh/badge?p&#x3D;object-agent
+[size-url]: https://packagephobia.now.sh/result?p&#x3D;object-agent
+[vulnerabilities]: https://snyk.io/test/github/DarrenPaulWright/object-agent/badge.svg?targetFile&#x3D;package.json
+[vulnerabilities-url]: https://snyk.io/test/github/DarrenPaulWright/object-agent?targetFile&#x3D;package.json
+[license]: https://img.shields.io/github/license/DarrenPaulWright/object-agent.svg
+[license-url]: https://npmjs.com/package/object-agent/LICENSE.md

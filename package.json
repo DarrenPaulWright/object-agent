@@ -9,28 +9,65 @@
 		"patch": "npm version patch -m \"Increment patch version to %s\"",
 		"minor": "npm version minor -m \"Increment minor version to %s\"",
 		"major": "npm version major -m \"Increment major version to %s\"",
-		"docs-readme": "jsdoc2md src/index.js > README.md --template docs.hbs --partial scope.hbs",
-		"docs-get": "jsdoc2md src/get.js > docs/get.md --template docs.hbs",
-		"docs-has": "jsdoc2md src/has.js > docs/has.md --template docs.hbs",
-		"docs-set": "jsdoc2md src/set.js > docs/set.md --template docs.hbs",
-		"docs-unset": "jsdoc2md src/unset.js > docs/unset.md --template docs.hbs",
-		"docs-forIn": "jsdoc2md src/forIn.js > docs/forIn.md --template docs.hbs",
-		"docs-forOwn": "jsdoc2md src/forOwn.js > docs/forOwn.md --template docs.hbs",
-		"docs-mapOwn": "jsdoc2md src/mapOwn.js > docs/mapOwn.md --template docs.hbs",
-		"docs-traverse": "jsdoc2md src/traverse.js > docs/traverse.md --template docs.hbs",
-		"docs-isEmpty": "jsdoc2md src/isEmpty.js > docs/isEmpty.md --template docs.hbs",
-		"docs-pull": "jsdoc2md src/pull.js > docs/pull.md --template docs.hbs",
-		"docs-isEqual": "jsdoc2md src/isEqual.js > docs/isEqual.md --template docs.hbs",
-		"docs-deepEqual": "jsdoc2md src/deepEqual.js > docs/deepEqual.md --template docs.hbs",
-		"docs-diffUpdate": "jsdoc2md src/diffUpdate.js > docs/diffUpdate.md --template docs.hbs",
-		"docs-intersection": "jsdoc2md src/intersection.js > docs/intersection.md --template docs.hbs",
-		"docs-clone": "jsdoc2md src/clone.js > docs/clone.md --template docs.hbs",
-		"docs-combo": "jsdoc2md src/combo.js > docs/combo.md --template docs.hbs",
-		"docs-mix": "jsdoc2md src/mix.js > docs/mix.md --template docs.hbs",
-		"docs-powerset": "jsdoc2md src/powerset.js > docs/powerset.md --template docs.hbs",
-		"docs-nestedEach": "jsdoc2md src/nestedEach.js > docs/nestedEach.md --template docs.hbs",
+		"docs-readme": "jsdoc2md src/index.js > README.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-get": "jsdoc2md src/get.js > docs/get.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-has": "jsdoc2md src/has.js > docs/has.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-set": "jsdoc2md src/set.js > docs/set.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-unset": "jsdoc2md src/unset.js > docs/unset.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-forIn": "jsdoc2md src/forIn.js > docs/forIn.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-forOwn": "jsdoc2md src/forOwn.js > docs/forOwn.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-mapOwn": "jsdoc2md src/mapOwn.js > docs/mapOwn.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-traverse": "jsdoc2md src/traverse.js > docs/traverse.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-isEmpty": "jsdoc2md src/isEmpty.js > docs/isEmpty.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-pull": "jsdoc2md src/pull.js > docs/pull.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-isEqual": "jsdoc2md src/isEqual.js > docs/isEqual.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-deepEqual": "jsdoc2md src/deepEqual.js > docs/deepEqual.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-diffUpdate": "jsdoc2md src/diffUpdate.js > docs/diffUpdate.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-intersection": "jsdoc2md src/intersection.js > docs/intersection.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-clone": "jsdoc2md src/clone.js > docs/clone.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-combo": "jsdoc2md src/combo.js > docs/combo.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-mix": "jsdoc2md src/mix.js > docs/mix.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-powerset": "jsdoc2md src/powerset.js > docs/powerset.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-nestedEach": "jsdoc2md src/nestedEach.js > docs/nestedEach.md -t docs/docs.hbs --plugin dmd-readable -d 3",
 		"docs": "npm run docs-readme && npm run docs-get && npm run docs-has && npm run docs-set && npm run docs-unset && npm run docs-forIn && npm run docs-forOwn && npm run docs-mapOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-isEqual && npm run docs-deepEqual && npm run docs-diffUpdate && npm run docs-pull && npm run docs-intersection && npm run docs-clone && npm run docs-combo && npm run docs-mix && npm run docs-powerset && npm run docs-nestedEach"
 	},
+	"badges": [
+		{
+			"name": "npm",
+			"image": "https://img.shields.io/npm/v/object-agent.svg",
+			"url": "https://npmjs.com/package/object-agent"
+		},
+		{
+			"name": "build",
+			"image": "https://travis-ci.org/DarrenPaulWright/object-agent.svg?branch=master",
+			"url": "https://travis-ci.org/DarrenPaulWright/object-agent"
+		},
+		{
+			"name": "coverage",
+			"image": "https://coveralls.io/repos/github/DarrenPaulWright/object-agent/badge.svg?branch=master",
+			"url": "https://coveralls.io/github/DarrenPaulWright/object-agent?branch=master"
+		},
+		{
+			"name": "deps",
+			"image": "https://david-dm.org/darrenpaulwright/object-agent.svg",
+			"url": "https://david-dm.org/darrenpaulwright/object-agent"
+		},
+		{
+			"name": "size",
+			"image": "https://packagephobia.now.sh/badge?p=object-agent",
+			"url": "https://packagephobia.now.sh/result?p=object-agent"
+		},
+		{
+			"name": "vulnerabilities",
+			"image": "https://snyk.io/test/github/DarrenPaulWright/object-agent/badge.svg?targetFile=package.json",
+			"url": "https://snyk.io/test/github/DarrenPaulWright/object-agent?targetFile=package.json"
+		},
+		{
+			"name": "license",
+			"image": "https://img.shields.io/github/license/DarrenPaulWright/object-agent.svg",
+			"url": "https://npmjs.com/package/object-agent/LICENSE.md"
+		}
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/DarrenPaulWright/object-agent.git"
@@ -69,6 +106,7 @@
 		"babel-loader": "^8.0.5",
 		"babel-plugin-istanbul": "^5.1.0",
 		"chai": "^4.2.0",
+		"dmd-readable": "^0.2.1",
 		"eslint": "^5.13.0",
 		"eslint-loader": "^2.1.2",
 		"eslint-plugin-babel": "^5.3.0",

@@ -11,34 +11,19 @@
 [![license][license]][license-url]
 
 
-<br><a name="deepEqual"></a>
+<br><a name="combo"></a>
 
-### deepEqual(item1, item2) ⇒ <code>Boolean</code>
-> Deeply compares two items.
+### combo(array, [length]) ⇒ <code>array</code>
+> Takes a set of values and creates an array of the unique sets of the values of a given length.
 
 
-| Param | Type |
-| --- | --- |
-| item1 | <code>\*</code> | 
-| item2 | <code>\*</code> | 
+| Param | Type | Default |
+| --- | --- | --- |
+| array | <code>array</code> |  | 
+| [length] | <code>length</code> | <code>2</code> | 
 
 **Example**  
-``` javascript
-import { deepEqual } from 'object-agent';
-
-deepEqual(null, undefined);
-// => false
-
-const item1 = {
-    a: ['b']
-}
-const item2 = {
-    a: ['c']
-}
-
-deepEqual(item1, item2);
-// => false
-```
+``` javascriptimport { combo } from 'object-agent';combo([1, 2, 3]);// => [[1, 2], [1, 3], [2, 3]]combo([1, 2, 3, 4], 3);// => [[1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

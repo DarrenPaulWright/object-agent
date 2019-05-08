@@ -1,16 +1,20 @@
 /**
- * With npm
+ * With npm:
  * ```
  * npm install object-agent
  * ```
  *
- * ## Compatibility
- *
+ * @name Installation
+ */
+
+/**
  * Requires:
  * - Babel >= 7.2
  *
- * ## Docs
- *
+ * @name Compatibility
+ */
+
+/**
  * - [get](docs/get.md)
  * - [has](docs/has.md)
  * - [set](docs/set.md)
@@ -31,7 +35,7 @@
  * - [powerset](docs/powerset.md)
  * - [nestedEach](docs/nestedEach.md)
  *
- * @name Installation
+ * @name Docs
  */
 export { default as get } from './get';
 export { default as has } from './has';

@@ -11,34 +11,20 @@
 [![license][license]][license-url]
 
 
-<br><a name="deepEqual"></a>
+<br><a name="nestedEach"></a>
 
-### deepEqual(item1, item2) ⇒ <code>Boolean</code>
-> Deeply compares two items.
+### nestedEach(arrays, callback, [accrue]) ⇒ <code>array</code>
+> Iterate over the values of multiple arrays
 
 
-| Param | Type |
-| --- | --- |
-| item1 | <code>\*</code> | 
-| item2 | <code>\*</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| arrays | <code>array</code> |  |  |
+| callback | <code>function</code> |  | Provides one item from each array. |
+| [accrue] | <code>boolean</code> | <code>false</code> | If true then each successive array in arrays will start it's loop on the next index instead of 0. |
 
 **Example**  
-``` javascript
-import { deepEqual } from 'object-agent';
-
-deepEqual(null, undefined);
-// => false
-
-const item1 = {
-    a: ['b']
-}
-const item2 = {
-    a: ['c']
-}
-
-deepEqual(item1, item2);
-// => false
-```
+``` javascriptimport { nestedEach } from 'object-agent';const output = [];const save = (item1, item2) => output.push([item1, item2]);nestedEach([[1, 2], ['a', 'b']], save);console.log(output);// => [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

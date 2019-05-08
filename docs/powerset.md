@@ -11,34 +11,18 @@
 [![license][license]][license-url]
 
 
-<br><a name="deepEqual"></a>
+<br><a name="powerset"></a>
 
-### deepEqual(item1, item2) ⇒ <code>Boolean</code>
-> Deeply compares two items.
+### powerset(input) ⇒ <code>array</code>
+> Create a [power set](https://en.wikipedia.org/wiki/Power_set) from a set of values
 
 
 | Param | Type |
 | --- | --- |
-| item1 | <code>\*</code> | 
-| item2 | <code>\*</code> | 
+| input | <code>array</code> | 
 
 **Example**  
-``` javascript
-import { deepEqual } from 'object-agent';
-
-deepEqual(null, undefined);
-// => false
-
-const item1 = {
-    a: ['b']
-}
-const item2 = {
-    a: ['c']
-}
-
-deepEqual(item1, item2);
-// => false
-```
+``` javascriptimport { powerset } from 'object-agent';powerset([1, 2, 3]);// => [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent
