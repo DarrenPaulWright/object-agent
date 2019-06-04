@@ -11,47 +11,19 @@
 [![license][license]][license-url]
 
 
-<br><a name="Installation"></a>
+<br><a name="fill"></a>
 
-### Installation
-> With npm:
-> ```
-> npm install object-agent
-> ```
+### fill(length, [callback]) ⇒ <code>Array</code>
+> Returns an array of specified length filled with either the index value or the value returned from the provided callback
 
 
-<br><a name="Compatibility"></a>
+| Param | Type | Description |
+| --- | --- | --- |
+| length | <code>integer</code> |  |
+| [callback] | <code>function</code> | provides one argument, the index of the returned array |
 
-### Compatibility
-> Requires:
-> - Babel >= 7.2
-
-
-<br><a name="Docs"></a>
-
-### Docs
-> - [get](docs/get.md)
-> - [has](docs/has.md)
-> - [set](docs/set.md)
-> - [unset](docs/unset.md)
-> - [forIn](docs/forIn.md)
-> - [forOwn](docs/forOwn.md)
-> - [mapOwn](docs/mapOwn.md)
-> - [traverse](docs/traverse.md)
-> - [isEmpty](docs/isEmpty.md)
-> - [pull](docs/pull.md)
-> - [isEqual](docs/isEqual.md)
-> - [deepEqual](docs/deepEqual.md)
-> - [diffUpdate](docs/diffUpdate.md)
-> - [intersection](docs/intersection.md)
-> - [clone](docs/clone.md)
-> - [combo](docs/combo.md)
-> - [mix](docs/mix.md)
-> - [powerset](docs/powerset.md)
-> - [nestedEach](docs/nestedEach.md)
-> - [repeat](docs/repeat.md)
-> - [fill](docs/fill.md)
-
+**Example**  
+``` javascriptimport { fill } from 'object-agent';fill(5);// => [0, 1, 2, 3, 4]fill(3, (index) => index * 3);// => [0, 3, 6]```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

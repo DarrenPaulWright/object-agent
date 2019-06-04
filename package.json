@@ -29,7 +29,9 @@
 		"docs-mix": "jsdoc2md src/mix.js > docs/mix.md -t docs/docs.hbs --plugin dmd-readable -d 3",
 		"docs-powerset": "jsdoc2md src/powerset.js > docs/powerset.md -t docs/docs.hbs --plugin dmd-readable -d 3",
 		"docs-nestedEach": "jsdoc2md src/nestedEach.js > docs/nestedEach.md -t docs/docs.hbs --plugin dmd-readable -d 3",
-		"docs": "npm run docs-readme && npm run docs-get && npm run docs-has && npm run docs-set && npm run docs-unset && npm run docs-forIn && npm run docs-forOwn && npm run docs-mapOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-isEqual && npm run docs-deepEqual && npm run docs-diffUpdate && npm run docs-pull && npm run docs-intersection && npm run docs-clone && npm run docs-combo && npm run docs-mix && npm run docs-powerset && npm run docs-nestedEach"
+		"docs-repeat": "jsdoc2md src/repeat.js > docs/repeat.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-fill": "jsdoc2md src/fill.js > docs/fill.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs": "npm run docs-readme && npm run docs-get && npm run docs-has && npm run docs-set && npm run docs-unset && npm run docs-forIn && npm run docs-forOwn && npm run docs-mapOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-isEqual && npm run docs-deepEqual && npm run docs-diffUpdate && npm run docs-pull && npm run docs-intersection && npm run docs-clone && npm run docs-combo && npm run docs-mix && npm run docs-powerset && npm run docs-nestedEach && npm run docs-repeat && npm run docs-fill"
 	},
 	"badges": [
 		{

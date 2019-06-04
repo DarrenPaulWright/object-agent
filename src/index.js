@@ -34,6 +34,8 @@
  * - [mix](docs/mix.md)
  * - [powerset](docs/powerset.md)
  * - [nestedEach](docs/nestedEach.md)
+ * - [repeat](docs/repeat.md)
+ * - [fill](docs/fill.md)
  *
  * @name Docs
  */
@@ -56,3 +58,5 @@ export { default as combo } from './combo';
 export { default as mix } from './mix';
 export { default as powerset } from './powerset';
 export { default as nestedEach } from './nestedEach';
+export { default as repeat } from './repeat';
+export { default as fill } from './fill';

@@ -11,47 +11,19 @@
 [![license][license]][license-url]
 
 
-<br><a name="Installation"></a>
+<br><a name="repeat"></a>
 
-### Installation
-> With npm:
-> ```
-> npm install object-agent
-> ```
+### repeat(times, callback) ⇒ <code>Array</code>
+> Calls a callback a specified number of times
 
 
-<br><a name="Compatibility"></a>
+| Param | Type | Description |
+| --- | --- | --- |
+| times | <code>integer</code> |  |
+| callback | <code>function</code> | Provides one argument, an index value of the call count |
 
-### Compatibility
-> Requires:
-> - Babel >= 7.2
-
-
-<br><a name="Docs"></a>
-
-### Docs
-> - [get](docs/get.md)
-> - [has](docs/has.md)
-> - [set](docs/set.md)
-> - [unset](docs/unset.md)
-> - [forIn](docs/forIn.md)
-> - [forOwn](docs/forOwn.md)
-> - [mapOwn](docs/mapOwn.md)
-> - [traverse](docs/traverse.md)
-> - [isEmpty](docs/isEmpty.md)
-> - [pull](docs/pull.md)
-> - [isEqual](docs/isEqual.md)
-> - [deepEqual](docs/deepEqual.md)
-> - [diffUpdate](docs/diffUpdate.md)
-> - [intersection](docs/intersection.md)
-> - [clone](docs/clone.md)
-> - [combo](docs/combo.md)
-> - [mix](docs/mix.md)
-> - [powerset](docs/powerset.md)
-> - [nestedEach](docs/nestedEach.md)
-> - [repeat](docs/repeat.md)
-> - [fill](docs/fill.md)
-
+**Example**  
+``` javascriptimport { repeat } from 'object-agent';repeat(5, (index) => console.log(index);// => 0// => 1// => 2// => 3// => 4```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent
