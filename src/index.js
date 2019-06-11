@@ -1,20 +1,16 @@
 /**
- * With npm:
+ * @name Installation
+ * @summary
+ *
  * ```
  * npm install object-agent
  * ```
- *
- * @name Installation
+ * _Requires Babel 7.2+_
  */
 
 /**
- * Requires:
- * - Babel >= 7.2
- *
- * @name Compatibility
- */
-
-/**
+ * @name Docs
+ * @summary
  * - [get](docs/get.md)
  * - [has](docs/has.md)
  * - [set](docs/set.md)
@@ -36,8 +32,6 @@
  * - [nestedEach](docs/nestedEach.md)
  * - [repeat](docs/repeat.md)
  * - [fill](docs/fill.md)
- *
- * @name Docs
  */
 export { default as get } from './get';
 export { default as has } from './has';
