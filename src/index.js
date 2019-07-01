@@ -25,6 +25,7 @@
  * - [deepEqual](docs/deepEqual.md)
  * - [diffUpdate](docs/diffUpdate.md)
  * - [intersection](docs/intersection.md)
+ * - [superimpose](docs/superimpose.md)
  * - [clone](docs/clone.md)
  * - [combo](docs/combo.md)
  * - [mix](docs/mix.md)
@@ -47,6 +48,7 @@ export { default as isEqual } from './isEqual';
 export { default as deepEqual } from './deepEqual';
 export { default as diffUpdate } from './diffUpdate';
 export { default as intersection } from './intersection';
+export { default as superimpose } from './superimpose';
 export { default as clone } from './clone';
 export { default as combo } from './combo';
 export { default as mix } from './mix';

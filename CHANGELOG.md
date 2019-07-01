@@ -4,12 +4,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
-## [0.5.0] - 2019-6/4
+## [0.6.0] - 2019-07-01
+### Added
+- [superimpose](docs/superimpose.md)
+
+## [0.5.3] - 2019-06-11
+- Updating documentation
+
+## [0.5.2] - 2019-06-05
+###Security
+- Updating dependencies
+
+## [0.5.1] - 2019-06-05
+###Security
+- Updating dependencies
+
+## [0.5.0] - 2019-06-04
 ### Added
 - [repeat](docs/repeat.md)
 - [fill](docs/fill.md)
 
-## [0.4.0] - 2019-5/8
+## [0.4.0] - 2019-05-08
 ### Added
 - [mix](docs/mix.md)
 - [combo](docs/combo.md)
@@ -82,6 +97,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [diffUpdate](docs/diffUpdate.md)
 - [intersection](docs/intersection.md)
 
+[0.6.0]: https://github.com/DarrenPaulWright/object-agent/compare/v0.5.3...0.6.0
+[0.5.3]: https://github.com/DarrenPaulWright/object-agent/compare/v0.5.2...0.5.3
+[0.5.2]: https://github.com/DarrenPaulWright/object-agent/compare/v0.5.1...0.5.2
+[0.5.1]: https://github.com/DarrenPaulWright/object-agent/compare/v0.5.0...0.5.1
 [0.5.0]: https://github.com/DarrenPaulWright/object-agent/compare/v0.4.0...0.5.0
 [0.4.0]: https://github.com/DarrenPaulWright/object-agent/compare/v0.3.2...0.4.0
 [0.3.2]: https://github.com/DarrenPaulWright/object-agent/compare/v0.3.1...0.3.2
