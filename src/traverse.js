@@ -1,4 +1,5 @@
 import forOwn from './forOwn';
+import isArray from './utility/isArray';
 import isObject from './utility/isObject';
 
 /**
@@ -42,7 +43,7 @@ export default (object, callback, isOptimistic) => {
 		if (callback(path, value)) {
 			return true;
 		}
-		if (Array.isArray(value)) {
+		if (isArray(value)) {
 			return value.some((value, key) => processValue(path.concat(key), value));
 		}
 		if (isObject(value)) {
@@ -62,7 +63,7 @@ export default (object, callback, isOptimistic) => {
 		if (callback(path, value)) {
 			isCanceled = true;
 		}
-		else if (Array.isArray(value)) {
+		else if (isArray(value)) {
 			value.some(loopCallback);
 		}
 		else if (isObject(value)) {

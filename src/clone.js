@@ -1,6 +1,7 @@
 import get from './get';
 import mapOwn from './mapOwn';
 import set from './set';
+import isArray from './utility/isArray';
 import isObject from './utility/isObject';
 
 /**
@@ -36,7 +37,7 @@ export default function clone(item, ignoreKeys = []) {
 
 			return mapOwn(item, (value, key) => doClone(value, path.concat(key)), ignoreKeys);
 		}
-		if (Array.isArray(item)) {
+		if (isArray(item)) {
 			return item.map((value, index) => doClone(value, path.concat(index)));
 		}
 		if (item instanceof Date) {

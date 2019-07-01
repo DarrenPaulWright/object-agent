@@ -1,3 +1,4 @@
+import isArray from './utility/isArray';
 import isObject from './utility/isObject';
 import multiArgs from './utility/multiArgs';
 
@@ -32,7 +33,7 @@ export default (...args) => {
 	if (isObject(base)) {
 		baseType = 'Object';
 	}
-	else if (Array.isArray(base)) {
+	else if (isArray(base)) {
 		baseType = 'Array';
 	}
 	else if (base instanceof Date) {
@@ -50,7 +51,7 @@ export default (...args) => {
 			return isObject(item) && Object.keys(base).length === Object.keys(item).length;
 		}
 		if (baseType === 'Array') {
-			return Array.isArray(item) && base.length === item.length;
+			return isArray(item) && base.length === item.length;
 		}
 		if (baseType === 'NaN') {
 			return item !== item;

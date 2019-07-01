@@ -1,1 +1,3 @@
-export default (path) => Array.isArray(path) ? path : path.split('.');
+import isArray from './isArray';
+
+export default (path) => isArray(path) ? path : path.split('.');

@@ -3,11 +3,12 @@ import isEmpty from './isEmpty';
 import isEqual from './isEqual';
 import pull from './pull';
 import set from './set';
+import isArray from './utility/isArray';
 import isObject from './utility/isObject';
 import multiArgs from './utility/multiArgs';
 
 const intersectionValues = (values) => {
-	if (Array.isArray(values[0])) {
+	if (isArray(values[0])) {
 		return intersectionArrays(values);
 	}
 	else if (isObject(values[0])) {
