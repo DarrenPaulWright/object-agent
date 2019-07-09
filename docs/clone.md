@@ -13,22 +13,19 @@
 
 <br><a name="clone"></a>
 
-### clone(value, [ignoreKeys]) ⇒ <code>\*</code>
+### clone(value, [settings]) ⇒ <code>\*</code>
 > Deep clone a value.
 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| value | <code>\*</code> |  |
-| [ignoreKeys] | <code>Array</code>, <code>String</code> | Any keys in this array will not be cloned |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| value | <code>\*</code> |  |  |
+| [settings] | <code>Object</code> |  |  |
+| [settings.ignoreKeys] | <code>Array</code>, <code>String</code> |  | Any keys in this array will not be cloned |
+| [settings.isCircular] | <code>Boolean</code> | <code>false</code> | If true then circular references will be handled |
 
 **Example**  
-``` javascript
-import { clone } from 'object-agent';
-
-clone({ a: 'b', c: 'd' });
-// => { a: 'b', c: 'd' }
-```
+``` javascriptimport { clone } from 'object-agent';clone({ a: 'b', c: 'd' });// => { a: 'b', c: 'd' }```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

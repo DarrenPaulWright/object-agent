@@ -4,8 +4,8 @@ import { clone } from '../src/';
 import { testValues } from './testValues';
 
 describe('clone', () => {
-	testValues.forEach((value, index) => {
-		it(`should clone ${displayValue(value)} [${index}]`, () => {
+	testValues.forEach((value) => {
+		it(`should clone ${displayValue(value)}`, () => {
 			assert.deepEqual(clone(value), value);
 		});
 	});
@@ -14,7 +14,9 @@ describe('clone', () => {
 		const object = {};
 		object.key1 = object;
 
-		assert.deepEqual(clone(object), object);
+		assert.deepEqual(clone(object, {
+			isCircular: true
+		}), object);
 	});
 
 	it('should clone a nested circular reference', () => {
@@ -26,10 +28,12 @@ describe('clone', () => {
 		};
 		object.key2.key4 = [object.key2];
 
-		assert.deepEqual(clone(object), object);
+		assert.deepEqual(clone(object, {
+			isCircular: true
+		}), object);
 	});
 
-	it('should ignore keys in the ignoreKeys arg', () => {
+	it('should ignore a key in the ignoreKeys setting', () => {
 		const object = {
 			key1: 'something',
 			key2: {
@@ -40,7 +44,25 @@ describe('clone', () => {
 			key1: 'something'
 		};
 
-		assert.deepEqual(clone(object, ['key2']), output);
+		assert.deepEqual(clone(object, {
+			ignoreKeys: 'key2'
+		}), output);
+	});
+
+	it('should ignore multiple keys in the ignoreKeys setting', () => {
+		const object = {
+			key1: 'something',
+			key2: {
+				key3: 'another'
+			}
+		};
+		const output = {
+			key2: {}
+		};
+
+		assert.deepEqual(clone(object, {
+			ignoreKeys: ['key1', 'key3']
+		}), output);
 	});
 
 	it('should clone a reference to an instance of a class', () => {

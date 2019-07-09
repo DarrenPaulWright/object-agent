@@ -19,24 +19,28 @@ import isObject from './utility/isObject';
  * @function clone
  *
  * @arg {*} value
- * @arg {Array|String} [ignoreKeys] - Any keys in this array will not be cloned
+ * @arg {Object} [settings]
+ * @arg {Array|String} [settings.ignoreKeys] - Any keys in this array will not be cloned
+ * @arg {Boolean} [settings.isCircular=false] - If true then circular references will be handled
  *
  * @returns {*}
  */
-export default function clone(item, ignoreKeys = []) {
-	const objectRefs = [];
+export default function clone(item, settings = {}) {
+	const objectRefs = new WeakMap();
 	const circularRefs = [];
 
 	const doClone = (item, path) => {
 		if (isObject(item)) {
-			const ref = objectRefs.find((data) => data[0] === item);
-			if (ref) {
-				circularRefs.push([path, ref[1]]);
-				return null;
+			if (settings.isCircular) {
+				const ref = objectRefs.get(item);
+				if (ref !== undefined) {
+					circularRefs.push([path, ref]);
+					return null;
+				}
+				objectRefs.set(item, path);
 			}
-			objectRefs.push([item, path]);
 
-			return mapOwn(item, (value, key) => doClone(value, appendToPath(path, key)), ignoreKeys);
+			return mapOwn(item, (value, key) => doClone(value, appendToPath(path, key)), settings.ignoreKeys);
 		}
 		if (isArray(item)) {
 			return item.map((value, index) => doClone(value, appendToPath(path, index)));
@@ -52,7 +56,10 @@ export default function clone(item, ignoreKeys = []) {
 
 	const result = doClone(item, '');
 
-	circularRefs.forEach((ref) => set(result, ref[0], get(result, ref[1])));
+	if (settings.isCircular) {
+		circularRefs.forEach((ref) => set(result, ref[0], get(result, ref[1])));
+		circularRefs.length = 0;
+	}
 
 	return result;
 }
