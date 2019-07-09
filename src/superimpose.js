@@ -70,7 +70,7 @@ export default (...args) => {
 				(typeof outputValue !== typeof value) ||
 				!(isArray(value) || isObject(value))) {
 
-				if (!path.length) {
+				if (path === '') {
 					output = value;
 				}
 				else {

@@ -1,4 +1,4 @@
-import parsePath from './utility/parsePath';
+import walkPath from './utility/walkPath';
 
 /**
  * Deletes a property from a nested object.
@@ -30,10 +30,14 @@ import parsePath from './utility/parsePath';
  * @arg {Array|String} path - If a string, gets split on '.'
  */
 export default (object, path) => {
-	parsePath(path).some((key, index, path) => {
-		if (index === path.length - 1) {
+	walkPath(path, (key, path) => {
+		if (path === '') {
 			delete object[key];
+			return true;
 		}
-		return !(object = object[key]);
+
+		object = object[key];
+		
+		return object === undefined;
 	});
 };

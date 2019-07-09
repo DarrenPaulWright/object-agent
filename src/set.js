@@ -1,4 +1,5 @@
-import parsePath from './utility/parsePath';
+import firstInPath from './utility/firstInPath';
+import walkPath from './utility/walkPath';
 
 /**
  * Sets a nested value in an object. Keys in the path that don't exist at any point in the object will be created and added to the object once.
@@ -33,27 +34,34 @@ import parsePath from './utility/parsePath';
  * @arg {*} value
  */
 export default (object, path, value) => {
-	path = parsePath(path);
-	const last = path.length - 1;
-	const buildNew = (index) => !isNaN(path[index + 1] - 0) ? [] : {};
 	let baseItem;
 	let baseKey;
 	let baseValue;
 
-	path.forEach((key, index) => {
-		if (index === last) {
+	const buildNew = (key) => !isNaN(key - 0) ? [] : {};
+
+	walkPath(path, (key, path) => {
+		if (path === '') {
 			object[key] = value;
+			return true;
 		}
-		else if (!(key in object)) {
+
+		if (object[key] === undefined) {
 			if (!baseItem) {
 				baseItem = object;
 				baseKey = key;
-				baseValue = object = buildNew(index);
-				return;
+				baseValue = object = buildNew(firstInPath(path));
 			}
-			object[key] = buildNew(index);
+			else {
+				object[key] = buildNew(firstInPath(path));
+				object = object[key];
+			}
 		}
-		object = object[key];
+		else {
+			object = object[key];
+		}
+
+		return false;
 	});
 
 	if (baseItem) {

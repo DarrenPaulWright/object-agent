@@ -1,10 +1,11 @@
 import { assert } from 'chai';
+import displayValue from 'display-value';
 import { clone } from '../src/';
 import { testValues } from './testValues';
 
 describe('clone', () => {
 	testValues.forEach((value, index) => {
-		it(`should clone ${value} [${index}]`, () => {
+		it(`should clone ${displayValue(value)} [${index}]`, () => {
 			assert.deepEqual(clone(value), value);
 		});
 	});

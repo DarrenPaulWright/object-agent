@@ -33,6 +33,7 @@
  * - [nestedEach](docs/nestedEach.md)
  * - [repeat](docs/repeat.md)
  * - [fill](docs/fill.md)
+ *   - [path utility functions](docs/pathUtilities.md)
  */
 export { default as get } from './get';
 export { default as has } from './has';
@@ -56,3 +57,10 @@ export { default as powerset } from './powerset';
 export { default as nestedEach } from './nestedEach';
 export { default as repeat } from './repeat';
 export { default as fill } from './fill';
+
+export { default as walkPath } from './utility/walkPath';
+export { default as appendToPath } from './utility/appendToPath';
+export { default as firstInPath } from './utility/firstInPath';
+export { default as initialInPath } from './utility/initialInPath';
+export { default as lastInPath } from './utility/lastInPath';
+export { default as tailInPath } from './utility/tailInPath';

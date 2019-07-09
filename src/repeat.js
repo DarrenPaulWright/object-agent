@@ -5,7 +5,7 @@
  * ``` javascript
  * import { repeat } from 'object-agent';
  *
- * repeat(5, (index) => console.log(index);
+ * repeat(5, (index) => console.log(index));
  * // => 0
  * // => 1
  * // => 2

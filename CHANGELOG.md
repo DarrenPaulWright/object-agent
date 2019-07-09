@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
+## [1.0.0]
+### Changed
+- Paths are now always strings.
+
 ## [0.6.0] - 2019-07-01
 ### Added
 - [superimpose](docs/superimpose.md)
@@ -97,6 +101,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [diffUpdate](docs/diffUpdate.md)
 - [intersection](docs/intersection.md)
 
+[1.0.0]: https://github.com/DarrenPaulWright/object-agent/compare/v0.6.0...1.0.0
 [0.6.0]: https://github.com/DarrenPaulWright/object-agent/compare/v0.5.3...0.6.0
 [0.5.3]: https://github.com/DarrenPaulWright/object-agent/compare/v0.5.2...0.5.3
 [0.5.2]: https://github.com/DarrenPaulWright/object-agent/compare/v0.5.1...0.5.2

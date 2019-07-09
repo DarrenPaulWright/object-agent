@@ -17,28 +17,28 @@ describe('traverse', () => {
 		const isCanceled = traverse(testObject, (path, value) => {
 			total++;
 
-			if (deepEqual(path, [])) {
+			if (deepEqual(path, '')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test'])) {
+			if (deepEqual(path, 'test')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0])) {
+			if (deepEqual(path, 'test.0')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test2'])) {
+			if (deepEqual(path, 'test.0.test2')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test2', 'test3'])) {
+			if (deepEqual(path, 'test.0.test2.test3')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test2', 'test3', 0]) && value === 'string1') {
+			if (deepEqual(path, 'test.0.test2.test3.0') && value === 'string1') {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test2', 'test3', 1]) && value === 'string2') {
+			if (deepEqual(path, 'test.0.test2.test3.1') && value === 'string2') {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test4']) && value === null) {
+			if (deepEqual(path, 'test.0.test4') && value === null) {
 				testVar++;
 			}
 		});
@@ -63,29 +63,29 @@ describe('traverse', () => {
 		const isCanceled = traverse(testObject, (path, value) => {
 			total++;
 
-			if (deepEqual(path, [])) {
+			if (deepEqual(path, '')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test'])) {
+			if (deepEqual(path, 'test')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0])) {
+			if (deepEqual(path, 'test.0')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test2'])) {
+			if (deepEqual(path, 'test.0.test2')) {
 				testVar++;
 				return true;
 			}
-			if (deepEqual(path, ['test', 0, 'test2', 'test3'])) {
+			if (deepEqual(path, 'test.0.test2.test3')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test2', 'test3', 0]) && value === 'string1') {
+			if (deepEqual(path, 'test.0.test2.test3.0') && value === 'string1') {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test2', 'test3', 1]) && value === 'string2') {
+			if (deepEqual(path, 'test.0.test2.test3.1') && value === 'string2') {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test4']) && value === null) {
+			if (deepEqual(path, 'test.0.test4') && value === null) {
 				testVar++;
 			}
 		});
@@ -110,29 +110,29 @@ describe('traverse', () => {
 		const isCanceled = traverse(testObject, (path, value) => {
 			total++;
 
-			if (deepEqual(path, [])) {
+			if (deepEqual(path, '')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test'])) {
+			if (deepEqual(path, 'test')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0])) {
+			if (deepEqual(path, 'test.0')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test2'])) {
+			if (deepEqual(path, 'test.0.test2')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test2', 'test3'])) {
+			if (deepEqual(path, 'test.0.test2.test3')) {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test2', 'test3', 0]) && value === 'string1') {
+			if (deepEqual(path, 'test.0.test2.test3.0') && value === 'string1') {
 				testVar++;
 				return true;
 			}
-			if (deepEqual(path, ['test', 0, 'test2', 'test3', 1]) && value === 'string2') {
+			if (deepEqual(path, 'test.0.test2.test3.1') && value === 'string2') {
 				testVar++;
 			}
-			if (deepEqual(path, ['test', 0, 'test4']) && value === null) {
+			if (deepEqual(path, 'test.0.test4') && value === null) {
 				testVar++;
 			}
 		});
@@ -158,29 +158,29 @@ describe('traverse', () => {
 			const isCanceled = traverse(testObject, (path, value) => {
 				total++;
 
-				if (deepEqual(path, [])) {
+				if (deepEqual(path, '')) {
 					testVar++;
 				}
-				if (deepEqual(path, ['test'])) {
+				if (deepEqual(path, 'test')) {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 0])) {
+				if (deepEqual(path, 'test.0')) {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 0, 'test2'])) {
+				if (deepEqual(path, 'test.0.test2')) {
 					testVar++;
 					return true;
 				}
-				if (deepEqual(path, ['test', 0, 'test2', 'test3'])) {
+				if (deepEqual(path, 'test.0.test2.test3')) {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 0, 'test2', 'test3', 0]) && value === 'string1') {
+				if (deepEqual(path, 'test.0.test2.test3.0') && value === 'string1') {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 0, 'test2', 'test3', 1]) && value === 'string2') {
+				if (deepEqual(path, 'test.0.test2.test3.1') && value === 'string2') {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 0, 'test4']) && value === null) {
+				if (deepEqual(path, 'test.0.test4') && value === null) {
 					testVar++;
 				}
 			}, true);
@@ -207,35 +207,35 @@ describe('traverse', () => {
 			const isCanceled = traverse(testObject, (path, value) => {
 				total++;
 
-				if (deepEqual(path, [])) {
+				if (deepEqual(path, '')) {
 					testVar++;
 				}
-				if (deepEqual(path, ['test'])) {
+				if (deepEqual(path, 'test')) {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 0])) {
+				if (deepEqual(path, 'test.0')) {
 					testVar++;
 					return true;
 				}
-				if (deepEqual(path, ['test', 0, 'test2'])) {
+				if (deepEqual(path, 'test.0.test2')) {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 0, 'test2', 'test3'])) {
+				if (deepEqual(path, 'test.0.test2.test3')) {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 0, 'test2', 'test3', 0]) && value === 'string1') {
+				if (deepEqual(path, 'test.0.test2.test3.0') && value === 'string1') {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 0, 'test2', 'test3', 1]) && value === 'string2') {
+				if (deepEqual(path, 'test.0.test2.test3.1') && value === 'string2') {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 0, 'test4']) && value === null) {
+				if (deepEqual(path, 'test.0.test4') && value === null) {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 1])) {
+				if (deepEqual(path, 'test.1')) {
 					testVar++;
 				}
-				if (deepEqual(path, ['test', 1, 'test4'])) {
+				if (deepEqual(path, 'test.1.test4')) {
 					testVar++;
 				}
 			}, true);

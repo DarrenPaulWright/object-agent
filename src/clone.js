@@ -1,6 +1,7 @@
 import get from './get';
 import mapOwn from './mapOwn';
 import set from './set';
+import appendToPath from './utility/appendToPath';
 import isArray from './utility/isArray';
 import isObject from './utility/isObject';
 
@@ -35,10 +36,10 @@ export default function clone(item, ignoreKeys = []) {
 			}
 			objectRefs.push([item, path]);
 
-			return mapOwn(item, (value, key) => doClone(value, path.concat(key)), ignoreKeys);
+			return mapOwn(item, (value, key) => doClone(value, appendToPath(path, key)), ignoreKeys);
 		}
 		if (isArray(item)) {
-			return item.map((value, index) => doClone(value, path.concat(index)));
+			return item.map((value, index) => doClone(value, appendToPath(path, index)));
 		}
 		if (item instanceof Date) {
 			return new Date(item.valueOf());
@@ -49,7 +50,7 @@ export default function clone(item, ignoreKeys = []) {
 		return item;
 	};
 
-	const result = doClone(item, []);
+	const result = doClone(item, '');
 
 	circularRefs.forEach((ref) => set(result, ref[0], get(result, ref[1])));
 

@@ -1,4 +1,4 @@
-import parsePath from './utility/parsePath';
+import walkPath from './utility/walkPath';
 
 /**
  * Gets a nested value from an object.
@@ -27,6 +27,11 @@ import parsePath from './utility/parsePath';
  * @returns {*}
  */
 export default (object, path) => {
-	parsePath(path).some((key) => !(object = object[key]));
+	walkPath(path, (key) => {
+		object = object[key];
+
+		return object === undefined;
+	});
+
 	return object;
 };

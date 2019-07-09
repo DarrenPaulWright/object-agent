@@ -1,5 +1,4 @@
 import get from './get';
-import parsePath from './utility/parsePath';
 
 /**
  * Pulls values from an array of objects into a new array.
@@ -25,6 +24,5 @@ import parsePath from './utility/parsePath';
  * @returns {Array}
  */
 export default (array, path) => {
-	path = parsePath(path);
 	return array.map((item) => item ? get(item, path) : undefined);
 };

@@ -15,7 +15,7 @@ describe('has', () => {
 			level1: 'something'
 		};
 
-		assert.isTrue(has(object, ['level1']));
+		assert.isTrue(has(object, 'level1'));
 	});
 
 	it('should return true for a second level key', () => {
@@ -25,7 +25,7 @@ describe('has', () => {
 			}
 		};
 
-		assert.isTrue(has(object, ['level1', 'level2']));
+		assert.isTrue(has(object, 'level1', 'level2'));
 	});
 
 	it('should return true for a second level key in an array', () => {
@@ -35,7 +35,7 @@ describe('has', () => {
 			}]
 		};
 
-		assert.isTrue(has(object, ['level1', 0, 'level2']));
+		assert.isTrue(has(object, 'level1.0.level2'));
 	});
 
 	it('should return true for a second level key in an array with multiple items', () => {
@@ -53,7 +53,7 @@ describe('has', () => {
 			}]
 		};
 
-		assert.isTrue(has(object, ['level1', '2', 'level2']));
+		assert.isTrue(has(object, 'level1.2.level2'));
 	});
 
 	it('should return true for a third level key in an array with multiple items', () => {
@@ -73,7 +73,7 @@ describe('has', () => {
 			}]
 		};
 
-		assert.isTrue(has(object, ['level1', '2', 'level2', 'level3']));
+		assert.isTrue(has(object, 'level1.2.level2.level3'));
 	});
 
 	it('should return false for a path that doesn\'t exist', () => {
@@ -93,6 +93,6 @@ describe('has', () => {
 			}]
 		};
 
-		assert.isFalse(has(object, ['level1', '2', 'level3', 'level4']));
+		assert.isFalse(has(object, 'level1.2.level3.level4'));
 	});
 });

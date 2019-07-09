@@ -21,7 +21,7 @@ describe('pull', () => {
 		}, null];
 		const output = ['something', 'something2', undefined];
 
-		assert.deepEqual(pull(input, ['level1']), output);
+		assert.deepEqual(pull(input, 'level1'), output);
 	});
 
 	it('should pull the values from an array of nested objects', () => {
@@ -36,7 +36,7 @@ describe('pull', () => {
 		}];
 		const output = [[1, 2, 3], [4, 5, 6]];
 
-		assert.deepEqual(pull(input, ['level1', 'level2']), output);
+		assert.deepEqual(pull(input, 'level1.level2'), output);
 	});
 
 	it('should pull the values from an array of nested objects with arrays', () => {
@@ -51,6 +51,6 @@ describe('pull', () => {
 		}];
 		const output = [2, 5];
 
-		assert.deepEqual(pull(input, ['level1', 'level2', 1]), output);
+		assert.deepEqual(pull(input, 'level1.level2.1'), output);
 	});
 });

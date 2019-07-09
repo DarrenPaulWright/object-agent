@@ -1,4 +1,4 @@
-import parsePath from './utility/parsePath';
+import get from './get';
 
 /**
  * Determines if a nested value is defined
@@ -26,7 +26,4 @@ import parsePath from './utility/parsePath';
  *
  * @returns {*}
  */
-export default (object, path) => {
-	parsePath(path).some((key) => !(object = object[key]));
-	return object !== undefined;
-};
+export default (object, path) => get(object, path) !== undefined;

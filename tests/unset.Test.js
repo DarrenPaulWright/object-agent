@@ -2,24 +2,13 @@ import { assert } from 'chai';
 import { unset } from '../src/';
 
 describe('unset', () => {
-	it('should set the value of a first level key if a string is provided', () => {
-		const object = {
-			level1: 'something'
-		};
-		const compare = {};
-
-		unset(object, 'level1');
-
-		assert.deepEqual(object, compare);
-	});
-
 	it('should set the value of a first level key', () => {
 		const object = {
 			level1: 'something'
 		};
 		const compare = {};
 
-		unset(object, ['level1']);
+		unset(object, 'level1');
 
 		assert.deepEqual(object, compare);
 	});
@@ -34,7 +23,7 @@ describe('unset', () => {
 			level1: {}
 		};
 
-		unset(object, ['level1', 'level2']);
+		unset(object, 'level1.level2');
 
 		assert.deepEqual(object, compare);
 	});
@@ -49,7 +38,7 @@ describe('unset', () => {
 			level1: [{}]
 		};
 
-		unset(object, ['level1', '0', 'level2']);
+		unset(object, 'level1.0.level2');
 
 		assert.deepEqual(object, compare);
 	});
@@ -80,7 +69,7 @@ describe('unset', () => {
 			}]
 		};
 
-		unset(object, ['level1', '2', 'level2']);
+		unset(object, 'level1.2.level2');
 
 		assert.deepEqual(object, compare);
 	});
@@ -115,7 +104,7 @@ describe('unset', () => {
 			}]
 		};
 
-		unset(object, ['level1', '2', 'level2', 'level3']);
+		unset(object, 'level1.2.level2.level3');
 
 		assert.deepEqual(object, compare);
 	});
