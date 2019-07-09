@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0]
 ### Changed
 - Paths are now always strings.
+- [set](docs/set.md) returns the mutated object.
 
 ## [0.6.0] - 2019-07-01
 ### Added

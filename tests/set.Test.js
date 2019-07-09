@@ -11,9 +11,10 @@ describe('set', () => {
 			level1: 'meh'
 		};
 
-		set(object, 'level1', 'meh');
+		const result = set(object, 'level1', 'meh');
 
 		assert.deepEqual(object, compare);
+		assert.equal(object, result);
 	});
 
 	it('should set the value of a second level key', () => {
@@ -28,9 +29,10 @@ describe('set', () => {
 			}
 		};
 
-		set(object, 'level1.level2', 'meh');
+		const result = set(object, 'level1.level2', 'meh');
 
 		assert.deepEqual(object, compare);
+		assert.equal(object, result);
 	});
 
 	it('should set the value of a second level key in an array', () => {
@@ -45,9 +47,10 @@ describe('set', () => {
 			}]
 		};
 
-		set(object, 'level1.0.level2', 'meh');
+		const result = set(object, 'level1.0.level2', 'meh');
 
 		assert.deepEqual(object, compare);
+		assert.equal(object, result);
 	});
 
 	it('should set the value of a second level key in an array with multiple items', () => {
@@ -78,9 +81,10 @@ describe('set', () => {
 			}]
 		};
 
-		set(object, 'level1.2.level2', 'meh');
+		const result = set(object, 'level1.2.level2', 'meh');
 
 		assert.deepEqual(object, compare);
+		assert.equal(object, result);
 	});
 
 	it('should set the value of a second level key in an array with multiple items', () => {
@@ -115,9 +119,10 @@ describe('set', () => {
 			}]
 		};
 
-		set(object, 'level1.2.level2.level3', 'meh');
+		const result = set(object, 'level1.2.level2.level3', 'meh');
 
 		assert.deepEqual(object, compare);
+		assert.equal(object, result);
 	});
 
 	it('should create objects and arrays then set the value', () => {
@@ -133,10 +138,11 @@ describe('set', () => {
 			}]
 		};
 
-		set(object, 'level1.2.level2.level3', 'meh');
+		const result = set(object, 'level1.2.level2.level3', 'meh');
 
 		assert.deepEqual(object, compare);
 		assert.equal(testVar, 1);
+		assert.equal(object, result);
 	});
 
 });

@@ -13,9 +13,10 @@
 
 <br><a name="set"></a>
 
-### set(object, path, value)
+### set(object, path, value) ⇒ <code>Object</code>
 > Sets a nested value in an object. Keys in the path that don't exist at any point in the object will be created and added to the object once.
 
+**Returns**: <code>Object</code> - The mutated object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -24,27 +25,7 @@
 | value | <code>\*</code> |  |
 
 **Example**  
-``` javascript
-import { set } from 'object-agent';
-
-const thing = {
-    a: [{
-        b: 'c'
-    }, {
-        b: 'd'
-    }]
-};
-
-set(thing, ['a', '1', 'b'], 'e');
-console.log(thing);
-// => {
-//    a: [{
-//        b: 'c'
-//    }, {
-//        b: 'e'
-//    }]
-//}
-```
+``` javascriptimport { set } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};set(thing, ['a', '1', 'b'], 'e');console.log(thing);// => {//    a: [{//        b: 'c'//    }, {//        b: 'e'//    }]//}```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

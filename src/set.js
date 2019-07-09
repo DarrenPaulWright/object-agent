@@ -32,8 +32,11 @@ import walkPath from './utility/walkPath';
  * @arg {Object} object
  * @arg {Array|String} path - If a string, gets split on '.'
  * @arg {*} value
+ *
+ * @returns {Object} The mutated object.
  */
 export default (object, path, value) => {
+	const original = object;
 	let baseItem;
 	let baseKey;
 	let baseValue;
@@ -67,4 +70,6 @@ export default (object, path, value) => {
 	if (baseItem) {
 		baseItem[baseKey] = baseValue;
 	}
+
+	return original;
 };
