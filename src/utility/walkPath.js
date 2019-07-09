@@ -1,6 +1,27 @@
 /**
  * Calls a callback for every key in a path. If true is returned from the callback then no further calls will be made.
  *
+ * @example
+ * ``` javascript
+ * import { walkPath } from 'object-agent';
+ *
+ * walkPath('first.0.last', (key, tail) => {
+ *     console.log(key, tail);
+ * });
+ * // => 'first', '0.last'
+ * // => '0', 'last'
+ * // => 'last', ''
+ *
+ * walkPath('first.0.last', (key, tail) => {
+ *     console.log(key, tail);
+ *     if (key === '0') {
+ *         return true;
+ *     }
+ * });
+ * // => 'first', '0.last'
+ * // => '0', 'last'
+ * ```
+ *
  * @function walkPath
  *
  * @arg {String} path

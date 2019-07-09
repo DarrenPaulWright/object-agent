@@ -23,17 +23,7 @@
 | path | <code>Array</code>, <code>String</code> | If a string, gets split on '.' |
 
 **Example**  
-``` javascript
-import { pull } from 'object-agent';
-
-const array = [{
-    a: { b: [1, 2, 3] }
-}, {
-    a: { b: [4, 5, 6] }
-}];
-
-pull(array, ['a', 'b', 1]); // => [2, 5]
-```
+``` javascriptimport { pull } from 'object-agent';const array = [{    a: { b: [1, 2, 3] }}, {    a: { b: [4, 5, 6] }}];pull(array, ['a', 'b', 1]); // => [2, 5]```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

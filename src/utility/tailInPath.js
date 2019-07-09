@@ -1,6 +1,14 @@
 /**
  * Returns the path without the first key
  *
+ * @example
+ * ``` javascript
+ * import { tailInPath } from 'object-agent';
+ *
+ * tailInPath('first.0.last');
+ * // => '0.last'
+ * ```
+ *
  * @function tailInPath
  *
  * @arg {String} path

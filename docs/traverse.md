@@ -25,29 +25,7 @@
 | [isOptimistic] | <code>Boolean</code> | <code>false</code> | If true then returning true in the callback will prevent going deeper down that branch, but will otherwise continue traversing. |
 
 **Example**  
-``` javascript
-import { traverse } from 'object-agent';
-
-const thing = {
-    a: [{
-        b: 'c'
-    }, {
-        b: 'd'
-    }],
-    e: 'f
-};
-
-traverse(thing, (path, value) => {
-    console.log(path, value);
-});
-// => [], { a: [{ b: 'c' }, { b: 'd' }] }
-// => ['a'], [{ b: 'c' }, { b: 'd' }]
-// => ['a', 0], { b: 'c' }
-// => ['a', 0, 'b'], 'c'
-// => ['a', 1], { b: 'd' }
-// => ['a', 1, 'b'], 'd'
-// => ['e'], 'f'
-```
+``` javascriptimport { traverse } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }],    e: 'f};traverse(thing, (path, value) => {    console.log(path, value);});// => [], { a: [{ b: 'c' }, { b: 'd' }] }// => ['a'], [{ b: 'c' }, { b: 'd' }]// => ['a', 0], { b: 'c' }// => ['a', 0, 'b'], 'c'// => ['a', 1], { b: 'd' }// => ['a', 1, 'b'], 'd'// => ['e'], 'f'```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

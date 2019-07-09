@@ -11,11 +11,12 @@
 /**
  * @name Docs
  * @summary
- * - Core
+ * - Path
  *   - [get](docs/get.md)
  *   - [set](docs/set.md)
  *   - [unset](docs/unset.md)
- * - Analyzing
+ *   - [path utility functions](docs/pathUtilities.md)
+ * - Analysis
  *   - [forIn](docs/forIn.md)
  *   - [forOwn](docs/forOwn.md)
  *   - [mapOwn](docs/mapOwn.md)
@@ -28,7 +29,7 @@
  *     - [isEmpty](docs/isEmpty.md)
  *     - [isEqual](docs/isEqual.md)
  *     - [deepEqual](docs/deepEqual.md)
- * - Generating
+ * - Data Generation
  *   - [nestedEach](docs/nestedEach.md)
  *   - [combo](docs/combo.md)
  *   - [mix](docs/mix.md)
@@ -39,7 +40,6 @@
  *   - [pull](docs/pull.md)
  *   - [repeat](docs/repeat.md)
  *   - [fill](docs/fill.md)
- *   - [path utility functions](docs/pathUtilities.md)
  */
 export { default as get } from './get';
 export { default as has } from './has';

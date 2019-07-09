@@ -1,6 +1,14 @@
 /**
  * Returns the path without the last key
  *
+ * @example
+ * ``` javascript
+ * import { initialInPath } from 'object-agent';
+ *
+ * initialInPath('first.0.last');
+ * // => 'first.0'
+ * ```
+ *
  * @function initialInPath
  *
  * @arg {String} path

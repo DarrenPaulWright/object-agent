@@ -23,24 +23,7 @@
 | object2 | <code>Object</code> | 
 
 **Example**  
-``` javascript
-import { diffUpdate } from 'object-agent';
-
-const item1 = {
-    a: ['b'],
-    c: 'd',
-    e: null
-}
-const item2 = {
-    a: ['b'],
-    c: null,
-    e: null,
-    f: 'g'
-}
-
-diffUpdate(item1, item2);
-// => { c: null, f: 'g' }
-```
+``` javascriptimport { diffUpdate } from 'object-agent';const item1 = {    a: ['b'],    c: 'd',    e: null}const item2 = {    a: ['b'],    c: null,    e: null,    f: 'g'}diffUpdate(item1, item2);// => { c: null, f: 'g' }```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

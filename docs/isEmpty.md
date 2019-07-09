@@ -22,27 +22,7 @@
 | item | <code>\*</code> | 
 
 **Example**  
-``` javascript
-import { isEmpty } from 'object-agent';
-
-isEmpty(['a', 1, 'b']);
-// => false
-
-isEmpty([]);
-// => true
-
-isEmpty({ a: 'b' });
-// => false
-
-isEmpty({});
-// => true
-
-isEmpty(null);
-// => true
-
-isEmpty(undefined);
-// => true
-```
+``` javascriptimport { isEmpty } from 'object-agent';isEmpty(['a', 1, 'b']);// => falseisEmpty([]);// => trueisEmpty({ a: 'b' });// => falseisEmpty({});// => trueisEmpty(null);// => trueisEmpty(undefined);// => true```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

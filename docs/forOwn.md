@@ -24,20 +24,7 @@
 | callback | <code>function</code> | Provides two args: value and key |
 
 **Example**  
-``` javascript
-import { forOwn } from 'object-agent';
-
-const thing = {
-    a: 'b',
-    c: 'd'
-};
-
-forOwn(thing, (value, key) => {
-    console.log(value, key);
-});
-// => 'b', 'a'
-// => 'd', 'c'
-```
+``` javascriptimport { forOwn } from 'object-agent';const thing = {    a: 'b',    c: 'd'};forOwn(thing, (value, key) => {    console.log(value, key);});// => 'b', 'a'// => 'd', 'c'```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent
