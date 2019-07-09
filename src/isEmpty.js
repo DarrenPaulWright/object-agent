@@ -30,4 +30,4 @@
  *
  * @returns {Boolean}
  */
-export default (item) => !item || !Object.keys(item).length;
+export default (item) => !item || item.length === 0 || Object.keys(item).length === 0;

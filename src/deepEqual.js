@@ -31,5 +31,5 @@ import traverse from './traverse';
  * @returns {Boolean}
  */
 export default (item1, item2) => {
-	return item1 === item2 || !traverse(item1, (path, value1) => !isEqual(value1, get(item2, path)));
+	return Object.is(item1, item2) || !traverse(item1, (path, value1) => !isEqual(value1, get(item2, path)));
 };

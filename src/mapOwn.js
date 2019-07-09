@@ -23,10 +23,16 @@
  * @returns {Object|*} If null or undefined are passed in then the same is returned, otherwise a new object
  */
 export default (object, callback, ignoreKeys = []) => {
-	return !object ? object : Object.entries(object).reduce((result, data) => {
-		if (!ignoreKeys.includes(data[0])) {
-			result[data[0]] = callback ? callback(data[1], data[0]) : data[1];
+	if (!object) {
+		return object;
+	}
+	const result = {};
+
+	for (let key in object) {
+		if (object.hasOwnProperty(key) && !ignoreKeys.includes(key)) {
+			result[key] = callback ? callback(object[key], key) : object[key];
 		}
-		return result;
-	}, {});
-}
+	}
+
+	return result;
+};

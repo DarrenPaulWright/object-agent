@@ -11,28 +11,34 @@
 /**
  * @name Docs
  * @summary
- * - [get](docs/get.md)
- * - [has](docs/has.md)
- * - [set](docs/set.md)
- * - [unset](docs/unset.md)
- * - [forIn](docs/forIn.md)
- * - [forOwn](docs/forOwn.md)
- * - [mapOwn](docs/mapOwn.md)
- * - [traverse](docs/traverse.md)
- * - [isEmpty](docs/isEmpty.md)
- * - [pull](docs/pull.md)
- * - [isEqual](docs/isEqual.md)
- * - [deepEqual](docs/deepEqual.md)
- * - [diffUpdate](docs/diffUpdate.md)
- * - [intersection](docs/intersection.md)
- * - [superimpose](docs/superimpose.md)
- * - [clone](docs/clone.md)
- * - [combo](docs/combo.md)
- * - [mix](docs/mix.md)
- * - [powerset](docs/powerset.md)
- * - [nestedEach](docs/nestedEach.md)
- * - [repeat](docs/repeat.md)
- * - [fill](docs/fill.md)
+ * - Core
+ *   - [get](docs/get.md)
+ *   - [set](docs/set.md)
+ *   - [unset](docs/unset.md)
+ * - Analyzing
+ *   - [forIn](docs/forIn.md)
+ *   - [forOwn](docs/forOwn.md)
+ *   - [mapOwn](docs/mapOwn.md)
+ *   - [traverse](docs/traverse.md)
+ *   - Comparison
+ *     - [diffUpdate](docs/diffUpdate.md)
+ *     - [intersection](docs/intersection.md)
+ *   - Testing
+ *     - [has](docs/has.md)
+ *     - [isEmpty](docs/isEmpty.md)
+ *     - [isEqual](docs/isEqual.md)
+ *     - [deepEqual](docs/deepEqual.md)
+ * - Generating
+ *   - [nestedEach](docs/nestedEach.md)
+ *   - [combo](docs/combo.md)
+ *   - [mix](docs/mix.md)
+ *   - [powerset](docs/powerset.md)
+ * - Other
+ *   - [superimpose](docs/superimpose.md)
+ *   - [clone](docs/clone.md)
+ *   - [pull](docs/pull.md)
+ *   - [repeat](docs/repeat.md)
+ *   - [fill](docs/fill.md)
  *   - [path utility functions](docs/pathUtilities.md)
  */
 export { default as get } from './get';

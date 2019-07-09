@@ -23,7 +23,7 @@
 | callback | <code>function</code> | Provides one argument, an index value of the call count |
 
 **Example**  
-``` javascriptimport { repeat } from 'object-agent';repeat(5, (index) => console.log(index);// => 0// => 1// => 2// => 3// => 4```
+``` javascriptimport { repeat } from 'object-agent';repeat(5, (index) => console.log(index));// => 0// => 1// => 2// => 3// => 4```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent
