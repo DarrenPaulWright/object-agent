@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [clone](docs/clone.md)
   - ignoreKeys is now in a settings object
   - isCircular setting added
+- [isEqual](docs/isEqual.md) now uses [SameValue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Same-value_equality) equality
 
 ## [0.6.0] - 2019-07-01
 ### Added

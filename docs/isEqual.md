@@ -14,7 +14,7 @@
 <br><a name="isEqual"></a>
 
 ### isEqual() ⇒ <code>Boolean</code>
-> Shallow compares two or more items. All items are compared with strict equality except Dates and RegExps which compare their _values_ with strict equality and Objects and Arrays which compare key lengths.
+> Shallow compares two or more items. All items are compared with [SameValue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Same-value_equality) equality except Dates and RegExps which compare their _values_ with [SameValue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Same-value_equality) equality and Objects and Arrays which compare key lengths.
 
 
 | Type | Description |
@@ -22,18 +22,7 @@
 | <code>\*</code>, <code>Array</code> | Can be an array of items or multiple args of items. |
 
 **Example**  
-``` javascript
-import { isEqual } from 'object-agent';
-
-isEqual(null, undefined);
-// => false
-
-isEqual('a', 'a', 'a');
-// => true
-
-isEqual('a', 'a', 'a', null);
-// => false
-```
+``` javascriptimport { isEqual } from 'object-agent';isEqual(null, undefined);// => falseisEqual('a', 'a', 'a');// => trueisEqual('a', 'a', 'a', null);// => false```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent
