@@ -35,7 +35,7 @@ export default (object, callback) => {
 			if (callback(object[key], key)) {
 				isCanceled = true;
 				break;
-			};
+			}
 		}
 	}
 
