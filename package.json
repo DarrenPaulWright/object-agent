@@ -16,6 +16,7 @@
 		"docs-unset": "jsdoc2md src/unset.js > docs/unset.md -t docs/docs.hbs --plugin dmd-readable -d 3",
 		"docs-forIn": "jsdoc2md src/forIn.js > docs/forIn.md -t docs/docs.hbs --plugin dmd-readable -d 3",
 		"docs-forOwn": "jsdoc2md src/forOwn.js > docs/forOwn.md -t docs/docs.hbs --plugin dmd-readable -d 3",
+		"docs-forOwnReduce": "jsdoc2md src/forOwnReduce.js > docs/forOwnReduce.md -t docs/docs.hbs --plugin dmd-readable -d 3",
 		"docs-mapOwn": "jsdoc2md src/mapOwn.js > docs/mapOwn.md -t docs/docs.hbs --plugin dmd-readable -d 3",
 		"docs-traverse": "jsdoc2md src/traverse.js > docs/traverse.md -t docs/docs.hbs --plugin dmd-readable -d 3",
 		"docs-isEmpty": "jsdoc2md src/isEmpty.js > docs/isEmpty.md -t docs/docs.hbs --plugin dmd-readable -d 3",
@@ -33,7 +34,7 @@
 		"docs-repeat": "jsdoc2md src/repeat.js > docs/repeat.md -t docs/docs.hbs --plugin dmd-readable -d 3",
 		"docs-fill": "jsdoc2md src/fill.js > docs/fill.md -t docs/docs.hbs --plugin dmd-readable -d 3",
 		"docs-pathUtilities": "jsdoc2md src/utility/*.js > docs/pathUtilities.md -t docs/docs.hbs --plugin dmd-readable -d 3",
-		"docs": "npm run docs-readme && npm run docs-get && npm run docs-has && npm run docs-set && npm run docs-unset && npm run docs-forIn && npm run docs-forOwn && npm run docs-mapOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-isEqual && npm run docs-deepEqual && npm run docs-diffUpdate && npm run docs-pull && npm run docs-intersection && npm run docs-clone && npm run docs-combo && npm run docs-mix && npm run docs-powerset && npm run docs-nestedEach && npm run docs-repeat && npm run docs-fill && npm run docs-pathUtilities"
+		"docs": "npm run docs-readme && npm run docs-get && npm run docs-has && npm run docs-set && npm run docs-unset && npm run docs-forIn && npm run docs-forOwn && npm run docs-forOwnReduce && npm run docs-mapOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-isEqual && npm run docs-deepEqual && npm run docs-diffUpdate && npm run docs-pull && npm run docs-intersection && npm run docs-clone && npm run docs-combo && npm run docs-mix && npm run docs-powerset && npm run docs-nestedEach && npm run docs-repeat && npm run docs-fill && npm run docs-pathUtilities"
 	},
 	"badges": [
 		{
