@@ -31,7 +31,7 @@ export default (object, callback) => {
 	let isCanceled = false;
 
 	for (let key in object) {
-		if (object.hasOwnProperty(key)) {
+		if (Object.hasOwnProperty.call(object, key)) {
 			if (callback(object[key], key)) {
 				isCanceled = true;
 				break;
