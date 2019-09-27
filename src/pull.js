@@ -13,13 +13,13 @@ import get from './get';
  *     a: { b: [4, 5, 6] }
  * }];
  *
- * pull(array, ['a', 'b', 1]); // => [2, 5]
+ * pull(array, 'a.b.1'); // => [2, 5]
  * ```
  *
  * @function pull
  *
  * @arg {Array} array
- * @arg {Array|String} path - If a string, gets split on '.'
+ * @arg {String} path - Dot delimited string
  *
  * @returns {Array}
  */

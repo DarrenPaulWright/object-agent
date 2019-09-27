@@ -15,14 +15,14 @@ import walkPath from './utility/walkPath';
  *     }]
  * };
  *
- * get(thing, ['a', 1, 'b']);
+ * get(thing, 'a.1.b');
  * // => 'd'
  * ```
  *
  * @function get
  *
  * @arg {Object} object
- * @arg {Array|String} path - If a string, gets split on '.'
+ * @arg {String} path - Dot delimited string
  *
  * @returns {*}
  */

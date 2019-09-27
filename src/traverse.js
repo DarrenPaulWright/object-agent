@@ -22,13 +22,13 @@ import isObject from './utility/isObject';
  * traverse(thing, (path, value) => {
  *     console.log(path, value);
  * });
- * // => [], { a: [{ b: 'c' }, { b: 'd' }] }
- * // => ['a'], [{ b: 'c' }, { b: 'd' }]
- * // => ['a', 0], { b: 'c' }
- * // => ['a', 0, 'b'], 'c'
- * // => ['a', 1], { b: 'd' }
- * // => ['a', 1, 'b'], 'd'
- * // => ['e'], 'f'
+ * // => '', { a: [{ b: 'c' }, { b: 'd' }] }
+ * // => 'a', [{ b: 'c' }, { b: 'd' }]
+ * // => 'a.0', { b: 'c' }
+ * // => 'a.0.b', 'c'
+ * // => 'a.1', { b: 'd' }
+ * // => 'a.1.b', 'd'
+ * // => 'e', 'f'
  * ```
  *
  * @function traverse

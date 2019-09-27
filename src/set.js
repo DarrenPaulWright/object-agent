@@ -16,7 +16,7 @@ import walkPath from './utility/walkPath';
  *     }]
  * };
  *
- * set(thing, ['a', '1', 'b'], 'e');
+ * set(thing, 'a.1.b', 'e');
  * console.log(thing);
  * // => {
  * //    a: [{
@@ -30,7 +30,7 @@ import walkPath from './utility/walkPath';
  * @function set
  *
  * @arg {Object} object
- * @arg {Array|String} path - If a string, gets split on '.'
+ * @arg {String} path - Dot delimited string
  * @arg {*} value
  *
  * @returns {Object} The mutated object.

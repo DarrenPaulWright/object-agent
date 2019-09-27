@@ -15,19 +15,17 @@ import walkPath from './utility/walkPath';
  *     }]
  * };
  *
- * unset(thing, ['a', '1', 'b']);
+ * unset(thing, ['a.1.b']);
  * console.log(thing);
  * // => {
- * //    a: [{
- * //        b: 'c'
- * //    }, {}]
+ * //    a: [{ b: 'c' }, {}]
  * //}
  * ```
  *
  * @function unset
  *
  * @arg {Object} object
- * @arg {Array|String} path - If a string, gets split on '.'
+ * @arg {String} path - Dot delimited string
  */
 export default (object, path) => {
 	walkPath(path, (key, path) => {
@@ -37,7 +35,7 @@ export default (object, path) => {
 		}
 
 		object = object[key];
-		
+
 		return object === undefined;
 	});
 };

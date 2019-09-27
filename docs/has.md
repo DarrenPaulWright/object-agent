@@ -20,10 +20,23 @@
 | Param | Type | Description |
 | --- | --- | --- |
 | object | <code>Object</code> |  |
-| path | <code>Array</code>, <code>String</code> | If a string, gets split on '.' |
+| path | <code>String</code> | Dot delimited string |
 
 **Example**  
-``` javascriptimport { has } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};has(thing, ['a', 1, 'b']);// => true```
+``` javascript
+import { has } from 'object-agent';
+
+const thing = {
+    a: [{
+        b: 'c'
+    }, {
+        b: 'd'
+    }]
+};
+
+has(thing, 'a.1.b');
+// => true
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

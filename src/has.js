@@ -15,14 +15,14 @@ import get from './get';
  *     }]
  * };
  *
- * has(thing, ['a', 1, 'b']);
+ * has(thing, 'a.1.b');
  * // => true
  * ```
  *
  * @function has
  *
  * @arg {Object} object
- * @arg {Array|String} path - If a string, gets split on '.'
+ * @arg {String} path - Dot delimited string
  *
  * @returns {*}
  */
