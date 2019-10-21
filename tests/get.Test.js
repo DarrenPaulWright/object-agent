@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import { get } from '../src/';
 
 describe('get', () => {
-	it('should get the value of a first level key if astring is provided', () => {
+	it('should get the value of a first level key if a string is provided', () => {
 		const object = {
 			level1: 'something'
 		};
@@ -94,5 +94,21 @@ describe('get', () => {
 		};
 
 		assert.equal(get(object, 'level1.2.level3.level4'), undefined);
+	});
+
+	it('should get undefined if undefined is provided', () => {
+		assert.equal(get(undefined, 'level1.2.level3.level4'), undefined);
+	});
+
+	it('should get undefined if null is provided', () => {
+		assert.equal(get(null, 'level1.2.level3.level4'), undefined);
+	});
+
+	it('should get undefined if 0 is provided', () => {
+		assert.equal(get(0, 'level1.2.level3.level4'), undefined);
+	});
+
+	it('should get undefined if \'\' is provided', () => {
+		assert.equal(get('', 'level1.2.level3.level4'), undefined);
 	});
 });
