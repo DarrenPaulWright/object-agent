@@ -23,7 +23,22 @@
 | item2 | <code>\*</code> | 
 
 **Example**  
-``` javascriptimport { deepEqual } from 'object-agent';deepEqual(null, undefined);// => falseconst item1 = {    a: ['b']}const item2 = {    a: ['c']}deepEqual(item1, item2);// => false```
+``` javascript
+import { deepEqual } from 'object-agent';
+
+deepEqual(null, undefined);
+// => false
+
+const item1 = {
+    a: ['b']
+}
+const item2 = {
+    a: ['c']
+}
+
+deepEqual(item1, item2);
+// => false
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

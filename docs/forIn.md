@@ -24,7 +24,21 @@
 | callback | <code>function</code> | Provides two args: value and key |
 
 **Example**  
-``` javascriptimport { forIn } from 'object-agent';const Thing = {    this.a = 'b';};Thing.prototype.c = 'd';forIn(new Thing(), (value, key) => {    console.log(value, key);});// => 'b', 'a'// => 'd', 'c'```
+``` javascript
+import { forIn } from 'object-agent';
+
+const Thing = {
+    this.a = 'b';
+};
+
+Thing.prototype.c = 'd';
+
+forIn(new Thing(), (value, key) => {
+    console.log(value, key);
+});
+// => 'b', 'a'
+// => 'd', 'c'
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

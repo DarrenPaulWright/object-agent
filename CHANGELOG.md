@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
+## [1.1.5] - 2019-10-21
+###Security
+- Updating dependencies
+
+## [1.1.4] - 2019-10-21
+###Fixed
+- Don't throw an error if null or undefined are passed in to get()
+
 ## [1.1.3] - 2019-09-27
 - Updating documentation
 
@@ -127,6 +135,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [diffUpdate](docs/diffUpdate.md)
 - [intersection](docs/intersection.md)
 
+[1.1.5]: https://github.com/DarrenPaulWright/object-agent/compare/v1.1.2...1.1.5
+[1.1.4]: https://github.com/DarrenPaulWright/object-agent/compare/v1.1.3...1.1.4
 [1.1.3]: https://github.com/DarrenPaulWright/object-agent/compare/v1.1.2...1.1.3
 [1.1.2]: https://github.com/DarrenPaulWright/object-agent/compare/v1.1.1...1.1.2
 [1.1.1]: https://github.com/DarrenPaulWright/object-agent/compare/v1.1.0...1.1.1

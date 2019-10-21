@@ -23,7 +23,12 @@
 | key | <code>String</code>, <code>Number</code> | 
 
 **Example**  
-``` javascriptimport { appendToPath } from 'object-agent';appendToPath('first.0', 'last');// => 'first.0.last'```
+``` javascript
+import { appendToPath } from 'object-agent';
+
+appendToPath('first.0', 'last');
+// => 'first.0.last'
+```
 
 <br><a name="firstInPath"></a>
 
@@ -36,7 +41,12 @@
 | path | <code>String</code> | 
 
 **Example**  
-``` javascriptimport { firstInPath } from 'object-agent';firstInPath('first.0.last');// => 'first'```
+``` javascript
+import { firstInPath } from 'object-agent';
+
+firstInPath('first.0.last');
+// => 'first'
+```
 
 <br><a name="initialInPath"></a>
 
@@ -49,7 +59,12 @@
 | path | <code>String</code> | 
 
 **Example**  
-``` javascriptimport { initialInPath } from 'object-agent';initialInPath('first.0.last');// => 'first.0'```
+``` javascript
+import { initialInPath } from 'object-agent';
+
+initialInPath('first.0.last');
+// => 'first.0'
+```
 
 <br><a name="lastInPath"></a>
 
@@ -62,7 +77,12 @@
 | path | <code>String</code> | 
 
 **Example**  
-``` javascriptimport { lastInPath } from 'object-agent';lastInPath('first.0.last');// => 'last'```
+``` javascript
+import { lastInPath } from 'object-agent';
+
+lastInPath('first.0.last');
+// => 'last'
+```
 
 <br><a name="tailInPath"></a>
 
@@ -75,7 +95,12 @@
 | path | <code>String</code> | 
 
 **Example**  
-``` javascriptimport { tailInPath } from 'object-agent';tailInPath('first.0.last');// => '0.last'```
+``` javascript
+import { tailInPath } from 'object-agent';
+
+tailInPath('first.0.last');
+// => '0.last'
+```
 
 <br><a name="walkPath"></a>
 
@@ -89,7 +114,25 @@
 | callback | <code>function</code> | Provides two args, the key and the tail path after key |
 
 **Example**  
-``` javascriptimport { walkPath } from 'object-agent';walkPath('first.0.last', (key, tail) => {    console.log(key, tail);});// => 'first', '0.last'// => '0', 'last'// => 'last', ''walkPath('first.0.last', (key, tail) => {    console.log(key, tail);    if (key === '0') {        return true;    }});// => 'first', '0.last'// => '0', 'last'```
+``` javascript
+import { walkPath } from 'object-agent';
+
+walkPath('first.0.last', (key, tail) => {
+    console.log(key, tail);
+});
+// => 'first', '0.last'
+// => '0', 'last'
+// => 'last', ''
+
+walkPath('first.0.last', (key, tail) => {
+    console.log(key, tail);
+    if (key === '0') {
+        return true;
+    }
+});
+// => 'first', '0.last'
+// => '0', 'last'
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

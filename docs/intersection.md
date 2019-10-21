@@ -22,7 +22,21 @@
 | <code>\*</code>, <code>Array</code> | 
 
 **Example**  
-``` javascriptimport { intersection } from 'object-agent';intersection([1, 2, 3], [2, 3, 4], [5, 6, 2, 3]); // => [2, 3]intersection({    a: 'b',    c: [1, 2, 3],    d: null}, {    a: 'b',    c: [1, 3, 4]})// => { a: 'b', c: [1, 3] }```
+``` javascript
+import { intersection } from 'object-agent';
+
+intersection([1, 2, 3], [2, 3, 4], [5, 6, 2, 3]); // => [2, 3]
+
+intersection({
+    a: 'b',
+    c: [1, 2, 3],
+    d: null
+}, {
+    a: 'b',
+    c: [1, 3, 4]
+})
+// => { a: 'b', c: [1, 3] }
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent
