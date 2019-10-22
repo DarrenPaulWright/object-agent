@@ -34,11 +34,7 @@ export default (object, path) => {
 		return undefined;
 	}
 
-	walkPath(path, (key) => {
-		object = object[key];
-
-		return object === undefined;
-	});
+	walkPath(path, (key) => undefined === (object = object[key]));
 
 	return object;
 };

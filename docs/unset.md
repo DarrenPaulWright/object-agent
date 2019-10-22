@@ -13,9 +13,10 @@
 
 <br><a name="unset"></a>
 
-### unset(object, path)
+### unset(object, path) ⇒ <code>Object</code>
 > Deletes a property from a nested object.
 
+**Returns**: <code>Object</code> - The mutated object.  
 
 | Param | Type | Description |
 | --- | --- | --- |

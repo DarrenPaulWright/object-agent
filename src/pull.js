@@ -23,6 +23,4 @@ import get from './get';
  *
  * @returns {Array}
  */
-export default (array, path) => {
-	return array.map((item) => item ? get(item, path) : undefined);
-};
+export default (array, path) => array.map((item) => get(item, path));

@@ -26,6 +26,8 @@ import walkPath from './utility/walkPath';
  *
  * @arg {Object} object
  * @arg {String} path - Dot delimited string
+ *
+ * @returns {Object} The mutated object.
  */
 export default (object, path) => {
 	walkPath(path, (key, path) => {
@@ -34,8 +36,8 @@ export default (object, path) => {
 			return true;
 		}
 
-		object = object[key];
-
-		return object === undefined;
+		return undefined === (object = object[key]);
 	});
+
+	return object;
 };
