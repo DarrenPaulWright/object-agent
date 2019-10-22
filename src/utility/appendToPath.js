@@ -13,12 +13,13 @@
  *
  * @arg {String} path
  * @arg {String|Number} key
+ * @arg {String} [separator=.] - Defines the boundary between steps in the path.
  *
  * @returns {String}
  */
-export default (path, key) => {
+export default (path, key, separator = '.') => {
 	if (path !== '') {
-		path += '.';
+		path += separator;
 	}
 
 	return path + key;

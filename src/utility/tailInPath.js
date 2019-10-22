@@ -12,9 +12,12 @@
  * @function tailInPath
  *
  * @arg {String} path
+ * @arg {String} [separator=.] - Defines the boundary between steps in the path.
  *
  * @returns {String}
  */
-export default (path) => {
-	return path.substring(path.indexOf('.') + 1);
+export default (path, separator = '.') => {
+	let index = path.indexOf(separator);
+	
+	return (index === -1) ? '' : path.substring(index + 1);
 };

@@ -10,7 +10,7 @@ describe('tailInPath', () => {
 		assert.equal(tailInPath('test1.test2.test3'), 'test2.test3');
 	});
 
-	it('should return the path if there is only one key', () => {
-		assert.equal(tailInPath('test1'), 'test1');
+	it('should return an empty string if there is only one key', () => {
+		assert.equal(tailInPath('test1'), '');
 	});
 });

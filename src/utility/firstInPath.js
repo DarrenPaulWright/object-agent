@@ -12,11 +12,12 @@
  * @function firstInPath
  *
  * @arg {String} path
+ * @arg {String} [separator=.] - Defines the boundary between steps in the path.
  *
  * @returns {String}
  */
-export default (path) => {
-	let index = path.indexOf('.');
+export default (path, separator = '.') => {
+	let index = path.indexOf(separator);
 
 	return (index === -1) ? path : path.substring(0, index);
 };

@@ -13,14 +13,15 @@
 
 <br><a name="appendToPath"></a>
 
-### appendToPath(path, key) ⇒ <code>String</code>
+### appendToPath(path, key, [separator]) ⇒ <code>String</code>
 > Adds a key to the end of a path
 
 
-| Param | Type |
-| --- | --- |
-| path | <code>String</code> | 
-| key | <code>String</code>, <code>Number</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| path | <code>String</code> |  |  |
+| key | <code>String</code>, <code>Number</code> |  |  |
+| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
 
 **Example**  
 ``` javascript
@@ -32,13 +33,14 @@ appendToPath('first.0', 'last');
 
 <br><a name="firstInPath"></a>
 
-### firstInPath(path) ⇒ <code>String</code>
+### firstInPath(path, [separator]) ⇒ <code>String</code>
 > Returns the first key in a path
 
 
-| Param | Type |
-| --- | --- |
-| path | <code>String</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| path | <code>String</code> |  |  |
+| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
 
 **Example**  
 ``` javascript
@@ -50,13 +52,14 @@ firstInPath('first.0.last');
 
 <br><a name="initialInPath"></a>
 
-### initialInPath(path) ⇒ <code>String</code>
+### initialInPath(path, [separator]) ⇒ <code>String</code>
 > Returns the path without the last key
 
 
-| Param | Type |
-| --- | --- |
-| path | <code>String</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| path | <code>String</code> |  |  |
+| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
 
 **Example**  
 ``` javascript
@@ -68,13 +71,14 @@ initialInPath('first.0.last');
 
 <br><a name="lastInPath"></a>
 
-### lastInPath(path) ⇒ <code>String</code>
+### lastInPath(path, [separator]) ⇒ <code>String</code>
 > Returns the last key in a path
 
 
-| Param | Type |
-| --- | --- |
-| path | <code>String</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| path | <code>String</code> |  |  |
+| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
 
 **Example**  
 ``` javascript
@@ -86,13 +90,14 @@ lastInPath('first.0.last');
 
 <br><a name="tailInPath"></a>
 
-### tailInPath(path) ⇒ <code>String</code>
+### tailInPath(path, [separator]) ⇒ <code>String</code>
 > Returns the path without the first key
 
 
-| Param | Type |
-| --- | --- |
-| path | <code>String</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| path | <code>String</code> |  |  |
+| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
 
 **Example**  
 ``` javascript
@@ -104,14 +109,15 @@ tailInPath('first.0.last');
 
 <br><a name="walkPath"></a>
 
-### walkPath(path, callback) ⇒ <code>String</code>
+### walkPath(path, callback, [separator]) ⇒ <code>String</code>
 > Calls a callback for every key in a path. If true is returned from the callback then no further calls will be made.
 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| path | <code>String</code> |  |
-| callback | <code>function</code> | Provides two args, the key and the tail path after key |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| path | <code>String</code> |  |  |
+| callback | <code>function</code> |  | Provides two args, the key and the tail path after key |
+| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
 
 **Example**  
 ``` javascript

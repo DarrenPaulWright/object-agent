@@ -12,9 +12,10 @@
  * @function lastInPath
  *
  * @arg {String} path
+ * @arg {String} [separator=.] - Defines the boundary between steps in the path.
  *
  * @returns {String}
  */
-export default (path) => {
-	return path.substring(path.lastIndexOf('.') + 1);
+export default (path, separator = '.') => {
+	return path.substring(path.lastIndexOf(separator) + 1);
 };
