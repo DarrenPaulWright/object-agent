@@ -6,8 +6,7 @@ import isArray from './utility/isArray';
 import isObject from './utility/isObject';
 
 /**
- * Returns a new item that is the result of deeply superimposing two or more items on
- * each other without mutating the original items.
+ * Deeply superimposes two or more items on each other.
  *
  * Notes:
  * - Undefined values will not overwrite defined values
@@ -52,11 +51,20 @@ import isObject from './utility/isObject';
  * @function superimpose
  *
  * @arg {*} args - two or more items to superimpose on each other. Each item is superimposed on the item before it.
+ * @arg {Boolean} [mutateFirst=false] - If a final argument of true is provided, then the first object will be mutated in place and returned.
  *
- * @returns {*}
+ * @returns {*} The resulting object
  */
 export default (...args) => {
-	let output = clone(args.shift());
+	let output;
+
+	if (args[args.length - 1] === true) {
+		output = args.shift();
+		args.pop();
+	}
+	else {
+		output = clone(args.shift());
+	}
 
 	args.forEach((object2) => {
 		traverse(object2, (path, value) => {

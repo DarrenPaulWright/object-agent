@@ -34,7 +34,7 @@
 		"docs-repeat": "jsdoc2md src/repeat.js > docs/repeat.md -t docs/docs.hbs --plugin dmd-readable",
 		"docs-fill": "jsdoc2md src/fill.js > docs/fill.md -t docs/docs.hbs --plugin dmd-readable",
 		"docs-pathUtilities": "jsdoc2md src/utility/*.js > docs/pathUtilities.md -t docs/docs.hbs --plugin dmd-readable",
-		"docs": "npm run docs-readme && npm run docs-get && npm run docs-has && npm run docs-set && npm run docs-unset && npm run docs-forIn && npm run docs-forOwn && npm run docs-forOwnReduce && npm run docs-mapOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-isEqual && npm run docs-deepEqual && npm run docs-diffUpdate && npm run docs-pull && npm run docs-intersection && npm run docs-clone && npm run docs-combo && npm run docs-mix && npm run docs-powerset && npm run docs-nestedEach && npm run docs-repeat && npm run docs-fill && npm run docs-pathUtilities"
+		"docs": "npm run docs-readme && npm run docs-get && npm run docs-has && npm run docs-set && npm run docs-unset && npm run docs-forIn && npm run docs-forOwn && npm run docs-forOwnReduce && npm run docs-mapOwn && npm run docs-traverse && npm run docs-isEmpty && npm run docs-isEqual && npm run docs-deepEqual && npm run docs-diffUpdate && npm run docs-pull && npm run docs-intersection && npm run docs-clone && npm run docs-combo && npm run docs-mix && npm run docs-powerset && npm run docs-nestedEach && npm run docs-repeat && npm run docs-fill && npm run docs-pathUtilities && npm run docs-superimpose"
 	},
 	"badges": [
 		{
@@ -112,9 +112,9 @@
 		"babel-loader": "^8.0.6",
 		"babel-plugin-istanbul": "^5.2.0",
 		"chai": "^4.2.0",
-		"display-value": "^1.2.2",
+		"display-value": "^1.3.0",
 		"dmd-readable": "^1.0.0",
-		"eslint": "^6.5.1",
+		"eslint": "^6.6.0",
 		"eslint-loader": "^3.0.2",
 		"eslint-plugin-babel": "^5.3.0",
 		"jsdoc-to-markdown": "^5.0.2",

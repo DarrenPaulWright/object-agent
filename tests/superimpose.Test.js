@@ -70,7 +70,7 @@ describe('superimpose', () => {
 	it('should superimpose one object onto another', () => {
 		const result = superimpose(object1, object2, object3);
 
-		assert.deepEqual(result, {
+		const output = {
 			test1: 1,
 			test2: 2,
 			test3: 3,
@@ -94,7 +94,44 @@ describe('superimpose', () => {
 				testUndefined: 1,
 				testNull: null
 			}]
-		});
+		};
+
+		assert.deepEqual(result, output);
+		assert.notDeepEqual(object1, output);
+	});
+
+	it('should mutate the first object if the last argument is true', () => {
+		const input = {};
+		const result = superimpose(input, object1, object2, object3, true);
+
+		const output = {
+			test1: 1,
+			test2: 2,
+			test3: 3,
+			test4: 3,
+			testUndefined: 1,
+			testNull: null,
+			test5: {
+				test1: 1,
+				test2: 2,
+				test3: 3,
+				test4: 3,
+				testUndefined: 1,
+				testNull: null
+			},
+			test6: [3, 2],
+			test7: [{
+				test1: 1,
+				test2: 2,
+				test3: 3,
+				test4: 3,
+				testUndefined: 1,
+				testNull: null
+			}]
+		};
+
+		assert.deepEqual(result, output);
+		assert.deepEqual(input, output);
 	});
 
 });
