@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 import displayValue from 'display-value';
-import { clone, deepEqual } from '../src/';
+import { clone, deepEqual } from '../index';
 import { testValues } from './testValues';
 
 describe('deepEqual', () => {

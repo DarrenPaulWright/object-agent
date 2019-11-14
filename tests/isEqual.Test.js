@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 import displayValue from 'display-value';
-import { clone, isEqual } from '../src/';
+import { clone, isEqual } from '../index';
 import { testSimpleValues } from './testValues';
 
 describe('isEqual', () => {

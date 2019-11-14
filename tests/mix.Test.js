@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { mix } from '../src/';
+import { mix } from '../index';
 
 describe('mix', () => {
 	it('should produce pairs when two arrays are provided', () => {

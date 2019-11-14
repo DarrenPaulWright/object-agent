@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { get } from '../src/';
+import { get } from '../index';
 
 describe('get', () => {
 	it('should get the value of a first level key if a string is provided', () => {

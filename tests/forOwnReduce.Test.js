@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { forOwnReduce } from '../src';
+import { forOwnReduce } from '../index';
 
 describe('forOwnReduce', () => {
 	it('should return the reduced value', () => {

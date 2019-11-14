@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { mapOwn } from '../src/';
+import { mapOwn } from '../index';
 
 describe('mapOwn', () => {
 	it('should return a cloned object if the callback isn\'t given', () => {

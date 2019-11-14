@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { powerset } from '../src/';
+import { powerset } from '../index';
 
 describe('powerset', () => {
 	it('should return a powerset', () => {

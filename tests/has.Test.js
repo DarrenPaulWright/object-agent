@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { has } from '../src/';
+import { has } from '../index';
 
 describe('has', () => {
 	it('should return true for a first level key if astring is provided', () => {

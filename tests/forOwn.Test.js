@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { forOwn } from '../src/';
+import { forOwn } from '../index';
 
 describe('forOwn', () => {
 	it('should call the callback for each key', () => {
@@ -45,7 +45,7 @@ describe('forOwn', () => {
 			}
 			if (key === 'key2' && value === 'something2') {
 				testVar++;
-				return true
+				return true;
 			}
 		});
 

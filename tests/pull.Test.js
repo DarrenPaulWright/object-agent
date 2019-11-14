@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { pull } from '../src/';
+import { pull } from '../index';
 
 describe('pull', () => {
 	it('should pull the values from an array of objects', () => {

@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { tailInPath } from '../../src/';
+import { tailInPath } from '../../index';
 
 describe('tailInPath', () => {
 	it('should return an empty string if an empty string is provided', () => {

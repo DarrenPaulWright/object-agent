@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { unset } from '../src/';
+import { unset } from '../index';
 
 describe('unset', () => {
 	it('should set the value of a first level key', () => {

@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { intersection } from '../src/';
+import { intersection } from '../index';
 
 describe('intersection', () => {
 	it('should return an identical string if the two inputs are equal', () => {
