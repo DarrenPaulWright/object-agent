@@ -72,3 +72,4 @@ export { default as firstInPath } from './src/utility/firstInPath';
 export { default as initialInPath } from './src/utility/initialInPath';
 export { default as lastInPath } from './src/utility/lastInPath';
 export { default as tailInPath } from './src/utility/tailInPath';
+export { default as countInString } from './src/utility/countInString';
