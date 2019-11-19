@@ -25,17 +25,7 @@
 | [ignoreKeys] | <code>Array</code>, <code>String</code> | Any keys in this array will be ignored |
 
 **Example**  
-``` javascript
-import { mapOwn } from 'object-agent';
-
-const thing = {
-    a: 'b',
-    c: 'd'
-};
-
-mapOwn(thing, (value, key) => value + ' ' + key);
-// => { a: 'b a', c: 'd c' }
-```
+``` javascriptimport { mapOwn } from 'object-agent';const thing = {    a: 'b',    c: 'd'};mapOwn(thing, (value, key) => value + ' ' + key);// => { a: 'b a', c: 'd c' }```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

@@ -25,27 +25,7 @@
 | value | <code>\*</code> |  |
 
 **Example**  
-``` javascript
-import { set } from 'object-agent';
-
-const thing = {
-    a: [{
-        b: 'c'
-    }, {
-        b: 'd'
-    }]
-};
-
-set(thing, 'a.1.b', 'e');
-console.log(thing);
-// => {
-//    a: [{
-//        b: 'c'
-//    }, {
-//        b: 'e'
-//    }]
-//}
-```
+``` javascriptimport { set } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};set(thing, 'a.1.b', 'e');console.log(thing);// => {//    a: [{//        b: 'c'//    }, {//        b: 'e'//    }]//}```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

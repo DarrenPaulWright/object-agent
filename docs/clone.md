@@ -25,12 +25,7 @@
 | [settings.isCircular] | <code>Boolean</code> | <code>false</code> | If true then circular references will be handled |
 
 **Example**  
-``` javascript
-import { clone } from 'object-agent';
-
-clone({ a: 'b', c: 'd' });
-// => { a: 'b', c: 'd' }
-```
+``` javascriptimport { clone } from 'object-agent';clone({ a: 'b', c: 'd' });// => { a: 'b', c: 'd' }```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

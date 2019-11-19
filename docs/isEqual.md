@@ -22,18 +22,7 @@
 | <code>\*</code>, <code>Array</code> | Can be an array of items or multiple args of items. |
 
 **Example**  
-``` javascript
-import { isEqual } from 'object-agent';
-
-isEqual(null, undefined);
-// => false
-
-isEqual('a', 'a', 'a');
-// => true
-
-isEqual('a', 'a', 'a', null);
-// => false
-```
+``` javascriptimport { isEqual } from 'object-agent';isEqual(null, undefined);// => falseisEqual('a', 'a', 'a');// => trueisEqual('a', 'a', 'a', null);// => false```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

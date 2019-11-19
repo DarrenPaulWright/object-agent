@@ -21,26 +21,11 @@
 | Param | Type | Description |
 | --- | --- | --- |
 | object | <code>Object</code> |  |
-| callback | <code>function</code> | Provides three args: result, value, and key |
+| callback | <code>function</code> | Provides three args: result, value, and key. If the result is only mutated then you may not need to return it. |
 | initialValue | <code>\*</code> |  |
 
 **Example**  
-``` javascript
-import { forOwnReduce } from 'object-agent';
-
-const thing = {
-    a: 'b',
-    c: 'd'
-};
-
-const output = forOwnReduce(thing, (result, value, key) => {
-    result.push([value, key]);
-    return result;
-}, []);
-
-console.log(output);
-// => [['b', 'a'], ['d', 'c']]
-```
+``` javascriptimport { forOwnReduce } from 'object-agent';const thing = {    a: 'b',    c: 'd'};const output = forOwnReduce(thing, (result, value, key) => {    result.push([value, key]);    return result;}, []);console.log(output);// => [['b', 'a'], ['d', 'c']]```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

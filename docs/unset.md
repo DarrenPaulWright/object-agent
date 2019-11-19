@@ -24,23 +24,7 @@
 | path | <code>String</code> | Dot delimited string |
 
 **Example**  
-``` javascript
-import { unset } from 'object-agent';
-
-const thing = {
-    a: [{
-        b: 'c'
-    }, {
-        b: 'd'
-    }]
-};
-
-unset(thing, ['a.1.b']);
-console.log(thing);
-// => {
-//    a: [{ b: 'c' }, {}]
-//}
-```
+``` javascriptimport { unset } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};unset(thing, ['a.1.b']);console.log(thing);// => {//    a: [{ b: 'c' }, {}]//}```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent
