@@ -7,6 +7,7 @@
 	"scripts": {
 		"test": "karma start --single-run",
 		"test-watch": "karma start",
+		"bench": "karma start karma.bench.conf.js",
 		"version": "npm run docs && git add docs",
 		"docs:readme": "jsdoc2md index.js > README.md",
 		"docs:get": "jsdoc2md src/get.js > docs/get.md",
