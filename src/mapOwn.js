@@ -29,7 +29,7 @@ export default (object, callback, ignoreKeys = []) => {
 	const result = {};
 
 	for (let key in object) {
-		if (Object.hasOwnProperty.call(object, key) && !ignoreKeys.includes(key)) {
+		if (Object.hasOwnProperty.call(object, key) && ignoreKeys.indexOf(key) === -1) {
 			result[key] = callback ? callback(object[key], key) : object[key];
 		}
 	}

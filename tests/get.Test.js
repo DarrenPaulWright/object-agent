@@ -2,6 +2,20 @@ import { assert } from 'chai';
 import { get } from '../index';
 
 describe('get', () => {
+	it('should return the object if the path is empty', () => {
+		const object = {
+			level1: 'something'
+		};
+
+		assert.equal(get(object, ''), object);
+	});
+
+	it('should return the object if the path is empty and the object is falsey', () => {
+		const object = false;
+
+		assert.equal(get(object, ''), object);
+	});
+
 	it('should get the value of a first level key if a string is provided', () => {
 		const object = {
 			level1: 'something'

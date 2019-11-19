@@ -17,5 +17,5 @@
  * @returns {String}
  */
 export default (path, separator = '.') => {
-	return path.substring(path.lastIndexOf(separator) + 1);
+	return path.slice(path.lastIndexOf(separator) + 1);
 };

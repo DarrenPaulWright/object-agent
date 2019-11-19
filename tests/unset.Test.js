@@ -8,9 +8,10 @@ describe('unset', () => {
 		};
 		const compare = {};
 
-		unset(object, 'level1');
+		const result = unset(object, 'level1');
 
 		assert.deepEqual(object, compare);
+		assert.equal(result, object);
 	});
 
 	it('should set the value of a second level key', () => {
@@ -23,9 +24,34 @@ describe('unset', () => {
 			level1: {}
 		};
 
-		unset(object, 'level1.level2');
+		const result = unset(object, 'level1.level2');
 
 		assert.deepEqual(object, compare);
+		assert.equal(result, object);
+	});
+
+	it('should do nothing if a non-object is provided', () => {
+		const object = null;
+		const compare = null;
+
+		const result = unset(object, 'level1.level2');
+
+		assert.deepEqual(object, compare);
+		assert.equal(result, object);
+	});
+
+	it('should do nothing if a non-object is encountered', () => {
+		const object = {
+			level1: null
+		};
+		const compare = {
+			level1: null
+		};
+
+		const result = unset(object, 'level1.level2');
+
+		assert.deepEqual(object, compare);
+		assert.equal(result, object);
 	});
 
 	it('should set the value of a second level key in an array', () => {
@@ -38,9 +64,10 @@ describe('unset', () => {
 			level1: [{}]
 		};
 
-		unset(object, 'level1.0.level2');
+		const result = unset(object, 'level1.0.level2');
 
 		assert.deepEqual(object, compare);
+		assert.equal(result, object);
 	});
 
 	it('should set the value of a second level key in an array with multiple items', () => {
@@ -69,9 +96,10 @@ describe('unset', () => {
 			}]
 		};
 
-		unset(object, 'level1.2.level2');
+		const result = unset(object, 'level1.2.level2');
 
 		assert.deepEqual(object, compare);
+		assert.equal(result, object);
 	});
 
 	it('should set the value of a second level key in an array with multiple items', () => {
@@ -104,9 +132,10 @@ describe('unset', () => {
 			}]
 		};
 
-		unset(object, 'level1.2.level2.level3');
+		const result = unset(object, 'level1.2.level2.level3');
 
 		assert.deepEqual(object, compare);
+		assert.equal(result, object);
 	});
 
 });

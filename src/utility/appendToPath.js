@@ -18,9 +18,5 @@
  * @returns {String}
  */
 export default (path, key, separator = '.') => {
-	if (path !== '') {
-		path += separator;
-	}
-
-	return path + key;
+	return `${path}${path !== '' ? separator : ''}${key}`;
 };

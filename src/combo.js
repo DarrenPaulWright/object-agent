@@ -1,3 +1,4 @@
+import fill from './fill';
 import nestedEach from './nestedEach';
 
 /**
@@ -22,15 +23,9 @@ import nestedEach from './nestedEach';
  * @returns {array}
  */
 export default (array, length = 2) => {
-	const input = [];
 	const output = [];
 
-	while (length) {
-		input.push(array);
-		length--;
-	}
-
-	nestedEach(input, (...args) => output.push(args), true);
+	nestedEach(fill(length, () => array), (...args) => output.push(args), true);
 
 	return output;
 }

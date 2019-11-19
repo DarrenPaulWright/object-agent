@@ -8,14 +8,7 @@ import isObject from './utility/isObject';
 import multiArgs from './utility/multiArgs';
 
 const intersectionValues = (values) => {
-	if (isArray(values[0])) {
-		return intersectionArrays(values);
-	}
-	else if (isObject(values[0])) {
-		return intersectionObjects(values);
-	}
-
-	return intersectionOther(values);
+	return isArray(values[0]) ? intersectionArrays(values) : isObject(values[0]) ? intersectionObjects(values) : intersectionOther(values);
 };
 
 const intersectionOther = (args) => {
@@ -30,10 +23,9 @@ const intersectionArrays = (args) => {
 
 const intersectionObjects = (args) => {
 	const output = {};
-	let diff;
 
 	forOwn(args[0], (value, key) => {
-		diff = intersectionValues(pull(args, key));
+		const diff = intersectionValues(pull(args, key));
 
 		if (!isEmpty(diff) || diff === null) {
 			set(output, key, diff);

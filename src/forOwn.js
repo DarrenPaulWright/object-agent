@@ -25,19 +25,13 @@
  * @returns {Boolean} true if the callback function returns a truthy value for any key; otherwise, false.
  */
 export default (object, callback) => {
-	if (!object) {
-		return false;
-	}
-	let isCanceled = false;
-
-	for (let key in object) {
-		if (Object.hasOwnProperty.call(object, key)) {
-			if (callback(object[key], key)) {
-				isCanceled = true;
-				break;
+	if (object) {
+		for (let key in object) {
+			if (Object.hasOwnProperty.call(object, key) && callback(object[key], key)) {
+				return true;
 			}
 		}
 	}
 
-	return isCanceled;
+	return false;
 };

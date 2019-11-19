@@ -18,6 +18,6 @@
  */
 export default (path, separator = '.') => {
 	let index = path.indexOf(separator);
-	
-	return (index === -1) ? '' : path.substring(index + 1);
+
+	return (index === -1) ? '' : path.slice(index + 1);
 };

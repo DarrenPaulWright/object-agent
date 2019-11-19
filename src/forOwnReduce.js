@@ -24,14 +24,14 @@ import forOwn from './forOwn';
  * @function forOwnReduce
  *
  * @arg {Object} object
- * @arg {Function} callback - Provides three args: result, value, and key
+ * @arg {Function} callback - Provides three args: result, value, and key. If the result is only mutated then you may not need to return it.
  * @arg {*} initialValue
  *
  * @returns {*} The accumulated result
  */
 export default (object, callback, initialValue) => {
 	forOwn(object, (value, key) => {
-		initialValue = callback(initialValue, value, key);
+		initialValue = callback(initialValue, value, key) || initialValue;
 	});
 
 	return initialValue;

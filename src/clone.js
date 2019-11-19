@@ -5,6 +5,24 @@ import appendToPath from './utility/appendToPath';
 import isArray from './utility/isArray';
 import isObject from './utility/isObject';
 
+const doClone = (item, path, settings) => {
+	if (isObject(item)) {
+		if (settings.isCircular) {
+			if (settings.objectRefs.has(item)) {
+				return settings.circularRefs.push([path, settings.objectRefs.get(item)]);
+			}
+			settings.objectRefs.set(item, path);
+		}
+
+		return mapOwn(item, (value, key) => doClone(value, appendToPath(path, key), settings), settings.ignoreKeys);
+	}
+
+	return isArray(item) ? item.map((value, index) => doClone(value, appendToPath(path, index), settings)) :
+		item instanceof Date ? new Date(item.valueOf()) :
+			item instanceof RegExp ? new RegExp(item) :
+				item;
+};
+
 /**
  * Deep clone a value.
  *
@@ -26,39 +44,23 @@ import isObject from './utility/isObject';
  * @returns {*}
  */
 export default function clone(item, settings = {}) {
-	const objectRefs = new WeakMap();
-	const circularRefs = [];
+	if (settings.isCircular) {
+		settings.objectRefs = new WeakMap();
+		settings.circularRefs = [];
+	}
 
-	const doClone = (item, path) => {
-		if (isObject(item)) {
-			if (settings.isCircular) {
-				const ref = objectRefs.get(item);
-				if (ref !== undefined) {
-					circularRefs.push([path, ref]);
-					return null;
-				}
-				objectRefs.set(item, path);
-			}
-
-			return mapOwn(item, (value, key) => doClone(value, appendToPath(path, key)), settings.ignoreKeys);
-		}
-		if (isArray(item)) {
-			return item.map((value, index) => doClone(value, appendToPath(path, index)));
-		}
-		if (item instanceof Date) {
-			return new Date(item.valueOf());
-		}
-		if (item instanceof RegExp) {
-			return new RegExp(item);
-		}
-		return item;
-	};
-
-	const result = doClone(item, '');
+	const result = doClone(item, '', settings);
 
 	if (settings.isCircular) {
-		circularRefs.forEach((ref) => set(result, ref[0], get(result, ref[1])));
-		circularRefs.length = 0;
+		let ref = '';
+
+		for (let index = 0; index < settings.circularRefs.length; index++) {
+			ref = settings.circularRefs[index];
+			set(result, ref[0], get(result, ref[1]));
+		}
+
+		settings.objectRefs = null;
+		settings.circularRefs = null;
 	}
 
 	return result;

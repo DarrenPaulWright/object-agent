@@ -1,6 +1,3 @@
-import firstInPath from './firstInPath';
-import tailInPath from './tailInPath';
-
 /**
  * Calls a callback for every key in a path. If true is returned from the callback then no further calls will be made.
  *
@@ -34,16 +31,10 @@ import tailInPath from './tailInPath';
  * @returns {String}
  */
 export default (path, callback, separator = '.') => {
-	let key;
-
-	while (path !== '') {
-		key = firstInPath(path, separator);
-		path = tailInPath(path, separator);
-
-		if (key) {
-			if (callback(key, path) === true) {
-				break;
-			}
-		}
+	for (let prev = 0, index = -1, length = path.length; ((index = path.indexOf(separator, prev)) === -1 ? (index = length) : 1) !== -1 &&
+	(prev === index ||
+		callback(path.slice(prev, index), path.slice(index + 1)) !== true) &&
+	index !== length;) {
+		prev = index + 1;
 	}
 };

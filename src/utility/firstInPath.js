@@ -19,5 +19,5 @@
 export default (path, separator = '.') => {
 	let index = path.indexOf(separator);
 
-	return (index === -1) ? path : path.substring(0, index);
+	return (index === -1) ? path : path.slice(0, index);
 };

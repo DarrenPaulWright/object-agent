@@ -1,1 +1,1 @@
-export default (item) => !!item && item.constructor === Object;
+export default (item) => Boolean(item && item.constructor === Object);

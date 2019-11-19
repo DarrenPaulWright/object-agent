@@ -56,34 +56,23 @@ import isObject from './utility/isObject';
  * @returns {*} The resulting object
  */
 export default (...args) => {
-	let output;
+	let output = args.shift();
 
 	if (args[args.length - 1] === true) {
-		output = args.shift();
 		args.pop();
 	}
 	else {
-		output = clone(args.shift());
+		output = clone(output);
 	}
 
 	args.forEach((object2) => {
 		traverse(object2, (path, value) => {
-			const outputValue = get(output, path);
-
 			if (value === undefined) {
 				return false;
 			}
 
-			if (!outputValue ||
-				(typeof outputValue !== typeof value) ||
-				!(isArray(value) || isObject(value))) {
-
-				if (path === '') {
-					output = value;
-				}
-				else {
-					set(output, path, value);
-				}
+			if (!(isArray(value) || isObject(value)) || typeof get(output, path) !== typeof value) {
+				output = set(output, path, value);
 			}
 		});
 	});

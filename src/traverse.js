@@ -3,6 +3,14 @@ import appendToPath from './utility/appendToPath';
 import isArray from './utility/isArray';
 import isObject from './utility/isObject';
 
+const processValue = (path, value, callback, isOptimistic) => {
+	const loopCallback = (value, key) => {
+		return processValue(appendToPath(path, key), value, callback, isOptimistic) === true && !isOptimistic;
+	};
+
+	return callback(path, value) === true || (isArray(value) ? value.some(loopCallback) : isObject(value) ? forOwn(value, loopCallback) : false) || isOptimistic;
+};
+
 /**
  * Traverses a nested object.
  *
@@ -40,38 +48,5 @@ import isObject from './utility/isObject';
  * @returns {Boolean} true if the callback function returns a truthy value for any path; otherwise, false.
  */
 export default (object, callback, isOptimistic = false) => {
-	const processValue = (path, value) => {
-		let isCanceled = false;
-		let result;
-
-		const loopCallback = (value, key) => {
-			if (processValue(appendToPath(path, key), value) === true) {
-				if (!isOptimistic) {
-					return true;
-				}
-				isCanceled = true;
-			}
-		};
-
-		if (callback(path, value) === true) {
-			return true;
-		}
-
-		if (isArray(value)) {
-			result = value.some(loopCallback);
-			if (!isOptimistic) {
-				return result;
-			}
-		}
-		else if (isObject(value)) {
-			result = forOwn(value, loopCallback);
-			if (!isOptimistic) {
-				return result;
-			}
-		}
-
-		return isCanceled;
-	};
-
-	return processValue('', object);
+	return processValue('', object, callback, isOptimistic === true);
 };

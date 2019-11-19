@@ -1,6 +1,8 @@
 import firstInPath from './utility/firstInPath';
 import walkPath from './utility/walkPath';
 
+const buildNew = (key) => !isNaN(parseInt(key)) ? [] : {};
+
 /**
  * Sets a nested value in an object. Keys in the path that don't exist at any point in the object will be created and added to the object once.
  *
@@ -36,12 +38,10 @@ import walkPath from './utility/walkPath';
  * @returns {Object} The mutated object.
  */
 export default (object, path, value) => {
-	const original = object;
+	const original = path === '' ? value : object;
 	let baseItem;
 	let baseKey;
 	let baseValue;
-
-	const buildNew = (key) => !isNaN(key - 0) ? [] : {};
 
 	walkPath(path, (key, path) => {
 		if (path === '') {
@@ -63,8 +63,6 @@ export default (object, path, value) => {
 		else {
 			object = object[key];
 		}
-
-		return false;
 	});
 
 	if (baseItem) {

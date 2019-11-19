@@ -27,14 +27,5 @@ import walkPath from './utility/walkPath';
  * @returns {*}
  */
 export default (object, path) => {
-	if (!path) {
-		return object;
-	}
-	if (!object) {
-		return undefined;
-	}
-
-	walkPath(path, (key) => undefined === (object = object[key]));
-
-	return object;
+	return walkPath(path, (key) => undefined === (object = object ? object[key] : undefined)) || object;
 };

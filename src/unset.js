@@ -30,14 +30,9 @@ import walkPath from './utility/walkPath';
  * @returns {Object} The mutated object.
  */
 export default (object, path) => {
-	walkPath(path, (key, path) => {
-		if (path === '') {
-			delete object[key];
-			return true;
-		}
+	let ref = object;
 
-		return undefined === (object = object[key]);
-	});
-
-	return object;
+	return walkPath(path, (key, path) => {
+		return (path === '' && ref) ? delete ref[key] : undefined === (ref = (ref ? ref[key] : undefined));
+	}) || object;
 };

@@ -1,5 +1,7 @@
 import repeat from './repeat';
 
+const defaultCallback = (index) => index;
+
 /**
  * Returns an array of specified length filled with either the index value or the value returned from the provided callback
  *
@@ -21,7 +23,7 @@ import repeat from './repeat';
  *
  * @returns {Array}
  */
-export default (length, callback = (index) => index) => {
+export default (length, callback = defaultCallback) => {
 	const output = [];
 
 	repeat(length, (index) => output[index] = callback(index));

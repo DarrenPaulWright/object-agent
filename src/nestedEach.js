@@ -22,24 +22,21 @@
  *
  * @returns {array}
  */
-export default (arrays, callback, accrue = false) => {
-	const indexes = [];
+// const inner = ()
+const loop = (depth, index, arrays, callback, accrue, result) => {
+	for (const length = arrays[depth].length; index < length; index++) {
+		result[depth] = arrays[depth][index];
 
-	const loop = (depth, index) => {
-		const length = arrays[depth].length;
-		const depthPlus = depth + 1;
-
-		while (length > index++) {
-			indexes[depth] = index;
-
-			if (depthPlus < arrays.length) {
-				loop(depthPlus, accrue ? index : 0);
-			}
-			else {
-				callback.apply(null, arrays.map((array, index) => array[indexes[index] - 1]));
-			}
+		if (depth !== arrays.length - 1) {
+			loop(depth + 1, accrue ? index + 1 : 0, arrays, callback, accrue, result);
 		}
-	};
-
-	loop(0, 0);
+		else {
+			callback.apply(null, result);
+		}
+	}
 };
+
+export default (arrays, callback, accrue = false) => {
+	loop(0, 0, arrays, callback, accrue, []);
+};
+
