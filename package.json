@@ -3,6 +3,9 @@
 	"version": "1.4.0",
 	"description": "A javascript library for working with objects",
 	"main": "index.js",
+	"files": [
+		"/src"
+	],
 	"sideEffects": false,
 	"scripts": {
 		"test": "karma start --single-run",
