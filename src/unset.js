@@ -1,3 +1,4 @@
+import erase from './erase';
 import walkPath from './utility/walkPath';
 
 /**
@@ -33,6 +34,10 @@ export default (object, path) => {
 	let ref = object;
 
 	return walkPath(path, (key, path) => {
-		return (path === '' && ref) ? delete ref[key] : undefined === (ref = (ref ? ref[key] : undefined));
+		return ref === undefined ||
+			ref === null ||
+			(path === '' ?
+				erase(ref, key) :
+				undefined === (ref = ref[key]));
 	}) || object;
 };

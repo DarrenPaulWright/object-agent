@@ -13,6 +13,7 @@
 		"bench": "karma start karma.bench.conf.js",
 		"version": "npm run docs && git add docs",
 		"docs:readme": "jsdoc2md index.js > README.md",
+		"docs:erase": "jsdoc2md src/erase.js > docs/erase.md",
 		"docs:get": "jsdoc2md src/get.js > docs/get.md",
 		"docs:has": "jsdoc2md src/has.js > docs/has.md",
 		"docs:set": "jsdoc2md src/set.js > docs/set.md",

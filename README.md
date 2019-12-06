@@ -14,44 +14,12 @@
 <br><a name="Installation"></a>
 
 ### Installation
-```
-npm install object-agent
-```
-_Requires Babel 7.2+_
+```npm install object-agent```_Requires Babel 7.2+_
 
 <br><a name="Docs"></a>
 
 ### Docs
-- Path
-  - [get](docs/get.md)
-  - [set](docs/set.md)
-  - [unset](docs/unset.md)
-  - [path utility functions](docs/pathUtilities.md)
-- Analysis
-  - [forIn](docs/forIn.md)
-  - [forOwn](docs/forOwn.md)
-  - [forOwnReduce](docs/forOwnReduce.md)
-  - [mapOwn](docs/mapOwn.md)
-  - [traverse](docs/traverse.md)
-  - Comparison
-    - [diffUpdate](docs/diffUpdate.md)
-    - [intersection](docs/intersection.md)
-  - Testing
-    - [has](docs/has.md)
-    - [isEmpty](docs/isEmpty.md)
-    - [isEqual](docs/isEqual.md)
-    - [deepEqual](docs/deepEqual.md)
-- Data Generation
-  - [nestedEach](docs/nestedEach.md)
-  - [combo](docs/combo.md)
-  - [mix](docs/mix.md)
-  - [powerset](docs/powerset.md)
-- Other
-  - [superimpose](docs/superimpose.md)
-  - [clone](docs/clone.md)
-  - [pull](docs/pull.md)
-  - [repeat](docs/repeat.md)
-  - [fill](docs/fill.md)
+- Path  - [get](docs/get.md)  - [set](docs/set.md)  - [erase](docs/erase.md)  - [unset](docs/unset.md)  - [path utility functions](docs/pathUtilities.md)- Analysis  - [forIn](docs/forIn.md)  - [forOwn](docs/forOwn.md)  - [forOwnReduce](docs/forOwnReduce.md)  - [mapOwn](docs/mapOwn.md)  - [traverse](docs/traverse.md)  - Comparison    - [diffUpdate](docs/diffUpdate.md)    - [intersection](docs/intersection.md)  - Testing    - [has](docs/has.md)    - [isEmpty](docs/isEmpty.md)    - [isEqual](docs/isEqual.md)    - [deepEqual](docs/deepEqual.md)- Data Generation  - [nestedEach](docs/nestedEach.md)  - [combo](docs/combo.md)  - [mix](docs/mix.md)  - [powerset](docs/powerset.md)- Other  - [superimpose](docs/superimpose.md)  - [clone](docs/clone.md)  - [pull](docs/pull.md)  - [repeat](docs/repeat.md)  - [fill](docs/fill.md)
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

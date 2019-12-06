@@ -14,6 +14,7 @@
  * - Path
  *   - [get](docs/get.md)
  *   - [set](docs/set.md)
+ *   - [erase](docs/erase.md)
  *   - [unset](docs/unset.md)
  *   - [path utility functions](docs/pathUtilities.md)
  * - Analysis
@@ -46,6 +47,7 @@ export { default as get } from './src/get';
 export { default as has } from './src/has';
 export { default as set } from './src/set';
 export { default as unset } from './src/unset';
+export { default as erase } from './src/erase';
 export { default as forIn } from './src/forIn';
 export { default as forOwn } from './src/forOwn';
 export { default as forOwnReduce } from './src/forOwnReduce';
