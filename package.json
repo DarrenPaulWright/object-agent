@@ -1,6 +1,6 @@
 {
 	"name": "object-agent",
-	"version": "1.4.2",
+	"version": "1.4.3",
 	"description": "A javascript library for working with objects",
 	"main": "index.js",
 	"files": [
