@@ -1,5 +1,7 @@
 import { assert } from 'chai';
+import displayValue from 'display-value';
 import { unset } from '../index';
+import { testValues } from './testValues';
 
 describe('unset', () => {
 	it('should set the value of a first level key', () => {
@@ -22,30 +24,6 @@ describe('unset', () => {
 		};
 		const compare = {
 			level1: {}
-		};
-
-		const result = unset(object, 'level1.level2');
-
-		assert.deepEqual(object, compare);
-		assert.equal(result, object);
-	});
-
-	it('should do nothing if a non-object is provided', () => {
-		const object = null;
-		const compare = null;
-
-		const result = unset(object, 'level1.level2');
-
-		assert.deepEqual(object, compare);
-		assert.equal(result, object);
-	});
-
-	it('should do nothing if a non-object is encountered', () => {
-		const object = {
-			level1: null
-		};
-		const compare = {
-			level1: null
 		};
 
 		const result = unset(object, 'level1.level2');
@@ -138,4 +116,31 @@ describe('unset', () => {
 		assert.equal(result, object);
 	});
 
+	testValues.forEach((value) => {
+		it(`should do nothing if the non-object ${displayValue(value)} is provided`, () => {
+			const object = value;
+			const compare = value;
+
+			const result = unset(object, 'level1.level2');
+
+			if (value === value) {
+				assert.deepEqual(object, compare);
+				assert.equal(result, object);
+			}
+		});
+
+		it(`should do nothing if the non-object ${displayValue(value)} is encountered`, () => {
+			const object = {
+				level1: value
+			};
+			const compare = {
+				level1: value
+			};
+
+			const result = unset(object, 'level1.level2');
+
+			assert.deepEqual(object, compare);
+			assert.equal(result, object);
+		});
+	});
 });

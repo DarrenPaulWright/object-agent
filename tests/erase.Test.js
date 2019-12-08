@@ -1,5 +1,7 @@
 import { assert } from 'chai';
+import displayValue from 'display-value';
 import { erase } from '../index';
+import { testValues } from './testValues';
 
 describe('erase', () => {
 	it('should delete a key and return true', () => {
@@ -24,5 +26,17 @@ describe('erase', () => {
 
 		assert.notDeepEqual(object, compare);
 		assert.equal(result, false);
+	});
+
+	testValues.forEach((value) => {
+		it(`should do nothing if the non-object ${displayValue(value)} is provided`, () => {
+			const object = value;
+			const compare = value;
+
+			const result = erase(object, 'level2');
+
+			assert.deepEqual(object, compare);
+			assert.equal(result, false);
+		});
 	});
 });

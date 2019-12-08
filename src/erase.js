@@ -23,4 +23,4 @@
  *
  * @returns {boolean}
  */
-export default (object, key) => key in object && delete object[key];
+export default (object, key) => typeof object === 'object' && object !== null && key in object && delete object[key];
