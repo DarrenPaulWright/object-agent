@@ -11,18 +11,20 @@
 [![license][license]][license-url]
 
 
-<br><a name="isEmpty"></a>
+<br><a name="walkPath"></a>
 
-## isEmpty(item) ⇒ <code>Boolean</code>
-> Tests if an object or array has any set keys. The values of each key are not considered.
+## walkPath(path, callback, [separator]) ⇒ <code>String</code>
+> Calls a callback for every key in a path. If true is returned from the callback then no further calls will be made.
 
 
-| Param | Type |
-| --- | --- |
-| item | <code>\*</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| path | <code>String</code> |  |  |
+| callback | <code>function</code> |  | Provides two args, the key and the tail path after key |
+| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
 
 **Example**  
-``` javascriptimport { isEmpty } from 'object-agent';isEmpty(['a', 1, 'b']);// => falseisEmpty([]);// => trueisEmpty({ a: 'b' });// => falseisEmpty({});// => trueisEmpty(null);// => trueisEmpty(undefined);// => true```
+``` javascriptimport { walkPath } from 'object-agent';walkPath('first.0.last', (key, tail) => {    console.log(key, tail);});// => 'first', '0.last'// => '0', 'last'// => 'last', ''walkPath('first.0.last', (key, tail) => {    console.log(key, tail);    if (key === '0') {        return true;    }});// => 'first', '0.last'// => '0', 'last'```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

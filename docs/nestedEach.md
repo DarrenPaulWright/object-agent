@@ -13,7 +13,7 @@
 
 <br><a name="nestedEach"></a>
 
-### nestedEach(arrays, callback, [accrue]) ⇒ <code>array</code>
+## nestedEach(arrays, callback, [accrue]) ⇒ <code>array</code>
 > Iterate over the values of multiple arrays
 
 

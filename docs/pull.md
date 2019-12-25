@@ -13,7 +13,7 @@
 
 <br><a name="pull"></a>
 
-### pull(array, path) ⇒ <code>Array</code>
+## pull(array, path) ⇒ <code>Array</code>
 > Pulls values from an array of objects into a new array.
 
 

@@ -13,7 +13,7 @@
 
 <br><a name="get"></a>
 
-### get(object, path) ⇒ <code>\*</code>
+## get(object, path) ⇒ <code>\*</code>
 > Gets a nested value from an object.
 
 

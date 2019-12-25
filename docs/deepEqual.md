@@ -13,7 +13,7 @@
 
 <br><a name="deepEqual"></a>
 
-### deepEqual(item1, item2) ⇒ <code>Boolean</code>
+## deepEqual(item1, item2) ⇒ <code>Boolean</code>
 > Deeply compares two items.
 
 

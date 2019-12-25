@@ -13,7 +13,7 @@
 
 <br><a name="forOwn"></a>
 
-### forOwn(object, callback) ⇒ <code>Boolean</code>
+## forOwn(object, callback) ⇒ <code>Boolean</code>
 > Iterates over own properties of an object. Stops iterating as soon as the callback returns a truthy value.
 
 **Returns**: <code>Boolean</code> - true if the callback function returns a truthy value for any key; otherwise, false.  

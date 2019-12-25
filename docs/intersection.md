@@ -13,7 +13,7 @@
 
 <br><a name="intersection"></a>
 
-### intersection() ⇒ <code>Object</code>
+## intersection() ⇒ <code>Object</code>
 > Performs a deep comparison of objects and returns a new object of values that are equal in all given objects.
 
 

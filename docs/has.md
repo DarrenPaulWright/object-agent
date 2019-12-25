@@ -13,7 +13,7 @@
 
 <br><a name="has"></a>
 
-### has(object, path) ⇒ <code>\*</code>
+## has(object, path) ⇒ <code>\*</code>
 > Determines if a nested value is defined
 
 

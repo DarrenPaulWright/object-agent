@@ -13,7 +13,7 @@
 
 <br><a name="mapOwn"></a>
 
-### mapOwn(object, callback, [ignoreKeys]) ⇒ <code>Object</code> \| <code>\*</code>
+## mapOwn(object, callback, [ignoreKeys]) ⇒ <code>Object</code> \| <code>\*</code>
 > Builds a new object by iterating over own properties of an object.
 
 **Returns**: <code>Object</code> \| <code>\*</code> - If null or undefined are passed in then the same is returned, otherwise a new object  

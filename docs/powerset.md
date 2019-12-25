@@ -13,7 +13,7 @@
 
 <br><a name="powerset"></a>
 
-### powerset(input) ⇒ <code>array</code>
+## powerset(input) ⇒ <code>array</code>
 > Create a [power set](https://en.wikipedia.org/wiki/Power_set) from a set of values
 
 

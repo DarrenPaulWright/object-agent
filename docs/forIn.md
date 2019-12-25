@@ -13,7 +13,7 @@
 
 <br><a name="forIn"></a>
 
-### forIn(object, callback) ⇒ <code>Boolean</code>
+## forIn(object, callback) ⇒ <code>Boolean</code>
 > Iterates over own and inherited properties of an object. Stops iterating as soon as the callback returns a truthy value.
 
 **Returns**: <code>Boolean</code> - true if the callback function returns a truthy value for any key; otherwise, false.  

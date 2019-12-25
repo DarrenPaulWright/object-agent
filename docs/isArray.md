@@ -11,32 +11,6 @@
 [![license][license]][license-url]
 
 
-<br><a name="erase"></a>
-
-## erase(object, key) ⇒ <code>boolean</code>
-> Deletes a property from an object, if the property exists.
-
-
-| Param | Type |
-| --- | --- |
-| object | <code>Object</code> | 
-| key | <code>String</code> | 
-
-**Example**  
-``` javascript
-import { erase } from 'object-agent';
-
-const foo = {
-    bar: 1,
-    also: 2
-};
-
-erase(foo, 'bar');
-
-console.log(foo);
-// => {also: 2}
-```
-
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent
 [build]: https://travis-ci.org/DarrenPaulWright/object-agent.svg?branch&#x3D;master

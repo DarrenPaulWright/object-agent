@@ -13,7 +13,7 @@
 
 <br><a name="superimpose"></a>
 
-### superimpose(args, [mutateFirst]) ⇒ <code>\*</code>
+## superimpose(args, [mutateFirst]) ⇒ <code>\*</code>
 > Deeply superimposes two or more items on each other.> > Notes:> - Undefined values will not overwrite defined values> - Array order is maintained
 
 **Returns**: <code>\*</code> - The resulting object  

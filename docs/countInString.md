@@ -11,18 +11,19 @@
 [![license][license]][license-url]
 
 
-<br><a name="isEmpty"></a>
+<br><a name="countInString"></a>
 
-## isEmpty(item) ⇒ <code>Boolean</code>
-> Tests if an object or array has any set keys. The values of each key are not considered.
+## countInString(string, match) ⇒ <code>Number</code>
+> Counts the number of instances of a string within another string
 
 
 | Param | Type |
 | --- | --- |
-| item | <code>\*</code> | 
+| string | <code>String</code> | 
+| match | <code>String</code> | 
 
 **Example**  
-``` javascriptimport { isEmpty } from 'object-agent';isEmpty(['a', 1, 'b']);// => falseisEmpty([]);// => trueisEmpty({ a: 'b' });// => falseisEmpty({});// => trueisEmpty(null);// => trueisEmpty(undefined);// => true```
+``` javascriptimport { countInString } from 'object-agent';countInString('first.0', '.');// => 1```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

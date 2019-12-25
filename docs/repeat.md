@@ -13,7 +13,7 @@
 
 <br><a name="repeat"></a>
 
-### repeat(times, callback) ⇒ <code>Array</code>
+## repeat(times, callback) ⇒ <code>Array</code>
 > Calls a callback a specified number of times
 
 

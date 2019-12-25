@@ -11,18 +11,19 @@
 [![license][license]][license-url]
 
 
-<br><a name="isEmpty"></a>
+<br><a name="tailInPath"></a>
 
-## isEmpty(item) ⇒ <code>Boolean</code>
-> Tests if an object or array has any set keys. The values of each key are not considered.
+## tailInPath(path, [separator]) ⇒ <code>String</code>
+> Returns the path without the first key
 
 
-| Param | Type |
-| --- | --- |
-| item | <code>\*</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| path | <code>String</code> |  |  |
+| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
 
 **Example**  
-``` javascriptimport { isEmpty } from 'object-agent';isEmpty(['a', 1, 'b']);// => falseisEmpty([]);// => trueisEmpty({ a: 'b' });// => falseisEmpty({});// => trueisEmpty(null);// => trueisEmpty(undefined);// => true```
+``` javascriptimport { tailInPath } from 'object-agent';tailInPath('first.0.last');// => '0.last'```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

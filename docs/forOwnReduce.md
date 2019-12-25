@@ -13,7 +13,7 @@
 
 <br><a name="forOwnReduce"></a>
 
-### forOwnReduce(object, callback, initialValue) ⇒ <code>\*</code>
+## forOwnReduce(object, callback, initialValue) ⇒ <code>\*</code>
 > Iterates over own properties of an object and returns a reduced value
 
 **Returns**: <code>\*</code> - The accumulated result  

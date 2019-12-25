@@ -13,7 +13,7 @@
 
 <br><a name="traverse"></a>
 
-### traverse(object, callback, [isOptimistic]) ⇒ <code>Boolean</code>
+## traverse(object, callback, [isOptimistic]) ⇒ <code>Boolean</code>
 > Traverses a nested object.
 
 **Returns**: <code>Boolean</code> - true if the callback function returns a truthy value for any path; otherwise, false.  

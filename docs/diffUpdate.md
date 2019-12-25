@@ -13,7 +13,7 @@
 
 <br><a name="diffUpdate"></a>
 
-### diffUpdate(object1, object2) ⇒ <code>Object</code>
+## diffUpdate(object1, object2) ⇒ <code>Object</code>
 > Performs a deep comparison of two objects, returns a new object with only the first level values that have been changed or added on the second object
 
 

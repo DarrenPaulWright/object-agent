@@ -13,7 +13,7 @@
 
 <br><a name="set"></a>
 
-### set(object, path, value) ⇒ <code>Object</code>
+## set(object, path, value) ⇒ <code>Object</code>
 > Sets a nested value in an object. Keys in the path that don't exist at any point in the object will be created and added to the object once.
 
 **Returns**: <code>Object</code> - The mutated object.  

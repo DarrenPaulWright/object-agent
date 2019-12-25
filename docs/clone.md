@@ -13,7 +13,7 @@
 
 <br><a name="clone"></a>
 
-### clone(value, [settings]) ⇒ <code>\*</code>
+## clone(value, [settings]) ⇒ <code>\*</code>
 > Deep clone a value.
 
 

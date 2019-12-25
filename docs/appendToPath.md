@@ -11,18 +11,20 @@
 [![license][license]][license-url]
 
 
-<br><a name="isEmpty"></a>
+<br><a name="appendToPath"></a>
 
-## isEmpty(item) ⇒ <code>Boolean</code>
-> Tests if an object or array has any set keys. The values of each key are not considered.
+## appendToPath(path, key, [separator]) ⇒ <code>String</code>
+> Adds a key to the end of a path
 
 
-| Param | Type |
-| --- | --- |
-| item | <code>\*</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| path | <code>String</code> |  |  |
+| key | <code>String</code>, <code>Number</code> |  |  |
+| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
 
 **Example**  
-``` javascriptimport { isEmpty } from 'object-agent';isEmpty(['a', 1, 'b']);// => falseisEmpty([]);// => trueisEmpty({ a: 'b' });// => falseisEmpty({});// => trueisEmpty(null);// => trueisEmpty(undefined);// => true```
+``` javascriptimport { appendToPath } from 'object-agent';appendToPath('first.0', 'last');// => 'first.0.last'```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

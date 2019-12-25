@@ -13,7 +13,7 @@
 
 <br><a name="mix"></a>
 
-### mix(args) ⇒ <code>Array</code>
+## mix(args) ⇒ <code>Array</code>
 > Mix the contents of multiple arrays into a nested array where all variations of one item from each array is in each of the nested arrays.
 
 

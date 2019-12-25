@@ -11,18 +11,19 @@
 [![license][license]][license-url]
 
 
-<br><a name="isEmpty"></a>
+<br><a name="lastInPath"></a>
 
-## isEmpty(item) ⇒ <code>Boolean</code>
-> Tests if an object or array has any set keys. The values of each key are not considered.
+## lastInPath(path, [separator]) ⇒ <code>String</code>
+> Returns the last key in a path
 
 
-| Param | Type |
-| --- | --- |
-| item | <code>\*</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| path | <code>String</code> |  |  |
+| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
 
 **Example**  
-``` javascriptimport { isEmpty } from 'object-agent';isEmpty(['a', 1, 'b']);// => falseisEmpty([]);// => trueisEmpty({ a: 'b' });// => falseisEmpty({});// => trueisEmpty(null);// => trueisEmpty(undefined);// => true```
+``` javascriptimport { lastInPath } from 'object-agent';lastInPath('first.0.last');// => 'last'```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

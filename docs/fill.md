@@ -13,7 +13,7 @@
 
 <br><a name="fill"></a>
 
-### fill(length, [callback]) ⇒ <code>Array</code>
+## fill(length, [callback]) ⇒ <code>Array</code>
 > Returns an array of specified length filled with either the index value or the value returned from the provided callback
 
 

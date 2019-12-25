@@ -13,7 +13,7 @@
 
 <br><a name="combo"></a>
 
-### combo(array, [length]) ⇒ <code>array</code>
+## combo(array, [length]) ⇒ <code>array</code>
 > Takes a set of values and creates an array of the unique sets of the values of a given length.
 
 
