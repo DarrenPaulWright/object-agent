@@ -1,4 +1,4 @@
-import repeat from './repeat';
+import repeat from './repeat.js';
 
 const defaultCallback = (index) => index;
 

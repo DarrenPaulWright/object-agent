@@ -1,5 +1,5 @@
-import firstInPath from './utility/firstInPath';
-import walkPath from './utility/walkPath';
+import firstInPath from './utility/firstInPath.js';
+import walkPath from './utility/walkPath.js';
 
 const buildNew = (key) => !isNaN(parseInt(key)) ? [] : {};
 

@@ -1,11 +1,11 @@
-import forOwn from './forOwn';
-import isEmpty from './isEmpty';
-import isEqual from './isEqual';
-import pull from './pull';
-import set from './set';
-import isArray from './utility/isArray';
-import isObject from './utility/isObject';
-import multiArgs from './utility/multiArgs';
+import forOwn from './forOwn.js';
+import isEmpty from './isEmpty.js';
+import isEqual from './isEqual.js';
+import pull from './pull.js';
+import set from './set.js';
+import isArray from './utility/isArray.js';
+import isObject from './utility/isObject.js';
+import multiArgs from './utility/multiArgs.js';
 
 const intersectionValues = (values) => {
 	return isArray(values[0]) ? intersectionArrays(values) : isObject(values[0]) ? intersectionObjects(values) : intersectionOther(values);

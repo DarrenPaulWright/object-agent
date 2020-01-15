@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { isEmpty } from '../index';
+import { isEmpty } from '../index.js';
 
 describe('isEmpty', () => {
 	it('should return true for empty arrays', () => {

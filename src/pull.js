@@ -1,4 +1,4 @@
-import get from './get';
+import get from './get.js';
 
 /**
  * Pulls values from an array of objects into a new array.

@@ -1,7 +1,7 @@
-import forOwn from './forOwn';
-import appendToPath from './utility/appendToPath';
-import isArray from './utility/isArray';
-import isObject from './utility/isObject';
+import forOwn from './forOwn.js';
+import appendToPath from './utility/appendToPath.js';
+import isArray from './utility/isArray.js';
+import isObject from './utility/isObject.js';
 
 const processValue = (path, value, callback, isOptimistic) => {
 	const loopCallback = (value, key) => {

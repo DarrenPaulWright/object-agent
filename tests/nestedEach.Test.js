@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { nestedEach } from '../index';
+import { nestedEach } from '../index.js';
 
 describe('nestedEach', () => {
 	it('should call the callback for every combination of values', () => {

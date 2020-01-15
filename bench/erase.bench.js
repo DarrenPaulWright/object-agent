@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { erase } from '../index';
+import { erase } from '../index.js';
 
 let object = {id: 23};
 const settings = {

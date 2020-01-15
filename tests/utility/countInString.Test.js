@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { countInString } from '../../index';
+import { countInString } from '../../index.js';
 
 describe('countInString', () => {
 	it('should return 0 if an empty string is provided', () => {

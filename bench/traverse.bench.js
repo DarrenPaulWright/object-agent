@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { traverse } from '../index';
+import { traverse } from '../index.js';
 
 suite('traverse', () => {
 	benchmark('isOptimistic false', () => {

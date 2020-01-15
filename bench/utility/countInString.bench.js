@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { countInString } from '../../index';
+import { countInString } from '../../index.js';
 
 suite('countInString', () => {
 	let sandbox = '';

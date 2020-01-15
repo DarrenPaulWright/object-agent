@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { lastInPath } from '../../index';
+import { lastInPath } from '../../index.js';
 
 suite('lastInPath', () => {
 	let sandbox = '';

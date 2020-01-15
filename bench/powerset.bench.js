@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { powerset } from '../index';
+import { powerset } from '../index.js';
 
 suite('powerset', () => {
 	let sandbox = '';

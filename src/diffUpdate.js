@@ -1,5 +1,5 @@
-import deepEqual from './deepEqual';
-import forOwn from './forOwn';
+import deepEqual from './deepEqual.js';
+import forOwn from './forOwn.js';
 
 /**
  * Performs a deep comparison of two objects, returns a new object with only the first level values that have been changed or added on the second object

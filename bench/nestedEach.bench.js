@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { nestedEach } from '../index';
+import { nestedEach } from '../index.js';
 
 suite('nestedEach', () => {
 	benchmark('accrue false', () => {

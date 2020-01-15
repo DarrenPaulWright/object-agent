@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { appendToPath } from '../../index';
+import { appendToPath } from '../../index.js';
 
 describe('appendToPath', () => {
 	it('should add on to an empty string', () => {

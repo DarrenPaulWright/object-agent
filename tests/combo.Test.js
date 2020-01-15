@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { combo } from '../index';
+import { combo } from '../index.js';
 
 describe('combo', () => {
 	it('should generate sets of two by default', () => {

@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { appendToPath } from '../../index';
+import { appendToPath } from '../../index.js';
 
 suite('appendToPath', () => {
 	let sandbox = '';

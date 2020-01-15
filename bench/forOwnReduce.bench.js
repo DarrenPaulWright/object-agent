@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { forOwnReduce } from '../index';
+import { forOwnReduce } from '../index.js';
 
 suite('forOwnReduce', () => {
 	benchmark('with return', () => {

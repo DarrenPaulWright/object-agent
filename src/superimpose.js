@@ -1,9 +1,9 @@
-import clone from './clone';
-import get from './get';
-import set from './set';
-import traverse from './traverse';
-import isArray from './utility/isArray';
-import isObject from './utility/isObject';
+import clone from './clone.js';
+import get from './get.js';
+import set from './set.js';
+import traverse from './traverse.js';
+import isArray from './utility/isArray.js';
+import isObject from './utility/isObject.js';
 
 /**
  * Deeply superimposes two or more items on each other.

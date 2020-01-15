@@ -1,4 +1,4 @@
-import walkPath from './utility/walkPath';
+import walkPath from './utility/walkPath.js';
 
 /**
  * Gets a nested value from an object.

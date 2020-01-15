@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { deepEqual } from '../index';
+import { deepEqual } from '../index.js';
 
 suite('deepEqual', () => {
 	benchmark('true', () => {

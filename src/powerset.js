@@ -1,4 +1,4 @@
-import nestedEach from './nestedEach';
+import nestedEach from './nestedEach.js';
 
 /**
  * Create a [power set](https://en.wikipedia.org/wiki/Power_set) from a set of values

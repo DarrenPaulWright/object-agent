@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { superimpose } from '../index';
+import { superimpose } from '../index.js';
 
 describe('superimpose', () => {
 	const object1 = {

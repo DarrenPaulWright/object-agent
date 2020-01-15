@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { forIn } from '../index';
+import { forIn } from '../index.js';
 
 describe('forIn', () => {
 	it('should call the callback for each key', () => {

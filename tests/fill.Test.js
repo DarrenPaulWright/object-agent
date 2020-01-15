@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { fill } from '../index';
+import { fill } from '../index.js';
 
 describe('fill', () => {
 	it('should fill an array with index values if no callback is provided', () => {

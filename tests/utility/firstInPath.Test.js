@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { firstInPath } from '../../index';
+import { firstInPath } from '../../index.js';
 
 describe('firstInPath', () => {
 	it('should return an empty string if an empty string is provided', () => {

@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { walkPath } from '../../index';
+import { walkPath } from '../../index.js';
 
 describe('walkPath', () => {
 	it('should not execute the callback if the path is empty', () => {

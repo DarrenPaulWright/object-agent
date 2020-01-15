@@ -1,9 +1,9 @@
-import get from './get';
-import mapOwn from './mapOwn';
-import set from './set';
-import appendToPath from './utility/appendToPath';
-import isArray from './utility/isArray';
-import isObject from './utility/isObject';
+import get from './get.js';
+import mapOwn from './mapOwn.js';
+import set from './set.js';
+import appendToPath from './utility/appendToPath.js';
+import isArray from './utility/isArray.js';
+import isObject from './utility/isObject.js';
 
 const doClone = (item, path, settings) => {
 	if (isObject(item)) {

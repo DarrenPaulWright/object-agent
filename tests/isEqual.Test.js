@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import displayValue from 'display-value';
-import { clone, isEqual } from '../index';
-import { testSimpleValues } from './testValues';
+import { clone, isEqual } from '../index.js';
+import { testSimpleValues } from './testValues.js';
 
 describe('isEqual', () => {
 	testSimpleValues.forEach((value1, index1) => {

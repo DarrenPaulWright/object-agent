@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { mapOwn, repeat } from '../index';
+import { mapOwn, repeat } from '../index.js';
 
 suite('mapOwn', () => {
 	let sandbox = '';

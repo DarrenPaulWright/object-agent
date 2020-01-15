@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { tailInPath } from '../../index';
+import { tailInPath } from '../../index.js';
 
 suite('tailInPath', () => {
 	let sandbox = '';

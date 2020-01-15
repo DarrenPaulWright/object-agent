@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { unset } from '../index';
+import { unset } from '../index.js';
 
 suite('unset', () => {
 	let sandbox = '';

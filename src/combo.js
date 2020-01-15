@@ -1,5 +1,5 @@
-import fill from './fill';
-import nestedEach from './nestedEach';
+import fill from './fill.js';
+import nestedEach from './nestedEach.js';
 
 /**
  * Takes a set of values and creates an array of the unique sets of the values of a given length.

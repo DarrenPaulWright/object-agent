@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { superimpose } from '../index';
+import { superimpose } from '../index.js';
 
 suite('superimpose', () => {
 	let sandbox = 0;

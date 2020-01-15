@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 import onChange from 'on-change';
-import { set } from '../index';
+import { set } from '../index.js';
 
 describe('set', () => {
 	it('should set the value of a first level key', () => {

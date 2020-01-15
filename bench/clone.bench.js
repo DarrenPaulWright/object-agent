@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { clone } from '../index';
+import { clone } from '../index.js';
 
 suite('clone', () => {
 	let sandbox = '';

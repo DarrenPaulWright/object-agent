@@ -1,4 +1,4 @@
-import get from './get';
+import get from './get.js';
 
 /**
  * Determines if a nested value is defined

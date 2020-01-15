@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { diffUpdate } from '../index';
+import { diffUpdate } from '../index.js';
 
 describe('diffUpdate', () => {
 	it('should return an empty object if the two inputs are equal', () => {

@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { fill } from '../index';
+import { fill } from '../index.js';
 
 suite('fill', () => {
 	let sandbox = 0;

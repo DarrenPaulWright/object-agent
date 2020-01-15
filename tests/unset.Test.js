@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import displayValue from 'display-value';
-import { unset } from '../index';
-import { testValues } from './testValues';
+import { unset } from '../index.js';
+import { testValues } from './testValues.js';
 
 describe('unset', () => {
 	it('should set the value of a first level key', () => {

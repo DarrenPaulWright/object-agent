@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { intersection } from '../index';
+import { intersection } from '../index.js';
 
 suite('intersection', () => {
 	let sandbox = 0;

@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { diffUpdate } from '../index';
+import { diffUpdate } from '../index.js';
 
 suite('diffUpdate', () => {
 	let sandbox = 0;

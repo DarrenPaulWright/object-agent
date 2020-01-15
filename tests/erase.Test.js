@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import displayValue from 'display-value';
-import { erase } from '../index';
-import { testValues } from './testValues';
+import { erase } from '../index.js';
+import { testValues } from './testValues.js';
 
 describe('erase', () => {
 	it('should delete a key and return true', () => {

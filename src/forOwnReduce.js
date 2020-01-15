@@ -1,4 +1,4 @@
-import forOwn from './forOwn';
+import forOwn from './forOwn.js';
 
 /**
  * Iterates over own properties of an object and returns a reduced value

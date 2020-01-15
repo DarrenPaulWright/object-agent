@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { forIn, repeat } from '../index';
+import { forIn, repeat } from '../index.js';
 
 suite('forIn', () => {
 	let sandbox = '';

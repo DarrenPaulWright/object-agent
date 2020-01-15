@@ -1,5 +1,5 @@
-import erase from './erase';
-import walkPath from './utility/walkPath';
+import erase from './erase.js';
+import walkPath from './utility/walkPath.js';
 
 /**
  * Deletes a property from a nested object.

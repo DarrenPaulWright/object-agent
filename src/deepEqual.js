@@ -1,6 +1,6 @@
-import get from './get';
-import isEqual from './isEqual';
-import traverse from './traverse';
+import get from './get.js';
+import isEqual from './isEqual.js';
+import traverse from './traverse.js';
 
 /**
  * Deeply compares two items.

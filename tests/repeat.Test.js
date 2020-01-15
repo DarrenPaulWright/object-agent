@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { repeat } from '../index';
+import { repeat } from '../index.js';
 
 describe('repeat', () => {
 	it('should call the callback the specified number of times', () => {

@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { isEqual } from '../index';
+import { isEqual } from '../index.js';
 
 suite('isEqual', () => {
 	let sandbox = '';

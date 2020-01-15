@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { walkPath } from '../../index';
+import { walkPath } from '../../index.js';
 
 suite('walkPath', () => {
 	let sandbox = '';
