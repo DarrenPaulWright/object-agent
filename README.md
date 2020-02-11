@@ -1,5 +1,8 @@
 # Object Agent
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/DarrenPaulWright/object-agent.svg)](https://greenkeeper.io/)
+
+
 > A javascript library for working with objects
 >
 > [![npm][npm]][npm-url]
