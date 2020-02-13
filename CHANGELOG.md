@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
+## [1.4.6] - 2020-02-13
+### Changed
+- [isEqual](docs/isEqual.md) now compares instances of objects
+
+## [1.4.5] - 2020-01-15
+### Changed
+- Preparing library for use in nodejs
+
+## [1.4.4] - 2019-12-24
+### Security
+- Updating dependencies
+
+## [1.4.3] - 2019-12-08
+### Changed
+- Fixing bug in [erase](docs/erase.md)
+
 ## [1.4.2] - 2019-12-06
 ### Added
 - [erase](docs/erase.md)
@@ -166,6 +182,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [diffUpdate](docs/diffUpdate.md)
 - [intersection](docs/intersection.md)
 
+[1.4.6]: https://github.com/DarrenPaulWright/object-agent/compare/v1.4.5...1.4.6
+[1.4.5]: https://github.com/DarrenPaulWright/object-agent/compare/v1.4.4...1.4.5
+[1.4.4]: https://github.com/DarrenPaulWright/object-agent/compare/v1.4.3...1.4.4
+[1.4.3]: https://github.com/DarrenPaulWright/object-agent/compare/v1.4.2...1.4.3
 [1.4.2]: https://github.com/DarrenPaulWright/object-agent/compare/v1.4.1...1.4.2
 [1.4.1]: https://github.com/DarrenPaulWright/object-agent/compare/v1.4.0...1.4.1
 [1.4.0]: https://github.com/DarrenPaulWright/object-agent/compare/v1.3.0...1.4.0

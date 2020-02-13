@@ -1,9 +1,17 @@
 import { benchSettings } from 'karma-webpack-bundle';
 import { isEqual } from '../index.js';
 
-suite('isEqual', () => {
-	let sandbox = '';
+class Thing1 {
+	constructor(value) {
+		this.value = value;
+	}
 
+	doSomething() {
+		this.value += ' done';
+	}
+}
+
+suite('isEqual', () => {
 	benchmark('object true', () => {
 		isEqual({
 			'test1': 1,
@@ -64,5 +72,13 @@ suite('isEqual', () => {
 
 	benchmark('other false', () => {
 		isEqual('test', 23);
+	}, benchSettings);
+
+	benchmark('instances true', () => {
+		isEqual(new Thing1(1), new Thing1(1));
+	}, benchSettings);
+
+	benchmark('instances false', () => {
+		isEqual(new Thing1(1), new Thing1(2));
 	}, benchSettings);
 });

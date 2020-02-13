@@ -3,6 +3,18 @@ import displayValue from 'display-value';
 import { clone, isEqual } from '../index.js';
 import { testSimpleValues } from './testValues.js';
 
+class Thing1 {
+	constructor(value) {
+		this.value = value;
+	}
+
+	doSomething() {
+		this.value += ' done';
+	}
+}
+
+class Thing2 extends Thing1 {}
+
 describe('isEqual', () => {
 	testSimpleValues.forEach((value1, index1) => {
 		clone(testSimpleValues).forEach((value2, index2) => {
@@ -33,5 +45,17 @@ describe('isEqual', () => {
 				});
 			}
 		});
+	});
+
+	it(`should return true for two instances of a class`, () => {
+		assert.strictEqual(isEqual(new Thing1(1), new Thing1(1)), true);
+	});
+
+	it(`should return false for two instances of a class with different property values`, () => {
+		assert.strictEqual(isEqual(new Thing1(1), new Thing1(2)), false);
+	});
+
+	it(`should return false for instances of different classes`, () => {
+		assert.strictEqual(isEqual(new Thing1(1), new Thing2(1)), false);
 	});
 });

@@ -9,18 +9,19 @@
 	],
 	"sideEffects": false,
 	"scripts": {
+		"clean": "rm -rf node_modules && del /f package-lock.json && npm install",
 		"test": "karma start --single-run",
 		"test-watch": "karma start",
 		"bench": "karma start karma.bench.conf.js",
-		"patch": "npm version patch && npm publish",
-		"minor": "npm version minor && npm publish",
-		"major": "npm version major && npm publish",
 		"preversion": "npm test && npm run docs && git add --all && git diff --staged --quiet || git commit -m \"Updating docs\"",
+		"postversion": "npm publish",
 		"postpublish": "git push --follow-tags",
 		"deps": "ncu -u && npm install",
-		"deps-commit": "npm run deps && git add --all && git diff --staged --quiet || git commit -m \"Updating dependencies\"",
-		"deps-patch": "npm run deps-commit && npm run patch",
-		"docs": "exec-each src/**/*.js --out docs/{basefile}.md jsdoc2md -- {path} -t node_modules/dmd-readable/docs.hbs --plugin dmd-readable && jsdoc2md index.js src/**/*.js > README.md -t node_modules/dmd-readable/overview.hbs --plugin node_modules/dmd-readable/overview-plugin.js"
+		"deps-commit": "npm run deps && npm test && git add --all && git diff --staged --quiet || git commit -m \"Updating dependencies\"",
+		"deps-patch": "npm run deps-commit && npm version patch",
+		"docs:readme": "jsdoc2md ./index.js src/**/*.js > README.md -t node_modules/dmd-readable/overview.hbs --plugin dmd-readable/overview-plugin.js",
+		"docs:all": "exec-each --out docs/{basefile}.md src/**/*.js jsdoc2md -- {path} -t node_modules/dmd-readable/docs.hbs --plugin dmd-readable",
+		"docs": "run-p docs:*"
 	},
 	"badges": {
 		"npm": {
