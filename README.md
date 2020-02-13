@@ -64,7 +64,7 @@ _Requires Babel 7.2+_
 <dd><p>Tests if an object or array has any set keys. The values of each key are not considered.</p>
 </dd>
 <dt><a href="docs/isEqual.md">isEqual()</a> ⇒ <code>Boolean</code></dt>
-<dd><p>Shallow compares two or more items. All items are compared with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Same-value_equality">SameValue</a> equality except Dates and RegExps which compare their <em>values</em> with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Same-value_equality">SameValue</a> equality and Objects and Arrays which compare key lengths.</p>
+<dd><p>Shallow compares two or more items. All items are compared with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Same-value_equality">SameValue</a> equality except Dates and RegExps which compare their <em>values</em> with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Same-value_equality">SameValue</a> equality, Objects and Arrays which compare key lengths, and instances of objects that compare all properties and prototype objects.</p>
 </dd>
 <dt><a href="docs/mapOwn.md">mapOwn(object, callback, [ignoreKeys])</a> ⇒ <code>Object</code> | <code>*</code></dt>
 <dd><p>Builds a new object by iterating over own properties of an object.</p>
