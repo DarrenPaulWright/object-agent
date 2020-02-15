@@ -142,6 +142,45 @@ describe('traverse', () => {
 		assert.isTrue(isCanceled);
 	});
 
+	it('should NOT traverse circular objects twice', () => {
+		let total = 0;
+		let testVar = 0;
+		const testObject = {
+			key1: 'something',
+			key2: {
+				key3: 'another'
+			}
+		};
+		testObject.key2.key4 = [testObject.key2];
+
+		const isCanceled = traverse(testObject, (path, value) => {
+			total++;
+
+			if (path === '') {
+				testVar++;
+			}
+			if (path === 'key1') {
+				testVar++;
+			}
+			if (path === 'key2') {
+				testVar++;
+			}
+			if (path === 'key2.key3') {
+				testVar++;
+			}
+			if (path === 'key2.key4') {
+				testVar++;
+			}
+			if (path === 'key2.key4.0') {
+				testVar++;
+			}
+		});
+
+		assert.equal(total, 6);
+		assert.equal(testVar, 6);
+		assert.isFalse(isCanceled);
+	});
+
 	describe('isOptimistic', () => {
 		it('should NOT traverse deeper when true is returned', () => {
 			let total = 0;

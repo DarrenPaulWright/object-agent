@@ -18,4 +18,23 @@ describe('deepEqual', () => {
 			}
 		});
 	});
+
+	it('should compare a circular reference', () => {
+		const object = {
+			key1: 'something',
+			key2: {
+				key3: 'another'
+			}
+		};
+		object.key2.key4 = [object.key2];
+		const object2 = {
+			key1: 'something',
+			key2: {
+				key3: 'another'
+			}
+		};
+		object2.key2.key4 = [object2.key2];
+
+		assert.isTrue(deepEqual(object, object2));
+	});
 });

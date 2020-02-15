@@ -31,5 +31,7 @@ import traverse from './traverse.js';
  * @returns {Boolean}
  */
 export default (item1, item2) => {
-	return Object.is(item1, item2) || !traverse(item1, (path, value1) => !isEqual(value1, get(item2, path)));
+	return Object.is(item1, item2) || !traverse(item1, (path, value, isCircular) => {
+		return isCircular && Object.is(value, get(item2, path)) || !isEqual(value, get(item2, path));
+	});
 };
