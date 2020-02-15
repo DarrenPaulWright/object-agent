@@ -14,7 +14,6 @@ export const testSimpleValues = [
 	/test/gi,
 	/test/gim,
 	new RegExp('test'),
-	new Date(),
 	new Date('01/01/2000'),
 	() => {
 	},

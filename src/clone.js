@@ -5,22 +5,30 @@ import appendToPath from './utility/appendToPath.js';
 import isArray from './utility/isArray.js';
 import isObject from './utility/isObject.js';
 
-const doClone = (item, path, settings) => {
-	if (isObject(item)) {
-		if (settings.isCircular) {
-			if (settings.objectRefs.has(item)) {
-				return settings.circularRefs.push([path, settings.objectRefs.get(item)]);
-			}
-			settings.objectRefs.set(item, path);
+const cloneObject = (value, path, settings) => {
+	if (settings.isCircular) {
+		if (settings.objectRefs.has(value)) {
+			return settings.circularRefs.push([path, settings.objectRefs.get(value)]);
 		}
 
-		return mapOwn(item, (value, key) => doClone(value, appendToPath(path, key), settings), settings.ignoreKeys);
+		settings.objectRefs.set(value, path);
 	}
 
-	return isArray(item) ? item.map((value, index) => doClone(value, appendToPath(path, index), settings)) :
-		item instanceof Date ? new Date(item.valueOf()) :
-			item instanceof RegExp ? new RegExp(item) :
-				item;
+	return mapOwn(value, (value, key) => doClone(value, appendToPath(path, key), settings), settings.ignoreKeys);
+};
+
+const cloneArray = (value, path, settings) => value.map((value, index) => doClone(value, appendToPath(path, index), settings));
+
+const cloneDate = (value) => new Date(value.valueOf());
+
+const cloneRegExp = (value) => new RegExp(value);
+
+const doClone = (value, path, settings) => {
+	return isObject(value) ? cloneObject(value, path, settings) :
+		isArray(value) ? cloneArray(value, path, settings) :
+			value instanceof Date ? cloneDate(value) :
+				value instanceof RegExp ? cloneRegExp(value) :
+					value;
 };
 
 /**
@@ -45,7 +53,7 @@ const doClone = (item, path, settings) => {
  */
 export default function clone(item, settings = {}) {
 	if (settings.isCircular) {
-		settings.objectRefs = new WeakMap();
+		settings.objectRefs = new Map();
 		settings.circularRefs = [];
 	}
 
@@ -59,6 +67,7 @@ export default function clone(item, settings = {}) {
 			set(result, ref[0], get(result, ref[1]));
 		}
 
+		settings.objectRefs.clear();
 		settings.objectRefs = null;
 		settings.circularRefs = null;
 	}

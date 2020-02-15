@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
+## [1.4.7] - 2020-02-14
+### Changed
+- [traverse](docs/traverse.md) only traverses circular objects once
+
 ## [1.4.6] - 2020-02-13
 ### Changed
 - [isEqual](docs/isEqual.md) now compares instances of objects
@@ -182,6 +186,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [diffUpdate](docs/diffUpdate.md)
 - [intersection](docs/intersection.md)
 
+[1.4.7]: https://github.com/DarrenPaulWright/object-agent/compare/v1.4.6...1.4.7
 [1.4.6]: https://github.com/DarrenPaulWright/object-agent/compare/v1.4.5...1.4.6
 [1.4.5]: https://github.com/DarrenPaulWright/object-agent/compare/v1.4.4...1.4.5
 [1.4.4]: https://github.com/DarrenPaulWright/object-agent/compare/v1.4.3...1.4.4
