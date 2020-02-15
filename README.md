@@ -96,7 +96,7 @@ _Requires Babel 7.2+_
 </ul>
 </dd>
 <dt><a href="docs/traverse.md">traverse(object, callback, [isOptimistic])</a> ⇒ <code>Boolean</code></dt>
-<dd><p>Traverses a nested object.</p>
+<dd><p>Traverses a nested object. Circular objects are only traversed once.</p>
 </dd>
 <dt><a href="docs/unset.md">unset(object, path)</a> ⇒ <code>Object</code></dt>
 <dd><p>Deletes a property from a nested object.</p>

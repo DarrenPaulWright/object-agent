@@ -153,7 +153,7 @@ describe('traverse', () => {
 		};
 		testObject.key2.key4 = [testObject.key2];
 
-		const isCanceled = traverse(testObject, (path, value) => {
+		const isCanceled = traverse(testObject, (path) => {
 			total++;
 
 			if (path === '') {

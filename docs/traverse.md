@@ -14,7 +14,7 @@
 <br><a name="traverse"></a>
 
 ## traverse(object, callback, [isOptimistic]) ⇒ <code>Boolean</code>
-> Traverses a nested object.
+> Traverses a nested object. Circular objects are only traversed once.
 
 **Returns**: <code>Boolean</code> - true if the callback function returns a truthy value for any path; otherwise, false.  
 
