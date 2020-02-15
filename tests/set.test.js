@@ -1,5 +1,5 @@
-import { assert } from 'chai';
 import onChange from 'on-change';
+import { assert } from 'type-enforcer';
 import { set } from '../index.js';
 
 describe('set', () => {
@@ -13,7 +13,7 @@ describe('set', () => {
 
 		const result = set(object, 'level1', 'meh');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(object, result);
 	});
 
@@ -31,7 +31,7 @@ describe('set', () => {
 
 		const result = set(object, 'level1.level2', 'meh');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(object, result);
 	});
 
@@ -49,7 +49,7 @@ describe('set', () => {
 
 		const result = set(object, 'level1.0.level2', 'meh');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(object, result);
 	});
 
@@ -83,7 +83,7 @@ describe('set', () => {
 
 		const result = set(object, 'level1.2.level2', 'meh');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(object, result);
 	});
 
@@ -121,7 +121,7 @@ describe('set', () => {
 
 		const result = set(object, 'level1.2.level2.level3', 'meh');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(object, result);
 	});
 
@@ -140,7 +140,7 @@ describe('set', () => {
 
 		const result = set(object, 'level1.2.level2.level3', 'meh');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(testVar, 1);
 		assert.equal(object, result);
 	});

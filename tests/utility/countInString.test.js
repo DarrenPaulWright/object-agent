@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert } from 'type-enforcer';
 import { countInString } from '../../index.js';
 
 describe('countInString', () => {

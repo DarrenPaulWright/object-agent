@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert } from 'type-enforcer';
 import { mapOwn } from '../index.js';
 
 describe('mapOwn', () => {
@@ -14,7 +14,7 @@ describe('mapOwn', () => {
 			key3: 'something3'
 		};
 
-		assert.deepEqual(mapOwn(object), output);
+		assert.equal(mapOwn(object), output);
 	});
 
 	it('should return a mapped object', () => {
@@ -30,7 +30,7 @@ describe('mapOwn', () => {
 		};
 		const mapper = (value) => value + '_2';
 
-		assert.deepEqual(mapOwn(object, mapper), output);
+		assert.equal(mapOwn(object, mapper), output);
 		assert.notEqual(object, output);
 	});
 
@@ -46,20 +46,20 @@ describe('mapOwn', () => {
 		};
 		const mapper = (value) => value + '_2';
 
-		assert.deepEqual(mapOwn(object, mapper, ['key2']), output);
+		assert.equal(mapOwn(object, mapper, ['key2']), output);
 	});
 
 	it('should return null if null is given', () => {
 		let object = null;
 		const mapper = (value) => value;
 
-		assert.deepEqual(mapOwn(object, mapper), null);
+		assert.equal(mapOwn(object, mapper), null);
 	});
 
 	it('should return undefined if undefined is given', () => {
 		let object;
 		const mapper = (value) => value;
 
-		assert.deepEqual(mapOwn(object, mapper), undefined);
+		assert.equal(mapOwn(object, mapper), undefined);
 	});
 });

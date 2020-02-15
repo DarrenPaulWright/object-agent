@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert } from 'type-enforcer';
 import { repeat } from '../index.js';
 
 describe('repeat', () => {
@@ -7,7 +7,7 @@ describe('repeat', () => {
 
 		repeat(5, () => count++);
 
-		assert.deepEqual(count, 5);
+		assert.equal(count, 5);
 	});
 
 	it('should provide the index value', () => {
@@ -18,6 +18,6 @@ describe('repeat', () => {
 			count++;
 		});
 
-		assert.deepEqual(count, 7);
+		assert.equal(count, 7);
 	});
 });

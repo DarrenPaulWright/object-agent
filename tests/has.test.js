@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert } from 'type-enforcer';
 import { has } from '../index.js';
 
 describe('has', () => {
@@ -7,7 +7,7 @@ describe('has', () => {
 			level1: 'something'
 		};
 
-		assert.isTrue(has(object, 'level1'));
+		assert.is(has(object, 'level1'), true);
 	});
 
 	it('should return true for a first level key', () => {
@@ -15,7 +15,7 @@ describe('has', () => {
 			level1: 'something'
 		};
 
-		assert.isTrue(has(object, 'level1'));
+		assert.is(has(object, 'level1'), true);
 	});
 
 	it('should return true for a second level key', () => {
@@ -25,7 +25,7 @@ describe('has', () => {
 			}
 		};
 
-		assert.isTrue(has(object, 'level1', 'level2'));
+		assert.is(has(object, 'level1', 'level2'), true);
 	});
 
 	it('should return true for a second level key in an array', () => {
@@ -35,7 +35,7 @@ describe('has', () => {
 			}]
 		};
 
-		assert.isTrue(has(object, 'level1.0.level2'));
+		assert.is(has(object, 'level1.0.level2'), true);
 	});
 
 	it('should return true for a second level key in an array with multiple items', () => {
@@ -53,7 +53,7 @@ describe('has', () => {
 			}]
 		};
 
-		assert.isTrue(has(object, 'level1.2.level2'));
+		assert.is(has(object, 'level1.2.level2'), true);
 	});
 
 	it('should return true for a third level key in an array with multiple items', () => {
@@ -73,7 +73,7 @@ describe('has', () => {
 			}]
 		};
 
-		assert.isTrue(has(object, 'level1.2.level2.level3'));
+		assert.is(has(object, 'level1.2.level2.level3'), true);
 	});
 
 	it('should return false for a path that doesn\'t exist', () => {
@@ -93,6 +93,6 @@ describe('has', () => {
 			}]
 		};
 
-		assert.isFalse(has(object, 'level1.2.level3.level4'));
+		assert.is(has(object, 'level1.2.level3.level4'), false);
 	});
 });

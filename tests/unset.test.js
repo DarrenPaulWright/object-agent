@@ -1,5 +1,5 @@
-import { assert } from 'chai';
 import displayValue from 'display-value';
+import { assert } from 'type-enforcer';
 import { unset } from '../index.js';
 import { testValues } from './testValues.js';
 
@@ -12,7 +12,7 @@ describe('unset', () => {
 
 		const result = unset(object, 'level1');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(result, object);
 	});
 
@@ -28,7 +28,7 @@ describe('unset', () => {
 
 		const result = unset(object, 'level1.level2');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(result, object);
 	});
 
@@ -44,7 +44,7 @@ describe('unset', () => {
 
 		const result = unset(object, 'level1.0.level2');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(result, object);
 	});
 
@@ -76,7 +76,7 @@ describe('unset', () => {
 
 		const result = unset(object, 'level1.2.level2');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(result, object);
 	});
 
@@ -112,7 +112,7 @@ describe('unset', () => {
 
 		const result = unset(object, 'level1.2.level2.level3');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(result, object);
 	});
 
@@ -124,7 +124,7 @@ describe('unset', () => {
 			const result = unset(object, 'level1.level2');
 
 			if (value === value) {
-				assert.deepEqual(object, compare);
+				assert.equal(object, compare);
 				assert.equal(result, object);
 			}
 		});
@@ -139,7 +139,7 @@ describe('unset', () => {
 
 			const result = unset(object, 'level1.level2');
 
-			assert.deepEqual(object, compare);
+			assert.equal(object, compare);
 			assert.equal(result, object);
 		});
 	});

@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert } from 'type-enforcer';
 import { forOwn } from '../index.js';
 
 describe('forOwn', () => {
@@ -26,7 +26,7 @@ describe('forOwn', () => {
 
 		assert.equal(total, 3);
 		assert.equal(testVar, 3);
-		assert.isFalse(isCanceled);
+		assert.is(isCanceled, false);
 	});
 
 	it('should stop calling the callbacks if true is returned', () => {
@@ -51,7 +51,7 @@ describe('forOwn', () => {
 
 		assert.equal(total, 2);
 		assert.equal(testVar, 2);
-		assert.isTrue(isCanceled);
+		assert.is(isCanceled, true);
 	});
 
 	it('should NOT call the callback for keys that are deleted in a previous callback', () => {
@@ -76,7 +76,7 @@ describe('forOwn', () => {
 
 		assert.equal(total, 2);
 		assert.equal(testVar, 2);
-		assert.isFalse(isCanceled);
+		assert.is(isCanceled, false);
 	});
 
 	it('should not call the callback for inherited properties', () => {
@@ -97,7 +97,7 @@ describe('forOwn', () => {
 
 		assert.equal(total, 1);
 		assert.equal(testVar, 1);
-		assert.isFalse(isCanceled);
+		assert.is(isCanceled, false);
 	});
 
 	it('should not call the callback if object is undefined', () => {
@@ -109,6 +109,6 @@ describe('forOwn', () => {
 		});
 
 		assert.equal(total, 0);
-		assert.isFalse(isCanceled);
+		assert.is(isCanceled, false);
 	});
 });

@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert } from 'type-enforcer';
 import { forOwnReduce } from '../index.js';
 
 describe('forOwnReduce', () => {
@@ -14,7 +14,7 @@ describe('forOwnReduce', () => {
 			return result;
 		}, []);
 
-		assert.deepEqual(output, [['something1', 'key1'], ['something2', 'key2'], ['something3', 'key3']]);
+		assert.equal(output, [['something1', 'key1'], ['something2', 'key2'], ['something3', 'key3']]);
 	});
 
 	it('should return the reduced value when mutated and not returned', () => {
@@ -28,6 +28,6 @@ describe('forOwnReduce', () => {
 			result.push([value, key]);
 		}, []);
 
-		assert.deepEqual(output, [['something1', 'key1'], ['something2', 'key2'], ['something3', 'key3']]);
+		assert.equal(output, [['something1', 'key1'], ['something2', 'key2'], ['something3', 'key3']]);
 	});
 });

@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert } from 'type-enforcer';
 import { superimpose } from '../index.js';
 
 describe('superimpose', () => {
@@ -57,14 +57,14 @@ describe('superimpose', () => {
 	it('should return a clone of the object if only one object is provided', () => {
 		const result = superimpose(object1);
 
-		assert.deepEqual(result, object1);
-		assert.notEqual(result, object1);
+		assert.equal(result, object1);
+		assert.notIs(result, object1);
 	});
 
 	it('should handle simple values', () => {
 		const result = superimpose('test1', 'test2');
 
-		assert.deepEqual(result, 'test2');
+		assert.equal(result, 'test2');
 	});
 
 	it('should superimpose one object onto another', () => {
@@ -96,8 +96,8 @@ describe('superimpose', () => {
 			}]
 		};
 
-		assert.deepEqual(result, output);
-		assert.notDeepEqual(object1, output);
+		assert.equal(result, output);
+		assert.notEqual(object1, output);
 	});
 
 	it('should mutate the first object if the last argument is true', () => {
@@ -130,8 +130,8 @@ describe('superimpose', () => {
 			}]
 		};
 
-		assert.deepEqual(result, output);
-		assert.deepEqual(input, output);
+		assert.equal(result, output);
+		assert.equal(input, output);
 	});
 
 });

@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert } from 'type-enforcer';
 import { deepEqual, traverse } from '../index.js';
 
 describe('traverse', () => {
@@ -45,7 +45,7 @@ describe('traverse', () => {
 
 		assert.equal(total, 8);
 		assert.equal(testVar, 8);
-		assert.isFalse(isCanceled);
+		assert.is(isCanceled, false);
 	});
 
 	it('should NOT traverse deeper when true is returned', () => {
@@ -92,7 +92,7 @@ describe('traverse', () => {
 
 		assert.equal(total, 4);
 		assert.equal(testVar, 4);
-		assert.isTrue(isCanceled);
+		assert.is(isCanceled, true);
 	});
 
 	it('should NOT traverse further array items when true is returned', () => {
@@ -139,7 +139,7 @@ describe('traverse', () => {
 
 		assert.equal(total, 6);
 		assert.equal(testVar, 6);
-		assert.isTrue(isCanceled);
+		assert.is(isCanceled, true);
 	});
 
 	it('should NOT traverse circular objects twice', () => {
@@ -178,7 +178,7 @@ describe('traverse', () => {
 
 		assert.equal(total, 6);
 		assert.equal(testVar, 6);
-		assert.isFalse(isCanceled);
+		assert.is(isCanceled, false);
 	});
 
 	describe('isOptimistic', () => {
@@ -226,7 +226,7 @@ describe('traverse', () => {
 
 			assert.equal(total, 5);
 			assert.equal(testVar, 5);
-			assert.isTrue(isCanceled);
+			assert.is(isCanceled, true);
 		});
 
 		it('should NOT traverse further array items when true is returned', () => {
@@ -281,7 +281,7 @@ describe('traverse', () => {
 
 			assert.equal(total, 5);
 			assert.equal(testVar, 5);
-			assert.isTrue(isCanceled);
+			assert.is(isCanceled, true);
 		});
 	});
 });

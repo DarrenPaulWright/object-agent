@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert } from 'type-enforcer';
 import { diffUpdate } from '../index.js';
 
 describe('diffUpdate', () => {
@@ -21,7 +21,7 @@ describe('diffUpdate', () => {
 		};
 		const diffedObject = {};
 
-		assert.deepEqual(diffUpdate(firstObject, secondObject), diffedObject);
+		assert.equal(diffUpdate(firstObject, secondObject), diffedObject);
 	});
 
 	it('should return an empty object if the second input is empty', () => {
@@ -36,7 +36,7 @@ describe('diffUpdate', () => {
 		const secondObject = {};
 		const diffedObject = {};
 
-		assert.deepEqual(diffUpdate(firstObject, secondObject), diffedObject);
+		assert.equal(diffUpdate(firstObject, secondObject), diffedObject);
 	});
 
 	it('should return the second object if the first input is empty', () => {
@@ -58,7 +58,7 @@ describe('diffUpdate', () => {
 			}
 		};
 
-		assert.deepEqual(diffUpdate(firstObject, secondObject), diffedObject);
+		assert.equal(diffUpdate(firstObject, secondObject), diffedObject);
 	});
 
 	it('should return all the properties that differ between two objects', () => {
@@ -81,7 +81,7 @@ describe('diffUpdate', () => {
 			four: null
 		};
 
-		assert.deepEqual(diffUpdate(firstObject, secondObject), diffedObject);
+		assert.equal(diffUpdate(firstObject, secondObject), diffedObject);
 	});
 
 	it('should return an added property', () => {
@@ -99,7 +99,7 @@ describe('diffUpdate', () => {
 			five: 'something'
 		};
 
-		assert.deepEqual(diffUpdate(firstObject, secondObject), diffedObject);
+		assert.equal(diffUpdate(firstObject, secondObject), diffedObject);
 	});
 
 	it('should return an empty object if the first arg is undefined', () => {
@@ -119,7 +119,7 @@ describe('diffUpdate', () => {
 			}
 		};
 
-		assert.deepEqual(diffUpdate(firstObject, secondObject), diffedObject);
+		assert.equal(diffUpdate(firstObject, secondObject), diffedObject);
 	});
 
 	it('should return an empty object if the second arg is undefined', () => {
@@ -133,6 +133,6 @@ describe('diffUpdate', () => {
 		const secondObject = undefined;
 		const diffedObject = {};
 
-		assert.deepEqual(diffUpdate(firstObject, secondObject), diffedObject);
+		assert.equal(diffUpdate(firstObject, secondObject), diffedObject);
 	});
 });

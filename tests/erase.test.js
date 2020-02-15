@@ -1,5 +1,5 @@
-import { assert } from 'chai';
 import displayValue from 'display-value';
+import { assert } from 'type-enforcer';
 import { erase } from '../index.js';
 import { testValues } from './testValues.js';
 
@@ -12,7 +12,7 @@ describe('erase', () => {
 
 		const result = erase(object, 'level1');
 
-		assert.deepEqual(object, compare);
+		assert.equal(object, compare);
 		assert.equal(result, true);
 	});
 
@@ -24,7 +24,7 @@ describe('erase', () => {
 
 		const result = erase(object, 'level2');
 
-		assert.notDeepEqual(object, compare);
+		assert.notEqual(object, compare);
 		assert.equal(result, false);
 	});
 
@@ -35,7 +35,7 @@ describe('erase', () => {
 
 			const result = erase(object, 'level2');
 
-			assert.deepEqual(object, compare);
+			assert.equal(object, compare);
 			assert.equal(result, false);
 		});
 	});

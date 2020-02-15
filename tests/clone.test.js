@@ -1,12 +1,12 @@
-import { assert } from 'chai';
 import displayValue from 'display-value';
+import { assert } from 'type-enforcer';
 import { clone } from '../index.js';
 import { testValues } from './testValues.js';
 
 describe('clone', () => {
 	testValues.forEach((value) => {
 		it(`should clone ${displayValue(value)}`, () => {
-			assert.deepEqual(clone(value), value);
+			assert.equal(clone(value), value);
 		});
 	});
 
@@ -14,7 +14,7 @@ describe('clone', () => {
 		const object = {};
 		object.key1 = object;
 
-		assert.deepEqual(clone(object, {
+		assert.equal(clone(object, {
 			isCircular: true
 		}), object);
 	});
@@ -28,7 +28,7 @@ describe('clone', () => {
 		};
 		object.key2.key4 = [object.key2];
 
-		assert.deepEqual(clone(object, {
+		assert.equal(clone(object, {
 			isCircular: true
 		}), object);
 	});
@@ -44,7 +44,7 @@ describe('clone', () => {
 			key1: 'something'
 		};
 
-		assert.deepEqual(clone(object, {
+		assert.equal(clone(object, {
 			ignoreKeys: 'key2'
 		}), output);
 	});
@@ -60,7 +60,7 @@ describe('clone', () => {
 			key2: {}
 		};
 
-		assert.deepEqual(clone(object, {
+		assert.equal(clone(object, {
 			ignoreKeys: ['key1', 'key3']
 		}), output);
 	});
@@ -81,7 +81,7 @@ describe('clone', () => {
 
 		const cloned = clone(object);
 
-		assert.deepEqual(cloned, object);
-		assert.isTrue(cloned.key2.key3 === object.key2.key3);
+		assert.equal(cloned, object);
+		assert.is(cloned.key2.key3 === object.key2.key3, true);
 	});
 });

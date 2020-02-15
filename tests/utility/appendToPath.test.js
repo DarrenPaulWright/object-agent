@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert } from 'type-enforcer';
 import { appendToPath } from '../../index.js';
 
 describe('appendToPath', () => {

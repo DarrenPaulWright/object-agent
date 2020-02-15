@@ -1,5 +1,5 @@
-import { assert } from 'chai';
 import displayValue from 'display-value';
+import { assert } from 'type-enforcer';
 import { clone, deepEqual } from '../index.js';
 import { testValues } from './testValues.js';
 
@@ -8,12 +8,12 @@ describe('deepEqual', () => {
 		clone(testValues).forEach((value2, index2) => {
 			if (index1 !== index2) {
 				it(`should return false for ${displayValue(value1)} [${index1}] and ${displayValue(value2)} [${index2}]`, () => {
-					assert.isFalse(deepEqual(value1, value2));
+					assert.is(deepEqual(value1, value2), false);
 				});
 			}
 			else {
 				it(`should return true for ${displayValue(value1)} [${index1}] and ${displayValue(value2)} [${index2}]`, () => {
-					assert.isTrue(deepEqual(value1, value2));
+					assert.is(deepEqual(value1, value2), true);
 				});
 			}
 		});
@@ -35,6 +35,6 @@ describe('deepEqual', () => {
 		};
 		object2.key2.key4 = [object2.key2];
 
-		assert.isTrue(deepEqual(object, object2));
+		assert.equal(deepEqual(object, object2), true);
 	});
 });

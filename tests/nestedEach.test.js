@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert } from 'type-enforcer';
 import { nestedEach } from '../index.js';
 
 describe('nestedEach', () => {
@@ -116,8 +116,8 @@ describe('nestedEach', () => {
 			}
 		});
 
-		assert.deepEqual(total, 27);
-		assert.deepEqual(count, 27);
+		assert.equal(total, 27);
+		assert.equal(count, 27);
 	});
 
 	it('should call the callback for every unique combination of values if accrue = true', () => {
@@ -153,7 +153,7 @@ describe('nestedEach', () => {
 			}
 		}, true);
 
-		assert.deepEqual(total, 6);
-		assert.deepEqual(count, 6);
+		assert.equal(total, 6);
+		assert.equal(count, 6);
 	});
 });
