@@ -25,6 +25,7 @@
  * ```
  *
  * @function isEmpty
+ * @category Comparison
  *
  * @arg {*} item
  *

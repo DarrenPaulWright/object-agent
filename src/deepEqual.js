@@ -24,6 +24,7 @@ import traverse from './traverse.js';
  * ```
  *
  * @function deepEqual
+ * @category Comparison
  *
  * @arg {*} item1
  * @arg {*} item2

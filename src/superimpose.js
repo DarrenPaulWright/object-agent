@@ -49,6 +49,7 @@ import isObject from './utility/isObject.js';
  * ```
  *
  * @function superimpose
+ * @category Interaction
  *
  * @arg {*} args - two or more items to superimpose on each other. Each item is superimposed on the item before it.
  * @arg {Boolean} [mutateFirst=false] - If a final argument of true is provided, then the first object will be mutated in place and returned.

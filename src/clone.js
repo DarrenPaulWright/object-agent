@@ -43,6 +43,7 @@ const doClone = (value, path, settings) => {
  * ```
  *
  * @function clone
+ * @category Interaction
  *
  * @arg {*} value
  * @arg {Object} [settings]

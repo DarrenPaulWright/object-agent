@@ -20,6 +20,7 @@ import get from './get.js';
  * ```
  *
  * @function has
+ * @category Interaction
  *
  * @arg {Object} object
  * @arg {String} path - Dot delimited string

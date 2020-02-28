@@ -22,6 +22,7 @@ import forOwn from './forOwn.js';
  * ```
  *
  * @function forOwnReduce
+ * @category Iteration
  *
  * @arg {Object} object
  * @arg {Function} callback - Provides three args: result, value, and key. If the result is only mutated then you may not need to return it.

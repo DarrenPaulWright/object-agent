@@ -10,6 +10,7 @@
  * ```
  *
  * @function lastInPath
+ * @category Path Utility
  *
  * @arg {String} path
  * @arg {String} [separator=.] - Defines the boundary between steps in the path.

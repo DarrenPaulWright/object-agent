@@ -55,6 +55,7 @@ const processValue = (path, value, callback, isOptimistic, refs) => {
  * ```
  *
  * @function traverse
+ * @category Iteration
  *
  * @arg {Object} object
  * @arg {Function} callback - Provides two args, path and value. If true is returned then stop traversing and return true.

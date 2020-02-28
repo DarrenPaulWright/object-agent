@@ -52,6 +52,7 @@ const getComparer = (a) => {
  * ```
  *
  * @function isEqual
+ * @category Comparison
  *
  * @arg {...*|Array} - Can be an array of items or multiple args of items.
  *

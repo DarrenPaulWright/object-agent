@@ -17,6 +17,7 @@ const defaultCallback = (index) => index;
  * ```
  *
  * @function fill
+ * @category Iteration
  *
  * @arg {integer} length
  * @arg {Function} [callback] - provides one argument, the index of the returned array

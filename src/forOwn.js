@@ -18,6 +18,7 @@
  * ```
  *
  * @function forOwn
+ * @category Iteration
  *
  * @arg {Object} object
  * @arg {Function} callback - Provides two args: value and key

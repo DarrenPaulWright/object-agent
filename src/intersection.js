@@ -56,6 +56,7 @@ const intersectionObjects = (args) => {
  * ```
  *
  * @function intersection
+ * @category Interaction
  *
  * @arg {...*|Array}
  *

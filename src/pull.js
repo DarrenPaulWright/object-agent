@@ -17,6 +17,7 @@ import get from './get.js';
  * ```
  *
  * @function pull
+ * @category Iteration
  *
  * @arg {Array} array
  * @arg {String} path - Dot delimited string

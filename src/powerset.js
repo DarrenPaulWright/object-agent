@@ -12,6 +12,7 @@ import nestedEach from './nestedEach.js';
  * ```
  *
  * @function powerset
+ * @category Data Generation
  *
  * @arg {array} input
  *

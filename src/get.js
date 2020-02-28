@@ -20,6 +20,7 @@ import walkPath from './utility/walkPath.js';
  * ```
  *
  * @function get
+ * @category Interaction
  *
  * @arg {Object} object
  * @arg {String} path - Dot delimited string

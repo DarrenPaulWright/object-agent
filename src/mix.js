@@ -15,6 +15,7 @@ import nestedEach from './nestedEach.js';
  * ```
  *
  * @function mix
+ * @category Data Generation
  *
  * @arg {Array} args - All of the arrays to mix together
  *

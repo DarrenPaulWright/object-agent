@@ -24,6 +24,7 @@ import walkPath from './utility/walkPath.js';
  * ```
  *
  * @function unset
+ * @category Interaction
  *
  * @arg {Object} object
  * @arg {String} path - Dot delimited string

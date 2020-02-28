@@ -25,6 +25,7 @@ import forOwn from './forOwn.js';
  * ```
  *
  * @function diffUpdate
+ * @category Comparison
  *
  * @arg {Object} object1
  * @arg {Object} object2

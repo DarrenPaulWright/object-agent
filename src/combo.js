@@ -16,6 +16,7 @@ import nestedEach from './nestedEach.js';
  * ```
  *
  * @function combo
+ * @category Data Generation
  *
  * @arg {array} array
  * @arg {length} [length=2]

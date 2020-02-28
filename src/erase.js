@@ -17,6 +17,7 @@
  * ```
  *
  * @function erase
+ * @category Interaction
  *
  * @param {Object} object
  * @param {String} key

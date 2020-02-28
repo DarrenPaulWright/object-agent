@@ -14,6 +14,7 @@
  * ```
  *
  * @function repeat
+ * @category Iteration
  *
  * @arg {integer} times
  * @arg {Function} callback - Provides one argument, an index value of the call count

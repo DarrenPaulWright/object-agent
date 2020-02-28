@@ -10,6 +10,7 @@
  * ```
  *
  * @function countInString
+ * @category Interaction
  *
  * @arg {String} string
  * @arg {String} match

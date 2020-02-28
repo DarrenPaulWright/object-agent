@@ -15,6 +15,7 @@
  * ```
  *
  * @function nestedEach
+ * @category Iteration
  *
  * @arg {array} arrays
  * @arg {function} callback - Provides one item from each array.

@@ -23,6 +23,7 @@
  * ```
  *
  * @function walkPath
+ * @category Path Utility
  *
  * @arg {String} path
  * @arg {function} callback - Provides two args, the key and the tail path after key

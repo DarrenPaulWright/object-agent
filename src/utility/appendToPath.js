@@ -10,6 +10,7 @@
  * ```
  *
  * @function appendToPath
+ * @category Path Utility
  *
  * @arg {String} path
  * @arg {String|Number} key

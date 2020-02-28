@@ -30,6 +30,7 @@ const buildNew = (key) => !isNaN(parseInt(key)) ? [] : {};
  * ```
  *
  * @function set
+ * @category Interaction
  *
  * @arg {Object} object
  * @arg {String} path - Dot delimited string
