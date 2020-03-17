@@ -1,3 +1,3 @@
-const karmaBenchConfig = require('karma-webpack-bundle').karmaBenchConfig;
+const { karmaBenchConfig } = require('karma-webpack-bundle');
 
 module.exports = karmaBenchConfig();
