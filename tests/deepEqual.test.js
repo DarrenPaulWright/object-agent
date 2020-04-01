@@ -19,7 +19,21 @@ describe('deepEqual', () => {
 		});
 	});
 
-	it('should compare a circular reference', () => {
+	it('should compare the same item referenced multiple times', () => {
+		const item = {};
+
+		assert.equal(deepEqual([{
+			item
+		}, {
+			item
+		}], [{
+			item
+		}, {
+			item
+		}]), true);
+	});
+
+	it('should compare seperate circular references in different objects', () => {
 		const object = {
 			key1: 'something',
 			key2: {
