@@ -98,13 +98,12 @@
 	},
 	"homepage": "https://github.com/DarrenPaulWright/object-agent#readme",
 	"devDependencies": {
-		"dmd-readable": "^1.2.1",
+		"dmd-readable": "^1.2.2",
 		"exec-each": "0.0.3",
-		"jsdoc-to-markdown": "^5.0.3",
-		"karma-webpack-bundle": "0.4.1",
+		"jsdoc-to-markdown": "^6.0.1",
+		"karma-webpack-bundle": "0.4.3",
 		"npm-run-all": "^4.1.5",
 		"on-change": "^2.0.1",
-		"webpack": "^4.42.1"
-	},
-	"dependencies": {}
+		"webpack": "^4.43.0"
+	}
 }
