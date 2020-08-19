@@ -30,8 +30,8 @@
 [build-url]: https://travis-ci.org/DarrenPaulWright/object-agent
 [coverage]: https://coveralls.io/repos/github/DarrenPaulWright/object-agent/badge.svg?branch&#x3D;master
 [coverage-url]: https://coveralls.io/github/DarrenPaulWright/object-agent?branch&#x3D;master
-[deps]: https://david-dm.org/darrenpaulwright/object-agent.svg
-[deps-url]: https://david-dm.org/darrenpaulwright/object-agent
+[deps]: https://david-dm.org/DarrenPaulWright/object-agent.svg
+[deps-url]: https://david-dm.org/DarrenPaulWright/object-agent
 [size]: https://packagephobia.now.sh/badge?p&#x3D;object-agent
 [size-url]: https://packagephobia.now.sh/result?p&#x3D;object-agent
 [vulnerabilities]: https://snyk.io/test/github/DarrenPaulWright/object-agent/badge.svg?targetFile&#x3D;package.json
