@@ -1,5 +1,5 @@
 /**
- * Calls a callback a specified number of times
+ * Calls a callback a specified number of times.
  *
  * @example
  * ``` javascript
@@ -16,10 +16,8 @@
  * @function repeat
  * @category Iteration
  *
- * @arg {integer} times
- * @arg {Function} callback - Provides one argument, an index value of the call count
- *
- * @returns {Array}
+ * @param {number.integer} times - The number of times to call the callback.
+ * @param {Function} callback - Provides one argument, a zero based index value of the call count.
  */
 export default (times, callback) => {
 	for (let index = 0; index < times; index++) {

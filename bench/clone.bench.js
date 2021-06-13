@@ -2,7 +2,7 @@ import { benchSettings } from 'karma-webpack-bundle';
 import { clone } from '../index.js';
 
 suite('clone', () => {
-	let sandbox = '';
+	const sandbox = '';
 
 	const extra = {
 		'foo': 'bar'
@@ -39,5 +39,4 @@ suite('clone', () => {
 			isCircular: true
 		});
 	}, benchSettings);
-
 });

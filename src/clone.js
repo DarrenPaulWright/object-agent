@@ -8,27 +8,38 @@ import isObject from './utility/isObject.js';
 const cloneObject = (value, path, settings) => {
 	if (settings.isCircular) {
 		if (settings.objectRefs.has(value)) {
-			return settings.circularRefs.push([path, settings.objectRefs.get(value)]);
+			return settings.circularRefs.push([path,
+				settings.objectRefs.get(value)]);
 		}
 
 		settings.objectRefs.set(value, path);
 	}
 
-	return mapOwn(value, (value, key) => doClone(value, appendToPath(path, key), settings), settings.ignoreKeys);
+	return mapOwn(value, (innerValue, key) => {
+		return doClone(innerValue, appendToPath(path, key), settings);
+	}, settings.ignoreKeys);
 };
 
-const cloneArray = (value, path, settings) => value.map((value, index) => doClone(value, appendToPath(path, index), settings));
-
-const cloneDate = (value) => new Date(value.valueOf());
-
-const cloneRegExp = (value) => new RegExp(value);
-
 const doClone = (value, path, settings) => {
-	return isObject(value) ? cloneObject(value, path, settings) :
-		isArray(value) ? cloneArray(value, path, settings) :
-			value instanceof Date ? cloneDate(value) :
-				value instanceof RegExp ? cloneRegExp(value) :
-					value;
+	if (isObject(value)) {
+		return cloneObject(value, path, settings);
+	}
+
+	if (isArray(value)) {
+		return value.map((innerValue, index) => {
+			return doClone(innerValue, appendToPath(path, index), settings);
+		});
+	}
+
+	if (value instanceof Date) {
+		return new Date(value.valueOf());
+	}
+
+	if (value instanceof RegExp) {
+		return new RegExp(value); // eslint-disable-line require-unicode-regexp
+	}
+
+	return value;
 };
 
 /**
@@ -45,27 +56,27 @@ const doClone = (value, path, settings) => {
  * @function clone
  * @category Interaction
  *
- * @arg {*} value
- * @arg {Object} [settings]
- * @arg {Array|String} [settings.ignoreKeys] - Any keys in this array will not be cloned
- * @arg {Boolean} [settings.isCircular=false] - If true then circular references will be handled
+ * @param {*} value - The data to clone.
+ * @param {object} [settings] - Settings object.
+ * @param {Array | string} [settings.ignoreKeys] - Any keys in this array will not be cloned.
+ * @param {boolean} [settings.isCircular=false] - If true then circular references will be handled.
  *
  * @returns {*}
  */
-export default function clone(item, settings = {}) {
+export default function clone(value, settings = {}) {
 	if (settings.isCircular) {
 		settings.objectRefs = new Map();
 		settings.circularRefs = [];
 	}
 
-	const result = doClone(item, '', settings);
+	const result = doClone(value, '', settings);
 
 	if (settings.isCircular) {
-		let ref = '';
+		let reference = '';
 
 		for (let index = 0; index < settings.circularRefs.length; index++) {
-			ref = settings.circularRefs[index];
-			set(result, ref[0], get(result, ref[1]));
+			reference = settings.circularRefs[index];
+			set(result, reference[0], get(result, reference[1]));
 		}
 
 		settings.objectRefs.clear();

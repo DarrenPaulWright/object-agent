@@ -1,7 +1,7 @@
 import get from './get.js';
 
 /**
- * Determines if a nested value is defined
+ * Determines if a nested value is defined.
  *
  * @example
  * ``` javascript
@@ -22,9 +22,9 @@ import get from './get.js';
  * @function has
  * @category Interaction
  *
- * @arg {Object} object
- * @arg {String} path - Dot delimited string
+ * @param {object} object - The object to check.
+ * @param {string} path - Dot delimited string.
  *
- * @returns {*}
+ * @returns {boolean}
  */
 export default (object, path) => get(object, path) !== undefined;

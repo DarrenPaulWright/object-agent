@@ -1,11 +1,11 @@
 import { benchSettings } from 'karma-webpack-bundle';
 import { erase } from '../index.js';
 
-let object = {id: 23};
+let object = { id: 23 };
 const settings = {
 	...benchSettings,
 	onCycle() {
-		object = {id: 23};
+		object = { id: 23 };
 	}
 };
 
@@ -56,7 +56,7 @@ suite.skip('delete variants', () => {
 });
 
 suite('erase', () => {
-	let object = {id: 23};
+	const object = { id: 23 };
 
 	benchmark('delete', () => {
 		erase(object, 'id');

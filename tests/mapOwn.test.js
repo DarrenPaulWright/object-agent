@@ -50,14 +50,14 @@ describe('mapOwn', () => {
 	});
 
 	it('should return null if null is given', () => {
-		let object = null;
+		const object = null;
 		const mapper = (value) => value;
 
 		assert.equal(mapOwn(object, mapper), null);
 	});
 
 	it('should return undefined if undefined is given', () => {
-		let object;
+		let object; // eslint-disable-line init-declarations
 		const mapper = (value) => value;
 
 		assert.equal(mapOwn(object, mapper), undefined);

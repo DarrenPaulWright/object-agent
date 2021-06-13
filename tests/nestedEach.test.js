@@ -6,7 +6,7 @@ describe('nestedEach', () => {
 		let count = 0;
 		let total = 0;
 
-		nestedEach([[1, 2, 3], [1, 2, 3], [1, 2, 3]], (...args) => {
+		nestedEach([[1, 2, 3], [1, 2, 3], [1, 2, 3]], (...args) => { // eslint-disable-line complexity
 			total++;
 
 			if (args[0] === 1) {

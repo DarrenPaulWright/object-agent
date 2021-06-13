@@ -4,7 +4,7 @@ import { forOwn } from '../index.js';
 describe('forOwn', () => {
 	it('should call the callback for each key', () => {
 		let total = 0;
-		let testVar = 0;
+		let testVariable = 0;
 		const object = {
 			key1: 'something1',
 			key2: 'something2',
@@ -14,24 +14,24 @@ describe('forOwn', () => {
 		const isCanceled = forOwn(object, (value, key) => {
 			total++;
 			if (key === 'key1' && value === 'something1') {
-				testVar++;
+				testVariable++;
 			}
 			if (key === 'key2' && value === 'something2') {
-				testVar++;
+				testVariable++;
 			}
 			if (key === 'key3' && value === 'something3') {
-				testVar++;
+				testVariable++;
 			}
 		});
 
 		assert.equal(total, 3);
-		assert.equal(testVar, 3);
+		assert.equal(testVariable, 3);
 		assert.is(isCanceled, false);
 	});
 
 	it('should stop calling the callbacks if true is returned', () => {
 		let total = 0;
-		let testVar = 0;
+		let testVariable = 0;
 		const object = {
 			key1: 'something1',
 			key2: 'something2',
@@ -41,22 +41,22 @@ describe('forOwn', () => {
 		const isCanceled = forOwn(object, (value, key) => {
 			total++;
 			if (key === 'key1' && value === 'something1') {
-				testVar++;
+				testVariable++;
 			}
 			if (key === 'key2' && value === 'something2') {
-				testVar++;
+				testVariable++;
 				return true;
 			}
 		});
 
 		assert.equal(total, 2);
-		assert.equal(testVar, 2);
+		assert.equal(testVariable, 2);
 		assert.is(isCanceled, true);
 	});
 
 	it('should NOT call the callback for keys that are deleted in a previous callback', () => {
 		let total = 0;
-		let testVar = 0;
+		let testVariable = 0;
 		const object = {
 			key1: 'something1',
 			key2: 'something2',
@@ -66,22 +66,22 @@ describe('forOwn', () => {
 		const isCanceled = forOwn(object, (value, key) => {
 			total++;
 			if (key === 'key1' && value === 'something1') {
-				testVar++;
+				testVariable++;
 			}
 			if (key === 'key2' && value === 'something2') {
-				testVar++;
+				testVariable++;
 				delete object.key3;
 			}
 		});
 
 		assert.equal(total, 2);
-		assert.equal(testVar, 2);
+		assert.equal(testVariable, 2);
 		assert.is(isCanceled, false);
 	});
 
 	it('should not call the callback for inherited properties', () => {
 		let total = 0;
-		let testVar = 0;
+		let testVariable = 0;
 		const Thing = function() {
 			this.key1 = 'something1';
 		};
@@ -91,18 +91,18 @@ describe('forOwn', () => {
 		const isCanceled = forOwn(object, (value, key) => {
 			total++;
 			if (key === 'key1' && value === 'something1') {
-				testVar++;
+				testVariable++;
 			}
 		});
 
 		assert.equal(total, 1);
-		assert.equal(testVar, 1);
+		assert.equal(testVariable, 1);
 		assert.is(isCanceled, false);
 	});
 
 	it('should not call the callback if object is undefined', () => {
 		let total = 0;
-		let object;
+		let object; // eslint-disable-line init-declarations
 
 		const isCanceled = forOwn(object, () => {
 			total++;

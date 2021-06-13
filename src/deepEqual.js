@@ -26,10 +26,10 @@ import traverse from './traverse.js';
  * @function deepEqual
  * @category Comparison
  *
- * @arg {*} item1
- * @arg {*} item2
+ * @param {*} item1 - The first item to compare.
+ * @param {*} item2 - The second item to compare.
  *
- * @returns {Boolean}
+ * @returns {boolean}
  */
 export default (item1, item2) => {
 	return Object.is(item1, item2) || !traverse(item1, (path, value, isCircular) => {

@@ -35,6 +35,6 @@ suite('mapOwn', () => {
 	}, benchSettings);
 
 	benchmark('large destructuring', () => {
-		sandbox = {...largeObject};
+		sandbox = { ...largeObject };
 	}, benchSettings);
 });

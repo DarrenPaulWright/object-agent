@@ -29,5 +29,4 @@ suite('traverse', () => {
 			return path === 'test3.2';
 		}, true);
 	}, benchSettings);
-
 });

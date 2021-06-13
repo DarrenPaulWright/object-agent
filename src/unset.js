@@ -26,19 +26,19 @@ import walkPath from './utility/walkPath.js';
  * @function unset
  * @category Interaction
  *
- * @arg {Object} object
- * @arg {String} path - Dot delimited string
+ * @param {object} object - The object to mutate.
+ * @param {string} path - Dot delimited string.
  *
- * @returns {Object} The mutated object.
+ * @returns {object} The mutated object.
  */
 export default (object, path) => {
-	let ref = object;
+	let reference = object;
 
-	return walkPath(path, (key, path) => {
-		return ref === undefined ||
-			ref === null ||
-			(path === '' ?
-				erase(ref, key) :
-				undefined === (ref = ref[key]));
+	return walkPath(path, (key, innerPath) => {
+		return reference === undefined ||
+			reference === null ||
+			(innerPath === '' ?
+				erase(reference, key) :
+				undefined === (reference = reference[key]));
 	}) || object;
 };

@@ -87,7 +87,7 @@ describe('set', () => {
 		assert.equal(object, result);
 	});
 
-	it('should set the value of a second level key in an array with multiple items', () => {
+	it('should set the value of a third level key in an array with multiple items', () => {
 		const object = {
 			level1: [{
 				level2: 'test 0'
@@ -127,9 +127,9 @@ describe('set', () => {
 
 	it('should create objects and arrays then set the value', () => {
 		const object = onChange({}, () => {
-			testVar++;
+			testVariable++;
 		});
-		let testVar = 0;
+		let testVariable = 0;
 		const compare = {
 			level1: [, , { // eslint-disable-line no-sparse-arrays
 				level2: {
@@ -141,8 +141,7 @@ describe('set', () => {
 		const result = set(object, 'level1.2.level2.level3', 'meh');
 
 		assert.equal(object, compare);
-		assert.equal(testVar, 1);
+		assert.equal(testVariable, 1);
 		assert.equal(object, result);
 	});
-
 });

@@ -22,10 +22,10 @@ import walkPath from './utility/walkPath.js';
  * @function get
  * @category Interaction
  *
- * @arg {Object} object
- * @arg {String} path - Dot delimited string
+ * @param {object} object - The object to traverse.
+ * @param {string} path - Dot delimited string.
  *
- * @returns {*}
+ * @returns {*} The value at the end of the path or undefined.
  */
 export default (object, path) => {
 	return walkPath(path, (key) => undefined === (object = object ? object[key] : undefined)) || object;

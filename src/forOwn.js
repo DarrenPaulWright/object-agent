@@ -20,14 +20,14 @@
  * @function forOwn
  * @category Iteration
  *
- * @arg {Object} object
- * @arg {Function} callback - Provides two args: value and key
+ * @param {object} object - The object to iterate over.
+ * @param {Function} callback - Provides two args: value and key.
  *
- * @returns {Boolean} true if the callback function returns a truthy value for any key; otherwise, false.
+ * @returns {boolean} True if the callback function returns a truthy value for any key, otherwise false.
  */
 export default (object, callback) => {
 	if (object) {
-		for (let key in object) {
+		for (const key in object) {
 			if (Object.hasOwnProperty.call(object, key) && callback(object[key], key)) {
 				return true;
 			}

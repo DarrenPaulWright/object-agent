@@ -27,8 +27,8 @@
  * @function isEmpty
  * @category Comparison
  *
- * @arg {*} item
+ * @param {*} item - The item to test.
  *
- * @returns {Boolean}
+ * @returns {boolean}
  */
 export default (item) => !item || item.length === 0 || Object.keys(item).length === 0;

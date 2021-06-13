@@ -19,8 +19,8 @@ import get from './get.js';
  * @function pull
  * @category Iteration
  *
- * @arg {Array} array
- * @arg {String} path - Dot delimited string
+ * @param {Array} array - Array of objects.
+ * @param {string} path - Dot delimited string of the path within each object.
  *
  * @returns {Array}
  */

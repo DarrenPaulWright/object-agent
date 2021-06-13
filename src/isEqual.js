@@ -4,26 +4,24 @@ import isObject from './utility/isObject.js';
 import multiArgs from './utility/multiArgs.js';
 
 const getComparer = (a) => {
-	let alt;
-
 	if (isObject(a)) {
-		alt = Object.keys(a).length;
+		const alt = Object.keys(a).length;
 		return (b) => isObject(b) && alt === Object.keys(b).length;
 	}
 	if (isArray(a)) {
-		alt = a.length;
+		const alt = a.length;
 		return (b) => isArray(b) && alt === b.length;
 	}
 	if (a instanceof Date) {
-		alt = a.getTime();
+		const alt = a.getTime();
 		return (b) => b instanceof Date && Object.is(b.getTime(), alt);
 	}
 	if (a instanceof RegExp) {
-		alt = a + '';
+		const alt = a + '';
 		return (b) => b instanceof RegExp && Object.is(b + '', alt);
 	}
-	if (a !== a) {
-		return (b) => b !== b;
+	if (a !== a) { // eslint-disable-line no-self-compare
+		return (b) => b !== b; // eslint-disable-line no-self-compare
 	}
 	if (typeof a === 'object' && a !== null) {
 		return (b) => b !== null &&
@@ -54,9 +52,9 @@ const getComparer = (a) => {
  * @function isEqual
  * @category Comparison
  *
- * @arg {...*|Array} - Can be an array of items or multiple args of items.
+ * @param {...*|Array} args - Can be an array of items or multiple args of items.
  *
- * @returns {Boolean}
+ * @returns {boolean}
  */
 export default (...args) => {
 	args = multiArgs(args);

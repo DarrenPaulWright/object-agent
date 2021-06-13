@@ -51,11 +51,11 @@ suite('isEqual', () => {
 	}, benchSettings);
 
 	benchmark('regexp true', () => {
-		isEqual(/[0-9]/, /[0-9]/);
+		isEqual(/\d/, /\d/);
 	}, benchSettings);
 
 	benchmark('regexp false', () => {
-		isEqual(/[0-9]/, /[a-z]/);
+		isEqual(/\d/, /[a-z]/);
 	}, benchSettings);
 
 	benchmark('NaN true', () => {

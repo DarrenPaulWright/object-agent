@@ -7,14 +7,23 @@ describe('intersection', () => {
 	});
 
 	it('should return the same values from different arrays', () => {
-		assert.equal(intersection([1, 2, 3, 4], [3, 4, 5, 6], [3, 4, 5, 6, 7, 8]), [3, 4]);
+		assert.equal(intersection([1, 2, 3, 4], [3, 4, 5, 6], [3,
+			4,
+			5,
+			6,
+			7,
+			8]), [3, 4]);
 	});
 
 	it('should return an array with the values that are the same dates and regexps from both arrays', () => {
 		assert.equal(intersection([
-			[new Date('2007/12/12'), 'test2', /test/],
-			[/test/, /test2/, 'test2', new Date('2007/12/12'), new Date('2007/12/13')]]
-		), [new Date('2007/12/12'), 'test2', /test/]);
+			[new Date('2007/12/12'), 'test2', /test/u],
+			[/test/u,
+				/test2/u,
+				'test2',
+				new Date('2007/12/12'),
+				new Date('2007/12/13')]]
+		), [new Date('2007/12/12'), 'test2', /test/u]);
 	});
 
 	it('should return an identical object if the two inputs are equal simple objects', () => {
@@ -121,7 +130,11 @@ describe('intersection', () => {
 		};
 		const secondObject = {
 			one: 'something else',
-			three: ['test', 'test2', 'test3', new Date('2007/12/12'), new Date('2007/12/20')],
+			three: ['test',
+				'test2',
+				'test3',
+				new Date('2007/12/12'),
+				new Date('2007/12/20')],
 			four: {
 				sub: 'test',
 				sub2: 'test2'

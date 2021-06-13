@@ -1,5 +1,5 @@
 /**
- * Counts the number of instances of a string within another string
+ * Counts the number of instances of a string within another string.
  *
  * @example
  * ``` javascript
@@ -12,10 +12,10 @@
  * @function countInString
  * @category Interaction
  *
- * @arg {String} string
- * @arg {String} match
+ * @param {string} string - The string to search.
+ * @param {string} match - The string to find.
  *
- * @returns {Number}
+ * @returns {number}
  */
 export default (string, match) => {
 	let total = -1;

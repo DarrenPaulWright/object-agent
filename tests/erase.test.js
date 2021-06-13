@@ -1,7 +1,7 @@
 import displayValue from 'display-value';
 import { assert } from 'type-enforcer';
 import { erase } from '../index.js';
-import { testValues } from './testValues.js';
+import { testValues } from './helper/testValues.js';
 
 describe('erase', () => {
 	it('should delete a key and return true', () => {

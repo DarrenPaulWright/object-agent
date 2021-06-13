@@ -25,17 +25,15 @@
  * @function walkPath
  * @category Path Utility
  *
- * @arg {String} path
- * @arg {function} callback - Provides two args, the key and the tail path after key
- * @arg {String} [separator=.] - Defines the boundary between steps in the path.
- *
- * @returns {String}
+ * @param {string} path - The path.
+ * @param {Function} callback - Provides two args, the key and the tail path after key.
+ * @param {string} [separator=.] - Defines the boundary between steps in the path.
  */
 export default (path, callback, separator = '.') => {
-	for (let prev = 0, index = -1, length = path.length; ((index = path.indexOf(separator, prev)) === -1 ? (index = length) : 1) !== -1 &&
-	(prev === index ||
-		callback(path.slice(prev, index), path.slice(index + 1)) !== true) &&
+	for (let previous = 0, index = -1, length = path.length; ((index = path.indexOf(separator, previous)) === -1 ? (index = length) : 1) !== -1 &&
+	(previous === index ||
+		callback(path.slice(previous, index), path.slice(index + 1)) !== true) &&
 	index !== length;) {
-		prev = index + 1;
+		previous = index + 1;
 	}
 };

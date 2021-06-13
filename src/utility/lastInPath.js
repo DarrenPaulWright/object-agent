@@ -1,5 +1,5 @@
 /**
- * Returns the last key in a path
+ * Returns the last key in a path.
  *
  * @example
  * ``` javascript
@@ -12,10 +12,10 @@
  * @function lastInPath
  * @category Path Utility
  *
- * @arg {String} path
- * @arg {String} [separator=.] - Defines the boundary between steps in the path.
+ * @param {string} path - The path.
+ * @param {string} [separator=.] - Defines the boundary between steps in the path.
  *
- * @returns {String}
+ * @returns {string}
  */
 export default (path, separator = '.') => {
 	return path.slice(path.lastIndexOf(separator) + 1);

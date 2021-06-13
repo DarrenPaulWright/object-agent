@@ -10,7 +10,7 @@ describe('countInString', () => {
 		assert.equal(countInString('1, 2, 3, 4', '.'), 0);
 	});
 
-	it('should count spaced out single characters in a string', () => {
+	it('should count multiple single characters in a string', () => {
 		assert.equal(countInString(',,,,,', ','), 5);
 	});
 

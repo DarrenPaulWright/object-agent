@@ -1,7 +1,7 @@
 import forOwn from './forOwn.js';
 
 /**
- * Iterates over own properties of an object and returns a reduced value
+ * Iterates over own properties of an object and returns a reduced value.
  *
  * @example
  * ``` javascript
@@ -24,11 +24,11 @@ import forOwn from './forOwn.js';
  * @function forOwnReduce
  * @category Iteration
  *
- * @arg {Object} object
- * @arg {Function} callback - Provides three args: result, value, and key. If the result is only mutated then you may not need to return it.
- * @arg {*} initialValue
+ * @param {object} object - The object to iterate over.
+ * @param {Function} callback - Provides three args: result, value, and key. If the result is only mutated then you may not need to return it.
+ * @param {*} initialValue - The initial value passed into the callback as result.
  *
- * @returns {*} The accumulated result
+ * @returns {*} The accumulated result.
  */
 export default (object, callback, initialValue) => {
 	forOwn(object, (value, key) => {

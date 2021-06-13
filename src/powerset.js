@@ -1,7 +1,7 @@
 import nestedEach from './nestedEach.js';
 
 /**
- * Create a [power set](https://en.wikipedia.org/wiki/Power_set) from a set of values
+ * Create a [power set](https://en.wikipedia.org/wiki/Power_set) from a set of values.
  *
  * @example
  * ``` javascript
@@ -14,14 +14,15 @@ import nestedEach from './nestedEach.js';
  * @function powerset
  * @category Data Generation
  *
- * @arg {array} input
+ * @param {Array} values - Initial set of values.
  *
- * @returns {array}
+ * @returns {Array}
  */
-export default (input) => {
+export default (values) => {
 	const output = [[]];
 
-	nestedEach([input, output], (item, out) => output.push(out.concat([item])));
+	nestedEach([values,
+		output], (item, out) => output.push(out.concat([item])));
 
 	return output;
 };

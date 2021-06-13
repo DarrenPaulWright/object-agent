@@ -133,5 +133,4 @@ describe('superimpose', () => {
 		assert.equal(result, output);
 		assert.equal(input, output);
 	});
-
 });

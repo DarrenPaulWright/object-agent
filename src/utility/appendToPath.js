@@ -1,5 +1,5 @@
 /**
- * Adds a key to the end of a path
+ * Adds a key to the end of a path.
  *
  * @example
  * ``` javascript
@@ -12,12 +12,12 @@
  * @function appendToPath
  * @category Path Utility
  *
- * @arg {String} path
- * @arg {String|Number} key
- * @arg {String} [separator=.] - Defines the boundary between steps in the path.
+ * @param {string} path - The path.
+ * @param {string | number} key - The next key to append.
+ * @param {string} [separator=.] - Defines the boundary between steps in the path.
  *
- * @returns {String}
+ * @returns {string}
  */
 export default (path, key, separator = '.') => {
-	return `${path}${path !== '' ? separator : ''}${key}`;
+	return `${path}${path === '' ? '' : separator}${key}`;
 };

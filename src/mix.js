@@ -17,14 +17,14 @@ import nestedEach from './nestedEach.js';
  * @function mix
  * @category Data Generation
  *
- * @arg {Array} args - All of the arrays to mix together
+ * @param {...any} args - All of the arrays to mix together.
  *
  * @returns {Array}
  */
 export default (...args) => {
 	const output = [];
 
-	nestedEach(args, (...args) => output.push(args));
+	nestedEach(args, (...values) => output.push(values));
 
 	return output;
-}
+};

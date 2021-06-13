@@ -2,7 +2,7 @@ import deepEqual from './deepEqual.js';
 import forOwn from './forOwn.js';
 
 /**
- * Performs a deep comparison of two objects, returns a new object with only the first level values that have been changed or added on the second object
+ * Performs a deep comparison of two objects, returns a new object with only the first level values that have been changed or added on the second object.
  *
  * @example
  * ``` javascript
@@ -27,10 +27,10 @@ import forOwn from './forOwn.js';
  * @function diffUpdate
  * @category Comparison
  *
- * @arg {Object} object1
- * @arg {Object} object2
+ * @param {object} object1 - The initial object.
+ * @param {object} object2 - The changed object.
  *
- * @returns {Object}
+ * @returns {object}
  */
 export default (object1, object2) => {
 	const output = {};

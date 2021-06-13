@@ -8,7 +8,7 @@ import isObject from './utility/isObject.js';
 import multiArgs from './utility/multiArgs.js';
 
 const intersectionValues = (values) => {
-	return isArray(values[0]) ? intersectionArrays(values) : isObject(values[0]) ? intersectionObjects(values) : intersectionOther(values);
+	return isArray(values[0]) ? intersectionArrays(values) : (isObject(values[0]) ? intersectionObjects(values) : intersectionOther(values));
 };
 
 const intersectionOther = (args) => {
@@ -17,7 +17,7 @@ const intersectionOther = (args) => {
 
 const intersectionArrays = (args) => {
 	const array1 = args.shift();
-	let otherArrays = [].concat(...args);
+	const otherArrays = [].concat(...args);
 	return array1.filter((item) => otherArrays.findIndex((diffItem) => isEqual(diffItem, item)) !== -1);
 };
 
@@ -58,8 +58,8 @@ const intersectionObjects = (args) => {
  * @function intersection
  * @category Interaction
  *
- * @arg {...*|Array}
+ * @param {...*|Array} args - An array of arrays or arrays as separate args.
  *
- * @returns {Object}
+ * @returns {object}
  */
 export default (...args) => intersectionValues(multiArgs(args));

@@ -19,8 +19,8 @@
  * @function erase
  * @category Interaction
  *
- * @param {Object} object
- * @param {String} key
+ * @param {object} object - An object.
+ * @param {string} key - The key to delete.
  *
  * @returns {boolean}
  */

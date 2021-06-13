@@ -1,7 +1,7 @@
 import displayValue from 'display-value';
 import { assert } from 'type-enforcer';
 import { unset } from '../index.js';
-import { testValues } from './testValues.js';
+import { testValues } from './helper/testValues.js';
 
 describe('unset', () => {
 	it('should set the value of a first level key', () => {
@@ -80,7 +80,7 @@ describe('unset', () => {
 		assert.equal(result, object);
 	});
 
-	it('should set the value of a second level key in an array with multiple items', () => {
+	it('should set the value of a third level key in an array with multiple items', () => {
 		const object = {
 			level1: [{
 				level2: 'test 0'
@@ -123,7 +123,7 @@ describe('unset', () => {
 
 			const result = unset(object, 'level1.level2');
 
-			if (value === value) {
+			if (value === value) { //eslint-disable-line no-self-compare
 				assert.equal(object, compare);
 				assert.equal(result, object);
 			}

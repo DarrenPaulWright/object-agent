@@ -3,12 +3,12 @@ import appendToPath from './utility/appendToPath.js';
 import isArray from './utility/isArray.js';
 import isObject from './utility/isObject.js';
 
-const processValue = (path, value, callback, isOptimistic, refs) => {
-	const loopCallback = (value, key) => {
-		return processValue(appendToPath(path, key), value, callback, isOptimistic, refs) === true && !isOptimistic;
+const processValue = (path, value, callback, isOptimistic, references) => {
+	const loopCallback = (innerValue, key) => {
+		return processValue(appendToPath(path, key), innerValue, callback, isOptimistic, references) === true && !isOptimistic;
 	};
 
-	if (callback(path, value, refs.has(value)) === true) {
+	if (callback(path, value, references.has(value)) === true) {
 		return true;
 	}
 
@@ -17,8 +17,8 @@ const processValue = (path, value, callback, isOptimistic, refs) => {
 	}
 
 	if (isObject(value)) {
-		if (!refs.has(value)) {
-			refs.set(value, true);
+		if (!references.has(value)) {
+			references.set(value, true);
 			return forOwn(value, loopCallback) || isOptimistic;
 		}
 	}
@@ -57,11 +57,11 @@ const processValue = (path, value, callback, isOptimistic, refs) => {
  * @function traverse
  * @category Iteration
  *
- * @arg {Object} object
- * @arg {Function} callback - Provides two args, path and value. If true is returned then stop traversing and return true.
- * @arg {Boolean} [isOptimistic=false] - If true then returning true in the callback will prevent going deeper down that branch, but will otherwise continue traversing.
+ * @param {object} object - The object to traverse.
+ * @param {Function} callback - Provides two args, path and value. If true is returned then stop traversing and return true.
+ * @param {boolean} [isOptimistic=false] - If true then returning true in the callback will prevent going deeper down that branch, but will otherwise continue traversing.
  *
- * @returns {Boolean} true if the callback function returns a truthy value for any path; otherwise, false.
+ * @returns {boolean} True if the callback function returns a truthy value for any path, otherwise false.
  */
 export default (object, callback, isOptimistic = false) => {
 	const map = new Map();

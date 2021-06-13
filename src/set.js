@@ -1,7 +1,7 @@
 import firstInPath from './utility/firstInPath.js';
 import walkPath from './utility/walkPath.js';
 
-const buildNew = (key) => !isNaN(parseInt(key)) ? [] : {};
+const buildNew = (key) => isNaN(parseInt(key, 10)) ? {} : [];
 
 /**
  * Sets a nested value in an object. Keys in the path that don't exist at any point in the object will be created and added to the object once.
@@ -32,33 +32,33 @@ const buildNew = (key) => !isNaN(parseInt(key)) ? [] : {};
  * @function set
  * @category Interaction
  *
- * @arg {Object} object
- * @arg {String} path - Dot delimited string
- * @arg {*} value
+ * @param {object} object - The object to mutate.
+ * @param {string} path - Dot delimited string.
+ * @param {*} value - The value to set at the end of the path.
  *
- * @returns {Object} The mutated object.
+ * @returns {object} The mutated object.
  */
 export default (object, path, value) => {
 	const original = path === '' ? value : object;
-	let baseItem;
-	let baseKey;
-	let baseValue;
+	let baseItem = null;
+	let baseKey = '';
+	let baseValue = null;
 
-	walkPath(path, (key, path) => {
-		if (path === '') {
+	walkPath(path, (key, innerPath) => {
+		if (innerPath === '') {
 			object[key] = value;
 			return true;
 		}
 
 		if (object[key] === undefined) {
-			if (!baseItem) {
-				baseItem = object;
-				baseKey = key;
-				baseValue = object = buildNew(firstInPath(path));
+			if (baseItem) {
+				object[key] = buildNew(firstInPath(innerPath));
+				object = object[key];
 			}
 			else {
-				object[key] = buildNew(firstInPath(path));
-				object = object[key];
+				baseItem = object;
+				baseKey = key;
+				baseValue = object = buildNew(firstInPath(innerPath));
 			}
 		}
 		else {

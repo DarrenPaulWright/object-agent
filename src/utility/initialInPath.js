@@ -1,5 +1,5 @@
 /**
- * Returns the path without the last key
+ * Returns the path without the last key.
  *
  * @example
  * ``` javascript
@@ -12,13 +12,13 @@
  * @function initialInPath
  * @category Path Utility
  *
- * @arg {String} path
- * @arg {String} [separator=.] - Defines the boundary between steps in the path.
+ * @param {string} path - The path.
+ * @param {string} [separator=.] - Defines the boundary between steps in the path.
  *
- * @returns {String}
+ * @returns {string}
  */
 export default (path, separator = '.') => {
-	let index = path.lastIndexOf(separator);
+	const index = path.lastIndexOf(separator);
 
 	return (index === -1) ? '' : path.slice(0, index);
 };
