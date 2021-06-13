@@ -144,4 +144,34 @@ describe('set', () => {
 		assert.equal(testVariable, 1);
 		assert.equal(object, result);
 	});
+
+	it('should ignore paths with __proto__', () => {
+		const object = {};
+
+		assert.equal(object.polluted, undefined);
+
+		set(object, '__proto__.polluted', 'Yes! Its Polluted');
+
+		assert.equal(object.polluted, undefined);
+	});
+
+	it('should ignore paths with constructor', () => {
+		const object = {};
+
+		assert.equal(object.constructor, Object);
+
+		set(object, 'constructor.polluted', 'Yes! Its Polluted');
+
+		assert.equal(object.constructor, Object);
+	});
+
+	it('should ignore paths with prototype', () => {
+		const object = {};
+
+		assert.equal(object.polluted, undefined);
+
+		set(object, 'prototype.polluted', 'Yes! Its Polluted');
+
+		assert.equal(object.polluted, undefined);
+	});
 });
