@@ -13,16 +13,21 @@
 
 <br><a name="powerset"></a>
 
-## powerset(input) ⇒ <code>array</code>
-> Create a [power set](https://en.wikipedia.org/wiki/Power_set) from a set of values
+## powerset(values) ⇒ <code>Array</code>
+> Create a [power set](https://en.wikipedia.org/wiki/Power_set) from a set of values.
 
 
-| Param | Type |
-| --- | --- |
-| input | <code>array</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| values | <code>Array</code> | Initial set of values. |
 
 **Example**  
-``` javascriptimport { powerset } from 'object-agent';powerset([1, 2, 3]);// => [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]```
+``` javascript
+import { powerset } from 'object-agent';
+
+powerset([1, 2, 3]);
+// => [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

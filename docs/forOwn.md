@@ -13,18 +13,31 @@
 
 <br><a name="forOwn"></a>
 
-## forOwn(object, callback) ⇒ <code>Boolean</code>
+## forOwn(object, callback) ⇒ <code>boolean</code>
 > Iterates over own properties of an object. Stops iterating as soon as the callback returns a truthy value.
 
-**Returns**: <code>Boolean</code> - true if the callback function returns a truthy value for any key; otherwise, false.  
+**Returns**: <code>boolean</code> - True if the callback function returns a truthy value for any key, otherwise false.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| object | <code>Object</code> |  |
-| callback | <code>function</code> | Provides two args: value and key |
+| object | <code>object</code> | The object to iterate over. |
+| callback | <code>function</code> | Provides two args: value and key. |
 
 **Example**  
-``` javascriptimport { forOwn } from 'object-agent';const thing = {    a: 'b',    c: 'd'};forOwn(thing, (value, key) => {    console.log(value, key);});// => 'b', 'a'// => 'd', 'c'```
+``` javascript
+import { forOwn } from 'object-agent';
+
+const thing = {
+    a: 'b',
+    c: 'd'
+};
+
+forOwn(thing, (value, key) => {
+    console.log(value, key);
+});
+// => 'b', 'a'
+// => 'd', 'c'
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

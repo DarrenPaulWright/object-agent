@@ -13,17 +13,22 @@
 
 <br><a name="lastInPath"></a>
 
-## lastInPath(path, [separator]) ⇒ <code>String</code>
-> Returns the last key in a path
+## lastInPath(path, [separator]) ⇒ <code>string</code>
+> Returns the last key in a path.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| path | <code>String</code> |  |  |
-| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
+| path | <code>string</code> |  | The path. |
+| [separator] | <code>string</code> | <code>&quot;.&quot;</code> | Defines the boundary between steps in the path. |
 
 **Example**  
-``` javascriptimport { lastInPath } from 'object-agent';lastInPath('first.0.last');// => 'last'```
+``` javascript
+import { lastInPath } from 'object-agent';
+
+lastInPath('first.0.last');
+// => 'last'
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

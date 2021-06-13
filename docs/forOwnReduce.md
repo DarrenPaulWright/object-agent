@@ -14,18 +14,33 @@
 <br><a name="forOwnReduce"></a>
 
 ## forOwnReduce(object, callback, initialValue) ⇒ <code>\*</code>
-> Iterates over own properties of an object and returns a reduced value
+> Iterates over own properties of an object and returns a reduced value.
 
-**Returns**: <code>\*</code> - The accumulated result  
+**Returns**: <code>\*</code> - The accumulated result.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| object | <code>Object</code> |  |
+| object | <code>object</code> | The object to iterate over. |
 | callback | <code>function</code> | Provides three args: result, value, and key. If the result is only mutated then you may not need to return it. |
-| initialValue | <code>\*</code> |  |
+| initialValue | <code>\*</code> | The initial value passed into the callback as result. |
 
 **Example**  
-``` javascriptimport { forOwnReduce } from 'object-agent';const thing = {    a: 'b',    c: 'd'};const output = forOwnReduce(thing, (result, value, key) => {    result.push([value, key]);    return result;}, []);console.log(output);// => [['b', 'a'], ['d', 'c']]```
+``` javascript
+import { forOwnReduce } from 'object-agent';
+
+const thing = {
+    a: 'b',
+    c: 'd'
+};
+
+const output = forOwnReduce(thing, (result, value, key) => {
+    result.push([value, key]);
+    return result;
+}, []);
+
+console.log(output);
+// => [['b', 'a'], ['d', 'c']]
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

@@ -13,17 +13,22 @@
 
 <br><a name="tailInPath"></a>
 
-## tailInPath(path, [separator]) ⇒ <code>String</code>
-> Returns the path without the first key
+## tailInPath(path, [separator]) ⇒ <code>string</code>
+> Returns the path without the first key.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| path | <code>String</code> |  |  |
-| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
+| path | <code>string</code> |  | The path. |
+| [separator] | <code>string</code> | <code>&quot;.&quot;</code> | Defines the boundary between steps in the path. |
 
 **Example**  
-``` javascriptimport { tailInPath } from 'object-agent';tailInPath('first.0.last');// => '0.last'```
+``` javascript
+import { tailInPath } from 'object-agent';
+
+tailInPath('first.0.last');
+// => '0.last'
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

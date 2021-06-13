@@ -13,19 +13,29 @@
 
 <br><a name="mapOwn"></a>
 
-## mapOwn(object, callback, [ignoreKeys]) ⇒ <code>Object</code> \| <code>\*</code>
+## mapOwn(object, callback, [ignoreKeys]) ⇒ <code>object</code> \| <code>\*</code>
 > Builds a new object by iterating over own properties of an object.
 
-**Returns**: <code>Object</code> \| <code>\*</code> - If null or undefined are passed in then the same is returned, otherwise a new object  
+**Returns**: <code>object</code> \| <code>\*</code> - If null or undefined are passed in then the same is returned, otherwise a new object  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| object | <code>Object</code> |  |
-| callback | <code>function</code> | Provides two args: value and key |
-| [ignoreKeys] | <code>Array</code>, <code>String</code> | Any keys in this array will be ignored |
+| object | <code>object</code> | The object to map. |
+| callback | <code>function</code> | Provides two args: value and key. |
+| [ignoreKeys] | <code>Array</code>, <code>string</code> | Any keys that should be ignored. |
 
 **Example**  
-``` javascriptimport { mapOwn } from 'object-agent';const thing = {    a: 'b',    c: 'd'};mapOwn(thing, (value, key) => value + ' ' + key);// => { a: 'b a', c: 'd c' }```
+``` javascript
+import { mapOwn } from 'object-agent';
+
+const thing = {
+    a: 'b',
+    c: 'd'
+};
+
+mapOwn(thing, (value, key) => value + ' ' + key);
+// => { a: 'b a', c: 'd c' }
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

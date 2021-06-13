@@ -13,17 +13,32 @@
 
 <br><a name="deepEqual"></a>
 
-## deepEqual(item1, item2) ⇒ <code>Boolean</code>
+## deepEqual(item1, item2) ⇒ <code>boolean</code>
 > Deeply compares two items.
 
 
-| Param | Type |
-| --- | --- |
-| item1 | <code>\*</code> | 
-| item2 | <code>\*</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| item1 | <code>\*</code> | The first item to compare. |
+| item2 | <code>\*</code> | The second item to compare. |
 
 **Example**  
-``` javascriptimport { deepEqual } from 'object-agent';deepEqual(null, undefined);// => falseconst item1 = {    a: ['b']}const item2 = {    a: ['c']}deepEqual(item1, item2);// => false```
+``` javascript
+import { deepEqual } from 'object-agent';
+
+deepEqual(null, undefined);
+// => false
+
+const item1 = {
+    a: ['b']
+}
+const item2 = {
+    a: ['c']
+}
+
+deepEqual(item1, item2);
+// => false
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

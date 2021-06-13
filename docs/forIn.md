@@ -13,18 +13,32 @@
 
 <br><a name="forIn"></a>
 
-## forIn(object, callback) ⇒ <code>Boolean</code>
+## forIn(object, callback) ⇒ <code>boolean</code>
 > Iterates over own and inherited properties of an object. Stops iterating as soon as the callback returns a truthy value.
 
-**Returns**: <code>Boolean</code> - true if the callback function returns a truthy value for any key; otherwise, false.  
+**Returns**: <code>boolean</code> - True if the callback function returns a truthy value for any key, otherwise false.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| object | <code>Object</code> |  |
-| callback | <code>function</code> | Provides two args: value and key |
+| object | <code>object</code> | The object to iterate over. |
+| callback | <code>function</code> | Provides two args: value and key. |
 
 **Example**  
-``` javascriptimport { forIn } from 'object-agent';const Thing = {    this.a = 'b';};Thing.prototype.c = 'd';forIn(new Thing(), (value, key) => {    console.log(value, key);});// => 'b', 'a'// => 'd', 'c'```
+``` javascript
+import { forIn } from 'object-agent';
+
+const Thing = {
+    this.a = 'b';
+};
+
+Thing.prototype.c = 'd';
+
+forIn(new Thing(), (value, key) => {
+    console.log(value, key);
+});
+// => 'b', 'a'
+// => 'd', 'c'
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

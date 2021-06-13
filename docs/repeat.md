@@ -13,17 +13,26 @@
 
 <br><a name="repeat"></a>
 
-## repeat(times, callback) ⇒ <code>Array</code>
-> Calls a callback a specified number of times
+## repeat(times, callback)
+> Calls a callback a specified number of times.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| times | <code>integer</code> |  |
-| callback | <code>function</code> | Provides one argument, an index value of the call count |
+| times | <code>number.integer</code> | The number of times to call the callback. |
+| callback | <code>function</code> | Provides one argument, a zero based index value of the call count. |
 
 **Example**  
-``` javascriptimport { repeat } from 'object-agent';repeat(5, (index) => console.log(index));// => 0// => 1// => 2// => 3// => 4```
+``` javascript
+import { repeat } from 'object-agent';
+
+repeat(5, (index) => console.log(index));
+// => 0
+// => 1
+// => 2
+// => 3
+// => 4
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

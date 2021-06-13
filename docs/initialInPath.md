@@ -13,17 +13,22 @@
 
 <br><a name="initialInPath"></a>
 
-## initialInPath(path, [separator]) ⇒ <code>String</code>
-> Returns the path without the last key
+## initialInPath(path, [separator]) ⇒ <code>string</code>
+> Returns the path without the last key.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| path | <code>String</code> |  |  |
-| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
+| path | <code>string</code> |  | The path. |
+| [separator] | <code>string</code> | <code>&quot;.&quot;</code> | Defines the boundary between steps in the path. |
 
 **Example**  
-``` javascriptimport { initialInPath } from 'object-agent';initialInPath('first.0.last');// => 'first.0'```
+``` javascript
+import { initialInPath } from 'object-agent';
+
+initialInPath('first.0.last');
+// => 'first.0'
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

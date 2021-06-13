@@ -17,10 +17,10 @@
 > Deletes a property from an object, if the property exists.
 
 
-| Param | Type |
-| --- | --- |
-| object | <code>Object</code> | 
-| key | <code>String</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| object | <code>object</code> | An object. |
+| key | <code>string</code> | The key to delete. |
 
 **Example**  
 ``` javascript

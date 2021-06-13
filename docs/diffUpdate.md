@@ -13,17 +13,34 @@
 
 <br><a name="diffUpdate"></a>
 
-## diffUpdate(object1, object2) ⇒ <code>Object</code>
-> Performs a deep comparison of two objects, returns a new object with only the first level values that have been changed or added on the second object
+## diffUpdate(object1, object2) ⇒ <code>object</code>
+> Performs a deep comparison of two objects, returns a new object with only the first level values that have been changed or added on the second object.
 
 
-| Param | Type |
-| --- | --- |
-| object1 | <code>Object</code> | 
-| object2 | <code>Object</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| object1 | <code>object</code> | The initial object. |
+| object2 | <code>object</code> | The changed object. |
 
 **Example**  
-``` javascriptimport { diffUpdate } from 'object-agent';const item1 = {    a: ['b'],    c: 'd',    e: null}const item2 = {    a: ['b'],    c: null,    e: null,    f: 'g'}diffUpdate(item1, item2);// => { c: null, f: 'g' }```
+``` javascript
+import { diffUpdate } from 'object-agent';
+
+const item1 = {
+    a: ['b'],
+    c: 'd',
+    e: null
+}
+const item2 = {
+    a: ['b'],
+    c: null,
+    e: null,
+    f: 'g'
+}
+
+diffUpdate(item1, item2);
+// => { c: null, f: 'g' }
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

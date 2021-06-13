@@ -13,18 +13,23 @@
 
 <br><a name="appendToPath"></a>
 
-## appendToPath(path, key, [separator]) ⇒ <code>String</code>
-> Adds a key to the end of a path
+## appendToPath(path, key, [separator]) ⇒ <code>string</code>
+> Adds a key to the end of a path.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| path | <code>String</code> |  |  |
-| key | <code>String</code>, <code>Number</code> |  |  |
-| [separator] | <code>String</code> | <code>.</code> | Defines the boundary between steps in the path. |
+| path | <code>string</code> |  | The path. |
+| key | <code>string</code>, <code>number</code> |  | The next key to append. |
+| [separator] | <code>string</code> | <code>&quot;.&quot;</code> | Defines the boundary between steps in the path. |
 
 **Example**  
-``` javascriptimport { appendToPath } from 'object-agent';appendToPath('first.0', 'last');// => 'first.0.last'```
+``` javascript
+import { appendToPath } from 'object-agent';
+
+appendToPath('first.0', 'last');
+// => 'first.0.last'
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

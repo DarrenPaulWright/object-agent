@@ -13,18 +13,28 @@
 
 <br><a name="nestedEach"></a>
 
-## nestedEach(arrays, callback, [accrue]) ⇒ <code>array</code>
-> Iterate over the values of multiple arrays
+## nestedEach(arrays, callback, [accrue])
+> Iterate over the values of multiple arrays.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| arrays | <code>array</code> |  |  |
+| arrays | <code>Array</code> |  | The arrays to iterate over. |
 | callback | <code>function</code> |  | Provides one item from each array. |
 | [accrue] | <code>boolean</code> | <code>false</code> | If true then each successive array in arrays will start it's loop on the next index instead of 0. |
 
 **Example**  
-``` javascriptimport { nestedEach } from 'object-agent';const output = [];const save = (item1, item2) => output.push([item1, item2]);nestedEach([[1, 2], ['a', 'b']], save);console.log(output);// => [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]```
+``` javascript
+import { nestedEach } from 'object-agent';
+
+const output = [];
+const save = (item1, item2) => output.push([item1, item2]);
+
+nestedEach([[1, 2], ['a', 'b']], save);
+
+console.log(output);
+// => [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

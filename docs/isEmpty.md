@@ -13,16 +13,36 @@
 
 <br><a name="isEmpty"></a>
 
-## isEmpty(item) ⇒ <code>Boolean</code>
+## isEmpty(item) ⇒ <code>boolean</code>
 > Tests if an object or array has any set keys. The values of each key are not considered.
 
 
-| Param | Type |
-| --- | --- |
-| item | <code>\*</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>\*</code> | The item to test. |
 
 **Example**  
-``` javascriptimport { isEmpty } from 'object-agent';isEmpty(['a', 1, 'b']);// => falseisEmpty([]);// => trueisEmpty({ a: 'b' });// => falseisEmpty({});// => trueisEmpty(null);// => trueisEmpty(undefined);// => true```
+``` javascript
+import { isEmpty } from 'object-agent';
+
+isEmpty(['a', 1, 'b']);
+// => false
+
+isEmpty([]);
+// => true
+
+isEmpty({ a: 'b' });
+// => false
+
+isEmpty({});
+// => true
+
+isEmpty(null);
+// => true
+
+isEmpty(undefined);
+// => true
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

@@ -13,17 +13,25 @@
 
 <br><a name="combo"></a>
 
-## combo(array, [length]) ⇒ <code>array</code>
-> Takes a set of values and creates an array of the unique sets of the values of a given length.
+## combo(array, [length]) ⇒ <code>Array</code>
+> Takes an array of values and returns a new array of the unique sets of the values of a given length.
 
 
-| Param | Type | Default |
-| --- | --- | --- |
-| array | <code>array</code> |  | 
-| [length] | <code>length</code> | <code>2</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| array | <code>Array</code> |  | The array of values. |
+| [length] | <code>length</code> | <code>2</code> | The length of returned sets. |
 
 **Example**  
-``` javascriptimport { combo } from 'object-agent';combo([1, 2, 3]);// => [[1, 2], [1, 3], [2, 3]]combo([1, 2, 3, 4], 3);// => [[1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]```
+``` javascript
+import { combo } from 'object-agent';
+
+combo([1, 2, 3]);
+// => [[1, 2], [1, 3], [2, 3]]
+
+combo([1, 2, 3, 4], 3);
+// => [[1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

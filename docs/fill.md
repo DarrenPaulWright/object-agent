@@ -14,16 +14,24 @@
 <br><a name="fill"></a>
 
 ## fill(length, [callback]) ⇒ <code>Array</code>
-> Returns an array of specified length filled with either the index value or the value returned from the provided callback
+> Returns an array of specified length filled with either the index value or the value returned from the provided callback.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| length | <code>integer</code> |  |
-| [callback] | <code>function</code> | provides one argument, the index of the returned array |
+| length | <code>number.integer</code> | The desired length of the returned array. |
+| [callback] | <code>function</code> | Provides one argument, the index of the returned array. |
 
 **Example**  
-``` javascriptimport { fill } from 'object-agent';fill(5);// => [0, 1, 2, 3, 4]fill(3, (index) => index * 3);// => [0, 3, 6]```
+``` javascript
+import { fill } from 'object-agent';
+
+fill(5);
+// => [0, 1, 2, 3, 4]
+
+fill(3, (index) => index * 3);
+// => [0, 3, 6]
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

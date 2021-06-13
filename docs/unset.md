@@ -13,18 +13,34 @@
 
 <br><a name="unset"></a>
 
-## unset(object, path) ⇒ <code>Object</code>
+## unset(object, path) ⇒ <code>object</code>
 > Deletes a property from a nested object.
 
-**Returns**: <code>Object</code> - The mutated object.  
+**Returns**: <code>object</code> - The mutated object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| object | <code>Object</code> |  |
-| path | <code>String</code> | Dot delimited string |
+| object | <code>object</code> | The object to mutate. |
+| path | <code>string</code> | Dot delimited string. |
 
 **Example**  
-``` javascriptimport { unset } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};unset(thing, ['a.1.b']);console.log(thing);// => {//    a: [{ b: 'c' }, {}]//}```
+``` javascript
+import { unset } from 'object-agent';
+
+const thing = {
+    a: [{
+        b: 'c'
+    }, {
+        b: 'd'
+    }]
+};
+
+unset(thing, ['a.1.b']);
+console.log(thing);
+// => {
+//    a: [{ b: 'c' }, {}]
+//}
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

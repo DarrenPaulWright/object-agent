@@ -13,16 +13,30 @@
 
 <br><a name="intersection"></a>
 
-## intersection() ⇒ <code>Object</code>
+## intersection(args) ⇒ <code>object</code>
 > Performs a deep comparison of objects and returns a new object of values that are equal in all given objects.
 
 
-| Type |
-| --- |
-| <code>\*</code>, <code>Array</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| args | <code>\*</code>, <code>Array</code> | An array of arrays or arrays as separate args. |
 
 **Example**  
-``` javascriptimport { intersection } from 'object-agent';intersection([1, 2, 3], [2, 3, 4], [5, 6, 2, 3]); // => [2, 3]intersection({    a: 'b',    c: [1, 2, 3],    d: null}, {    a: 'b',    c: [1, 3, 4]})// => { a: 'b', c: [1, 3] }```
+``` javascript
+import { intersection } from 'object-agent';
+
+intersection([1, 2, 3], [2, 3, 4], [5, 6, 2, 3]); // => [2, 3]
+
+intersection({
+    a: 'b',
+    c: [1, 2, 3],
+    d: null
+}, {
+    a: 'b',
+    c: [1, 3, 4]
+})
+// => { a: 'b', c: [1, 3] }
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

@@ -16,14 +16,28 @@
 ## get(object, path) ⇒ <code>\*</code>
 > Gets a nested value from an object.
 
+**Returns**: <code>\*</code> - The value at the end of the path or undefined.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| object | <code>Object</code> |  |
-| path | <code>String</code> | Dot delimited string |
+| object | <code>object</code> | The object to traverse. |
+| path | <code>string</code> | Dot delimited string. |
 
 **Example**  
-``` javascriptimport { get } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};get(thing, 'a.1.b');// => 'd'```
+``` javascript
+import { get } from 'object-agent';
+
+const thing = {
+    a: [{
+        b: 'c'
+    }, {
+        b: 'd'
+    }]
+};
+
+get(thing, 'a.1.b');
+// => 'd'
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent

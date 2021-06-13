@@ -13,17 +13,30 @@
 
 <br><a name="has"></a>
 
-## has(object, path) ⇒ <code>\*</code>
-> Determines if a nested value is defined
+## has(object, path) ⇒ <code>boolean</code>
+> Determines if a nested value is defined.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| object | <code>Object</code> |  |
-| path | <code>String</code> | Dot delimited string |
+| object | <code>object</code> | The object to check. |
+| path | <code>string</code> | Dot delimited string. |
 
 **Example**  
-``` javascriptimport { has } from 'object-agent';const thing = {    a: [{        b: 'c'    }, {        b: 'd'    }]};has(thing, 'a.1.b');// => true```
+``` javascript
+import { has } from 'object-agent';
+
+const thing = {
+    a: [{
+        b: 'c'
+    }, {
+        b: 'd'
+    }]
+};
+
+has(thing, 'a.1.b');
+// => true
+```
 
 [npm]: https://img.shields.io/npm/v/object-agent.svg
 [npm-url]: https://npmjs.com/package/object-agent
