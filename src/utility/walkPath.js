@@ -30,10 +30,20 @@
  * @param {string} [separator=.] - Defines the boundary between steps in the path.
  */
 export default (path, callback, separator = '.') => {
-	for (let previous = 0, index = -1, length = path.length; ((index = path.indexOf(separator, previous)) === -1 ? (index = length) : 1) !== -1 &&
-	(previous === index ||
-		callback(path.slice(previous, index), path.slice(index + 1)) !== true) &&
-	index !== length;) {
-		previous = index + 1;
+	while (path !== '') {
+		const offset = path.indexOf(separator);
+
+		switch (offset) {
+			case -1:
+				callback(path, '');
+				return;
+			case 0:
+				path = path.slice(offset + 1);
+				break;
+			default:
+				if (callback(path.slice(0, offset), path = path.slice(offset + 1))) {
+					return;
+				}
+		}
 	}
 };

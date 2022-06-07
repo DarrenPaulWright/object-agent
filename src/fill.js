@@ -25,7 +25,7 @@ const defaultCallback = (index) => index;
  * @returns {Array}
  */
 export default (length, callback = defaultCallback) => {
-	const output = [];
+	const output = new Array(length);
 
 	repeat(length, (index) => output[index] = callback(index));
 

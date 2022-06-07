@@ -28,5 +28,10 @@ import walkPath from './utility/walkPath.js';
  * @returns {*} The value at the end of the path or undefined.
  */
 export default (object, path) => {
-	return walkPath(path, (key) => undefined === (object = object ? object[key] : undefined)) || object;
+	walkPath(path, (key) => {
+		object = (object !== undefined && object !== null) ? object[key] : undefined;
+		return object === undefined;
+	});
+
+	return object;
 };

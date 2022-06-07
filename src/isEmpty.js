@@ -1,3 +1,5 @@
+import isArray from './utility/isArray.js';
+
 /**
  * Tests if an object or array has any set keys. The values of each key are not considered.
  *
@@ -31,4 +33,18 @@
  *
  * @returns {boolean}
  */
-export default (item) => !item || item.length === 0 || Object.keys(item).length === 0;
+export default (item) => {
+	if (!item) {
+		return true;
+	}
+
+	if (isArray(item)) {
+		return item.length === 0;
+	}
+
+	for (const x in item) {
+		return false;
+	}
+
+	return true;
+};

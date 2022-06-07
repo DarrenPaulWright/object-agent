@@ -17,12 +17,20 @@ suite('get', () => {
 		}]
 	};
 
-	benchmark('leaf', () => {
-		sandbox = get(object, 'level1.2.level2');
+	benchmark('native', () => {
+		sandbox = object.level1[2].level2;
+	}, benchSettings);
+
+	benchmark('no path', () => {
+		sandbox = get(object, '');
 	}, benchSettings);
 
 	benchmark('first level', () => {
 		sandbox = get(object, 'level1');
+	}, benchSettings);
+
+	benchmark('leaf', () => {
+		sandbox = get(object, 'level1.2.level2');
 	}, benchSettings);
 
 	benchmark('non-existant', () => {

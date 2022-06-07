@@ -3,8 +3,12 @@ import walkPath from './utility/walkPath.js';
 
 const buildNew = (key) => isNaN(parseInt(key, 10)) ? {} : [];
 
-const prototypeKeys = ['__proto__', 'constructor', 'prototype'];
-const isPrototypePolluted = (key) => prototypeKeys.includes(key);
+const prototypeKeys2 = {
+	__proto__: true,
+	constructor: true,
+	prototype: true
+};
+const isPrototypePolluted = (key) => key in prototypeKeys2;
 
 /**
  * Sets a nested value in an object. Keys in the path that don't exist at any point in the object will be created and added to the object once.
@@ -54,14 +58,13 @@ export default (object, path, value) => {
 		}
 
 		if (object[key] === undefined) {
-			if (baseItem) {
-				object[key] = buildNew(firstInPath(innerPath));
-				object = object[key];
-			}
-			else {
+			if (baseItem === null) {
 				baseItem = object;
 				baseKey = key;
 				baseValue = object = buildNew(firstInPath(innerPath));
+			}
+			else {
+				object = object[key] = buildNew(firstInPath(innerPath));
 			}
 		}
 		else {

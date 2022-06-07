@@ -34,11 +34,13 @@ import walkPath from './utility/walkPath.js';
 export default (object, path) => {
 	let reference = object;
 
-	return walkPath(path, (key, innerPath) => {
+	walkPath(path, (key, innerPath) => {
 		return reference === undefined ||
 			reference === null ||
 			(innerPath === '' ?
 				erase(reference, key) :
 				undefined === (reference = reference[key]));
-	}) || object;
+	});
+
+	return object;
 };

@@ -9,8 +9,7 @@ const getComparer = (a) => {
 		return (b) => isObject(b) && alt === Object.keys(b).length;
 	}
 	if (isArray(a)) {
-		const alt = a.length;
-		return (b) => isArray(b) && alt === b.length;
+		return (b) => isArray(b) && a.length === b.length;
 	}
 	if (a instanceof Date) {
 		const alt = a.getTime();
