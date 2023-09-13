@@ -19,10 +19,10 @@ const defaultCallback = (index) => index;
  * @function fill
  * @category Iteration
  *
- * @param {number.integer} length - The desired length of the returned array.
+ * @param {number} length - The desired length of the returned array.
  * @param {Function} [callback] - Provides one argument, the index of the returned array.
  *
- * @returns {Array}
+ * @returns {Array<unknown>}
  */
 export default (length, callback = defaultCallback) => {
 	const output = new Array(length);

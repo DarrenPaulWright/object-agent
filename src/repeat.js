@@ -16,7 +16,7 @@
  * @function repeat
  * @category Iteration
  *
- * @param {number.integer} times - The number of times to call the callback.
+ * @param {number} times - The number of times to call the callback.
  * @param {Function} callback - Provides one argument, a zero based index value of the call count.
  */
 export default (times, callback) => {

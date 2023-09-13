@@ -29,7 +29,7 @@ import isArray from './utility/isArray.js';
  * @function isEmpty
  * @category Comparison
  *
- * @param {*} item - The item to test.
+ * @param {unknown} item - The item to test.
  *
  * @returns {boolean}
  */

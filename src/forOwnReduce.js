@@ -26,9 +26,9 @@ import forOwn from './forOwn.js';
  *
  * @param {object} object - The object to iterate over.
  * @param {Function} callback - Provides three args: result, value, and key. If the result is only mutated then you may not need to return it.
- * @param {*} initialValue - The initial value passed into the callback as result.
+ * @param {unknown} initialValue - The initial value passed into the callback as result.
  *
- * @returns {*} The accumulated result.
+ * @returns {unknown} The accumulated result.
  */
 export default (object, callback, initialValue) => {
 	forOwn(object, (value, key) => {

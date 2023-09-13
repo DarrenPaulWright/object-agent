@@ -13,13 +13,13 @@
 
 <br><a name="fill"></a>
 
-## fill(length, [callback]) ⇒ <code>Array</code>
+## fill(length, [callback]) ⇒ <code>Array.&lt;unknown&gt;</code>
 > Returns an array of specified length filled with either the index value or the value returned from the provided callback.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| length | <code>number.integer</code> | The desired length of the returned array. |
+| length | <code>number</code> | The desired length of the returned array. |
 | [callback] | <code>function</code> | Provides one argument, the index of the returned array. |
 
 **Example**  

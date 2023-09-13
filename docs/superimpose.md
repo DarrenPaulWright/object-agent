@@ -13,18 +13,18 @@
 
 <br><a name="superimpose"></a>
 
-## superimpose(...args, [mutateFirst]) ⇒ <code>\*</code>
+## superimpose(...args, [mutateFirst]) ⇒ <code>Partial.&lt;T&gt;</code>
 > Deeply superimposes two or more items on each other.
 > 
 > Notes:
 > - Undefined values will not overwrite defined values
 > - Array order is maintained
 
-**Returns**: <code>\*</code> - The resulting object.  
+**Returns**: <code>Partial.&lt;T&gt;</code> - The resulting object.  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| ...args | <code>any</code> |  | Two or more items to superimpose on each other. Each item is superimposed on the item before it. |
+| ...args | <code>Partial.&lt;T&gt;</code> |  | Two or more items to superimpose on each other. Each item is superimposed on the item before it. |
 | [mutateFirst] | <code>boolean</code> | <code>false</code> | If a final argument of true is provided, then the first object will be mutated in place and returned. |
 
 **Example**  

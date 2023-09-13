@@ -13,16 +13,16 @@
 
 <br><a name="forOwnReduce"></a>
 
-## forOwnReduce(object, callback, initialValue) ⇒ <code>\*</code>
+## forOwnReduce(object, callback, initialValue) ⇒ <code>unknown</code>
 > Iterates over own properties of an object and returns a reduced value.
 
-**Returns**: <code>\*</code> - The accumulated result.  
+**Returns**: <code>unknown</code> - The accumulated result.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | object | <code>object</code> | The object to iterate over. |
 | callback | <code>function</code> | Provides three args: result, value, and key. If the result is only mutated then you may not need to return it. |
-| initialValue | <code>\*</code> | The initial value passed into the callback as result. |
+| initialValue | <code>unknown</code> | The initial value passed into the callback as result. |
 
 **Example**  
 ``` javascript

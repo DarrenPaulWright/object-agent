@@ -25,7 +25,7 @@ import walkPath from './utility/walkPath.js';
  * @param {object} object - The object to traverse.
  * @param {string} path - Dot delimited string.
  *
- * @returns {*} The value at the end of the path or undefined.
+ * @returns {unknown} The value at the end of the path or undefined.
  */
 export default (object, path) => {
 	walkPath(path, (key) => {

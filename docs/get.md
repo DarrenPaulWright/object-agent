@@ -13,10 +13,10 @@
 
 <br><a name="get"></a>
 
-## get(object, path) ⇒ <code>\*</code>
+## get(object, path) ⇒ <code>unknown</code>
 > Gets a nested value from an object.
 
-**Returns**: <code>\*</code> - The value at the end of the path or undefined.  
+**Returns**: <code>unknown</code> - The value at the end of the path or undefined.  
 
 | Param | Type | Description |
 | --- | --- | --- |

@@ -19,7 +19,7 @@
 
 | Param | Type | Description |
 | --- | --- | --- |
-| item | <code>\*</code> | The item to test. |
+| item | <code>unknown</code> | The item to test. |
 
 **Example**  
 ``` javascript

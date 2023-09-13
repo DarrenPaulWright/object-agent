@@ -13,13 +13,13 @@
 
 <br><a name="clone"></a>
 
-## clone(value, [settings]) ⇒ <code>\*</code>
+## clone(value, [settings]) ⇒ <code>unknown</code>
 > Deep clone a value.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| value | <code>\*</code> |  | The data to clone. |
+| value | <code>unknown</code> |  | The data to clone. |
 | [settings] | <code>object</code> |  | Settings object. |
 | [settings.ignoreKeys] | <code>Array</code>, <code>string</code> |  | Any keys in this array will not be cloned. |
 | [settings.isCircular] | <code>boolean</code> | <code>false</code> | If true then circular references will be handled. |

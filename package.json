@@ -39,7 +39,9 @@
 		"url": "https://github.com/DarrenPaulWright/object-agent/issues"
 	},
 	"main": "index.js",
+	"types": "types/index.d.ts",
 	"files": [
+		"/types",
 		"/src"
 	],
 	"sideEffects": false,
@@ -81,9 +83,9 @@
 		}
 	},
 	"scripts": {
-		"test": "karma start karma.conf.cjs --single-run",
-		"test-watch": "karma start karma.conf.cjs",
-		"bench": "karma start karma.bench.conf.cjs",
+		"test": "",
+		"test-watch": "",
+		"bench": "",
 		"preversion": "npm test && npm run docs && git add --all && git diff HEAD --quiet || git commit -m \"Updating docs\"",
 		"postversion": "npm publish",
 		"postpublish": "git push --follow-tags",
@@ -95,17 +97,17 @@
 		"update-patch": "npm run update && npm test && git add --all && git diff HEAD --quiet || git commit -m \"Updating dependencies\" && npm version patch",
 		"docs:readme": "jsdoc2md ./index.js src/**/*.js > README.md -t node_modules/dmd-readable/overview.hbs --plugin dmd-readable/overview-plugin.js",
 		"docs:all": "exec-each --out docs/{basefile}.md src/**/*.js jsdoc2md -- {path} -t node_modules/dmd-readable/docs.hbs --plugin dmd-readable",
+		"docs:types": "rm -rf types && tsc",
 		"docs": "run-p docs:*"
 	},
 	"devDependencies": {
-		"display-value": "^2.0.0",
+		"display-value": "^2.2.0",
 		"dmd-readable": "^1.2.4",
 		"exec-each": "0.0.3",
-		"jsdoc-to-markdown": "^7.1.1",
-		"karma-webpack-bundle": "1.1.0",
+		"jsdoc-to-markdown": "^8.0.0",
 		"npm-run-all": "^4.1.5",
-		"on-change": "^4.0.1",
-		"type-enforcer": "^1.2.2",
-		"webpack": "^5.73.0"
+		"on-change": "^4.0.2",
+		"type-enforcer": "^1.2.5",
+		"typescript": "^5.2.2"
 	}
 }

@@ -41,7 +41,7 @@ const isPrototypePolluted = (key) => key in prototypeKeys2;
  *
  * @param {object} object - The object to mutate.
  * @param {string} path - Dot delimited string.
- * @param {*} value - The value to set at the end of the path.
+ * @param {unknown} value - The value to set at the end of the path.
  *
  * @returns {object} The mutated object.
  */

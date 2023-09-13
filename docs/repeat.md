@@ -19,7 +19,7 @@
 
 | Param | Type | Description |
 | --- | --- | --- |
-| times | <code>number.integer</code> | The number of times to call the callback. |
+| times | <code>number</code> | The number of times to call the callback. |
 | callback | <code>function</code> | Provides one argument, a zero based index value of the call count. |
 
 **Example**  

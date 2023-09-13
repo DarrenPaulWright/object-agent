@@ -26,8 +26,8 @@ import traverse from './traverse.js';
  * @function deepEqual
  * @category Comparison
  *
- * @param {*} item1 - The first item to compare.
- * @param {*} item2 - The second item to compare.
+ * @param {unknown} item1 - The first item to compare.
+ * @param {unknown} item2 - The second item to compare.
  *
  * @returns {boolean}
  */

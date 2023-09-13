@@ -56,12 +56,12 @@ const doClone = (value, path, settings) => {
  * @function clone
  * @category Interaction
  *
- * @param {*} value - The data to clone.
+ * @param {unknown} value - The data to clone.
  * @param {object} [settings] - Settings object.
  * @param {Array | string} [settings.ignoreKeys] - Any keys in this array will not be cloned.
  * @param {boolean} [settings.isCircular=false] - If true then circular references will be handled.
  *
- * @returns {*}
+ * @returns {unknown}
  */
 export default function clone(value, settings = {}) {
 	if (settings.isCircular) {

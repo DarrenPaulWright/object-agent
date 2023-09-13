@@ -19,8 +19,8 @@
 
 | Param | Type | Description |
 | --- | --- | --- |
-| item1 | <code>\*</code> | The first item to compare. |
-| item2 | <code>\*</code> | The second item to compare. |
+| item1 | <code>unknown</code> | The first item to compare. |
+| item2 | <code>unknown</code> | The second item to compare. |
 
 **Example**  
 ``` javascript

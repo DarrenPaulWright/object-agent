@@ -51,11 +51,12 @@ import isObject from './utility/isObject.js';
  *
  * @function superimpose
  * @category Interaction
+ * @template T
  *
- * @param {...any} args - Two or more items to superimpose on each other. Each item is superimposed on the item before it.
+ * @param {...Partial<T>} args - Two or more items to superimpose on each other. Each item is superimposed on the item before it.
  * @param {boolean} [mutateFirst=false] - If a final argument of true is provided, then the first object will be mutated in place and returned.
  *
- * @returns {*} The resulting object.
+ * @returns {Partial<T>} The resulting object.
  */
 export default (...args) => {
 	let output = args.shift();

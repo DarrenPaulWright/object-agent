@@ -22,7 +22,7 @@
 | --- | --- | --- |
 | object | <code>object</code> | The object to mutate. |
 | path | <code>string</code> | Dot delimited string. |
-| value | <code>\*</code> | The value to set at the end of the path. |
+| value | <code>unknown</code> | The value to set at the end of the path. |
 
 **Example**  
 ``` javascript

@@ -54,13 +54,13 @@ _Requires Babel 7.2+_
 
 #### Interaction Functions
 
-<dt><a href="docs/clone.md">clone(value, [settings])</a> ⇒ <code>*</code></dt>
+<dt><a href="docs/clone.md">clone(value, [settings])</a> ⇒ <code>unknown</code></dt>
 <dd><p>Deep clone a value.</p>
 </dd>
 <dt><a href="docs/erase.md">erase(object, key)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Deletes a property from an object, if the property exists.</p>
 </dd>
-<dt><a href="docs/get.md">get(object, path)</a> ⇒ <code>*</code></dt>
+<dt><a href="docs/get.md">get(object, path)</a> ⇒ <code>unknown</code></dt>
 <dd><p>Gets a nested value from an object.</p>
 </dd>
 <dt><a href="docs/has.md">has(object, path)</a> ⇒ <code>boolean</code></dt>
@@ -72,7 +72,7 @@ _Requires Babel 7.2+_
 <dt><a href="docs/set.md">set(object, path, value)</a> ⇒ <code>object</code></dt>
 <dd><p>Sets a nested value in an object. Keys in the path that don&#39;t exist at any point in the object will be created and added to the object once.</p>
 </dd>
-<dt><a href="docs/superimpose.md">superimpose(...args, [mutateFirst])</a> ⇒ <code>*</code></dt>
+<dt><a href="docs/superimpose.md">superimpose(...args, [mutateFirst])</a> ⇒ <code>Partial.&lt;T&gt;</code></dt>
 <dd><p>Deeply superimposes two or more items on each other.</p>
 <p>Notes:</p>
 <ul>
@@ -89,7 +89,7 @@ _Requires Babel 7.2+_
 
 #### Iteration Functions
 
-<dt><a href="docs/fill.md">fill(length, [callback])</a> ⇒ <code>Array</code></dt>
+<dt><a href="docs/fill.md">fill(length, [callback])</a> ⇒ <code>Array.&lt;unknown&gt;</code></dt>
 <dd><p>Returns an array of specified length filled with either the index value or the value returned from the provided callback.</p>
 </dd>
 <dt><a href="docs/forIn.md">forIn(object, callback)</a> ⇒ <code>boolean</code></dt>
@@ -98,7 +98,7 @@ _Requires Babel 7.2+_
 <dt><a href="docs/forOwn.md">forOwn(object, callback)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Iterates over own properties of an object. Stops iterating as soon as the callback returns a truthy value.</p>
 </dd>
-<dt><a href="docs/forOwnReduce.md">forOwnReduce(object, callback, initialValue)</a> ⇒ <code>*</code></dt>
+<dt><a href="docs/forOwnReduce.md">forOwnReduce(object, callback, initialValue)</a> ⇒ <code>unknown</code></dt>
 <dd><p>Iterates over own properties of an object and returns a reduced value.</p>
 </dd>
 <dt><a href="docs/mapOwn.md">mapOwn(object, callback, [ignoreKeys])</a> ⇒ <code>object</code> | <code>*</code></dt>
