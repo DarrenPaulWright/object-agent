@@ -6,11 +6,13 @@
 		"index.js"
 	],
 	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "bundler",
 		"allowJs": true,
 		"declaration": true,
 		"emitDeclarationOnly": true,
 		"outDir": "types",
-		"declarationMap": true,
-		"skipLibCheck": true
+		"declarationMap": true
 	}
 }
