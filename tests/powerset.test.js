@@ -1,4 +1,4 @@
-import { assert } from 'type-enforcer';
+import { assert, describe, it } from 'hippogriff';
 import { powerset } from '../index.js';
 
 describe('powerset', () => {
@@ -10,4 +10,3 @@ describe('powerset', () => {
 		assert.equal(powerset([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]).length, 1024);
 	});
 });
-

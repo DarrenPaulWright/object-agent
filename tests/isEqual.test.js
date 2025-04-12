@@ -1,5 +1,5 @@
 import displayValue from 'display-value';
-import { assert } from 'type-enforcer';
+import { assert, describe, it } from 'hippogriff';
 import { clone, isEqual } from '../index.js';
 import { testSimpleValues } from './helper/testValues.js';
 
@@ -19,28 +19,28 @@ describe('isEqual', () => {
 	testSimpleValues.forEach((value1, index1) => {
 		clone(testSimpleValues).forEach((value2, index2) => {
 			if (index1 === index2) {
-				it(`should return true for ${displayValue(value1)} and ${displayValue(value2)}`, () => {
+				it(`should return true for ${ displayValue(value1) } and ${ displayValue(value2) }`, () => {
 					assert.is(isEqual(value1, value2), true);
 				});
 
-				it(`should return true for three instances of ${displayValue(value1)}`, () => {
+				it(`should return true for three instances of ${ displayValue(value1) }`, () => {
 					assert.is(isEqual(value1, value2, clone(value2)), true);
 				});
 
-				it(`should return true for three instances of ${displayValue(value1)} in an array`, () => {
+				it(`should return true for three instances of ${ displayValue(value1) } in an array`, () => {
 					assert.is(isEqual([value1, value2, clone(value2)]), true);
 				});
 			}
 			else {
-				it(`should return false for ${displayValue(value1)} and ${displayValue(value2)}`, () => {
+				it(`should return false for ${ displayValue(value1) } and ${ displayValue(value2) }`, () => {
 					assert.is(isEqual(value1, value2), false);
 				});
 
-				it(`should return false for two instances of ${displayValue(value1)} and one ${displayValue(value2)}`, () => {
+				it(`should return false for two instances of ${ displayValue(value1) } and one ${ displayValue(value2) }`, () => {
 					assert.is(isEqual(value1, clone(value1), value2), false);
 				});
 
-				it(`should return false for two instances of ${displayValue(value1)} and one ${displayValue(value2)} in an array`, () => {
+				it(`should return false for two instances of ${ displayValue(value1) } and one ${ displayValue(value2) } in an array`, () => {
 					assert.is(isEqual([value1, clone(value1), value2]), false);
 				});
 			}

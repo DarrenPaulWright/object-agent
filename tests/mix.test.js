@@ -1,4 +1,4 @@
-import { assert } from 'type-enforcer';
+import { assert, describe, it } from 'hippogriff';
 import { mix } from '../index.js';
 
 describe('mix', () => {
@@ -6,7 +6,15 @@ describe('mix', () => {
 		const input = [1, 2, 3];
 		const output = mix(input, input);
 
-		assert.equal(output, [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3], [3, 1], [3, 2], [3, 3]]);
+		assert.equal(output, [[1, 1],
+			[1, 2],
+			[1, 3],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[3, 1],
+			[3, 2],
+			[3, 3]]);
 	});
 
 	it('should produce triplets when three arrays are provided', () => {

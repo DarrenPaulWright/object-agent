@@ -1,5 +1,5 @@
+import { assert, describe, it } from 'hippogriff';
 import onChange from 'on-change';
-import { assert } from 'type-enforcer';
 import { set } from '../index.js';
 
 describe('set', () => {

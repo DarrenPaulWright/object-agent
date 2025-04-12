@@ -1,4 +1,4 @@
-import { assert } from 'type-enforcer';
+import { assert, describe, it } from 'hippogriff';
 import { countInString } from '../../index.js';
 
 describe('countInString', () => {

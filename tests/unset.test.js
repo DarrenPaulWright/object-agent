@@ -1,5 +1,5 @@
 import displayValue from 'display-value';
-import { assert } from 'type-enforcer';
+import { assert, describe, it } from 'hippogriff';
 import { unset } from '../index.js';
 import { testValues } from './helper/testValues.js';
 
@@ -117,7 +117,7 @@ describe('unset', () => {
 	});
 
 	testValues.forEach((value) => {
-		it(`should do nothing if the non-object ${displayValue(value)} is provided`, () => {
+		it(`should do nothing if the non-object ${ displayValue(value) } is provided`, () => {
 			const object = value;
 			const compare = value;
 
@@ -129,7 +129,7 @@ describe('unset', () => {
 			}
 		});
 
-		it(`should do nothing if the non-object ${displayValue(value)} is encountered`, () => {
+		it(`should do nothing if the non-object ${ displayValue(value) } is encountered`, () => {
 			const object = {
 				level1: value
 			};

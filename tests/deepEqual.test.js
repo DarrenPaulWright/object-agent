@@ -1,5 +1,5 @@
 import displayValue from 'display-value';
-import { assert } from 'type-enforcer';
+import { assert, describe, it } from 'hippogriff';
 import { clone, deepEqual } from '../index.js';
 import { testValues } from './helper/testValues.js';
 
@@ -7,12 +7,12 @@ describe('deepEqual', () => {
 	testValues.forEach((value1, index1) => {
 		clone(testValues).forEach((value2, index2) => {
 			if (index1 === index2) {
-				it(`should return true for ${displayValue(value1)} [${index1}] and ${displayValue(value2)} [${index2}]`, () => {
+				it(`should return true for ${ displayValue(value1) } [${ index1 }] and ${ displayValue(value2) } [${ index2 }]`, () => {
 					assert.is(deepEqual(value1, value2), true);
 				});
 			}
 			else {
-				it(`should return false for ${displayValue(value1)} [${index1}] and ${displayValue(value2)} [${index2}]`, () => {
+				it(`should return false for ${ displayValue(value1) } [${ index1 }] and ${ displayValue(value2) } [${ index2 }]`, () => {
 					assert.is(deepEqual(value1, value2), false);
 				});
 			}

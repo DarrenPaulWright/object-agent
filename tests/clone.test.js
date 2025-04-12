@@ -1,11 +1,11 @@
 import displayValue from 'display-value';
-import { assert } from 'type-enforcer';
+import { assert, describe, it } from 'hippogriff';
 import { clone } from '../index.js';
 import { testValues } from './helper/testValues.js';
 
 describe('clone', () => {
 	testValues.forEach((value) => {
-		it(`should clone ${displayValue(value)}`, () => {
+		it(`should clone ${ displayValue(value) }`, () => {
 			assert.equal(clone(value), value);
 		});
 	});

@@ -1,4 +1,4 @@
-import { assert } from 'type-enforcer';
+import { assert, describe, it } from 'hippogriff';
 import { forOwnReduce } from '../index.js';
 
 describe('forOwnReduce', () => {
@@ -14,7 +14,9 @@ describe('forOwnReduce', () => {
 			return result;
 		}, []);
 
-		assert.equal(output, [['something1', 'key1'], ['something2', 'key2'], ['something3', 'key3']]);
+		assert.equal(output, [['something1', 'key1'],
+			['something2', 'key2'],
+			['something3', 'key3']]);
 	});
 
 	it('should return the reduced value when mutated and not returned', () => {
@@ -28,6 +30,8 @@ describe('forOwnReduce', () => {
 			result.push([value, key]);
 		}, []);
 
-		assert.equal(output, [['something1', 'key1'], ['something2', 'key2'], ['something3', 'key3']]);
+		assert.equal(output, [['something1', 'key1'],
+			['something2', 'key2'],
+			['something3', 'key3']]);
 	});
 });

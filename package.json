@@ -83,9 +83,9 @@
 		}
 	},
 	"scripts": {
-		"test": "",
-		"test-watch": "",
-		"bench": "",
+		"test": "hippogriff",
+		"test:watch": "hippogriff -w",
+		"bench": "hippogriff **/*.bench.js",
 		"preversion": "npm test && npm run docs && git add --all && git diff HEAD --quiet || git commit -m \"Updating docs\"",
 		"postversion": "npm publish",
 		"postpublish": "git push --follow-tags",
@@ -101,13 +101,14 @@
 		"docs": "run-p docs:*"
 	},
 	"devDependencies": {
-		"display-value": "^2.2.0",
+		"display-value": "^3.1.0",
 		"dmd-readable": "^1.2.4",
 		"exec-each": "0.0.3",
-		"jsdoc-to-markdown": "^8.0.0",
+		"hippogriff": "^0.1.2",
+		"jsdoc-to-markdown": "^9.1.1",
 		"npm-run-all": "^4.1.5",
-		"on-change": "^4.0.2",
-		"type-enforcer": "^1.2.5",
-		"typescript": "^5.2.2"
+		"on-change": "^5.0.1",
+		"type-enforcer": "^1.2.7",
+		"typescript": "^5.8.3"
 	}
 }

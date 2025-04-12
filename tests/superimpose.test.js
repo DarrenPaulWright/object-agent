@@ -1,4 +1,4 @@
-import { assert } from 'type-enforcer';
+import { assert, describe, it } from 'hippogriff';
 import { superimpose } from '../index.js';
 
 describe('superimpose', () => {
