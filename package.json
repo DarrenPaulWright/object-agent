@@ -38,77 +38,47 @@
 	"bugs": {
 		"url": "https://github.com/DarrenPaulWright/object-agent/issues"
 	},
-	"main": "index.js",
-	"types": "types/index.d.ts",
+	"main": "dist/js/index.js",
+	"module": "dist/js/index.js",
+	"types": "dist/types/index.d.ts",
 	"files": [
-		"/types",
-		"/src"
+		"/dist",
+		"!/dist/**/*.{test,bench}.js",
+		"!/dist/**/*.{test,bench}.d.ts"
 	],
 	"sideEffects": false,
 	"browserslist": [
 		"defaults"
 	],
-	"badges": {
-		"npm": {
-			"image": "https://img.shields.io/npm/v/object-agent.svg",
-			"url": "https://npmjs.com/package/object-agent"
-		},
-		"build": {
-			"base": "https://travis-ci.org/DarrenPaulWright/",
-			"image": "object-agent.svg?branch=master",
-			"url": "object-agent"
-		},
-		"coverage": {
-			"base": "https://coveralls.io/",
-			"image": "repos/github/DarrenPaulWright/object-agent/badge.svg?branch=master",
-			"url": "github/DarrenPaulWright/object-agent?branch=master"
-		},
-		"deps": {
-			"image": "https://david-dm.org/DarrenPaulWright/object-agent.svg",
-			"url": "https://david-dm.org/DarrenPaulWright/object-agent"
-		},
-		"size": {
-			"base": "https://packagephobia.now.sh/",
-			"image": "badge?p=object-agent",
-			"url": "result?p=object-agent"
-		},
-		"vulnerabilities": {
-			"base": "https://snyk.io/test/github/DarrenPaulWright/object-agent",
-			"image": "/badge.svg?targetFile=package.json",
-			"url": "?targetFile=package.json"
-		},
-		"license": {
-			"image": "https://img.shields.io/github/license/DarrenPaulWright/object-agent.svg",
-			"url": "https://npmjs.com/package/object-agent/LICENSE.md"
-		}
+	"engines": {
+		"node": ">=20.0.0"
 	},
 	"scripts": {
-		"test": "hippogriff",
+		"test": "tsc && eslint . && hippogriff",
 		"test:watch": "hippogriff -w",
 		"bench": "hippogriff **/*.bench.js",
 		"preversion": "npm test && npm run docs && git add --all && git diff HEAD --quiet || git commit -m \"Updating docs\"",
 		"postversion": "npm publish",
 		"postpublish": "git push --follow-tags",
 		"pre-clean": "rm -rf node_modules && del /f package-lock.json",
-		"clean": "npm run pre-clean && npm install && npm audit fix",
-		"update": "ncu -u && git diff --quiet || npm install && npm audit fix",
+		"clean": "npm run pre-clean && npm install",
+		"update": "ncu -u && git diff --quiet || npm install",
 		"update-clean": "npm run pre-clean && npm run update",
 		"update-commit": "npm run update && npm test && git add --all && git diff HEAD --quiet || git commit -m \"Updating dependencies\"",
 		"update-patch": "npm run update && npm test && git add --all && git diff HEAD --quiet || git commit -m \"Updating dependencies\" && npm version patch",
-		"docs:readme": "jsdoc2md ./index.js src/**/*.js > README.md -t node_modules/dmd-readable/overview.hbs --plugin dmd-readable/overview-plugin.js",
-		"docs:all": "exec-each --out docs/{basefile}.md src/**/*.js jsdoc2md -- {path} -t node_modules/dmd-readable/docs.hbs --plugin dmd-readable",
-		"docs:types": "rm -rf types && tsc",
-		"docs": "run-p docs:*"
+		"docs": "typedoc"
 	},
 	"devDependencies": {
+		"@types/node": "^25.0.3",
 		"display-value": "^3.1.0",
-		"dmd-readable": "^1.2.4",
-		"exec-each": "0.0.3",
-		"hippogriff": "^0.1.2",
-		"jsdoc-to-markdown": "^9.1.1",
-		"npm-run-all": "^4.1.5",
-		"on-change": "^5.0.1",
-		"type-enforcer": "^1.2.7",
-		"typescript": "^5.8.3"
+		"eslint": "^9.39.2",
+		"eslint-config-lucid": "^1.0.0",
+		"eslint-config-lucid-typescript": "^1.0.0",
+		"hippogriff": "^0.2.0",
+		"on-change": "^6.0.1",
+		"typedoc": "^0.28.15",
+		"typedoc-plugin-markdown": "^4.9.0",
+		"typedoc-plugin-missing-exports": "^4.1.2",
+		"typescript": "^5.9.3"
 	}
 }

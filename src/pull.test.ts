@@ -1,0 +1,61 @@
+import { assert, describe, it } from 'hippogriff';
+import { pull } from '../index.js';
+
+describe('pull', () => {
+	it('should pull the values from an array of objects', () => {
+		const input = [{
+			level1: 'something'
+		}, {
+			level1: 'something2'
+		}];
+
+		const output = ['something', 'something2'];
+
+		assert.equal(pull(input, 'level1'), output);
+	});
+
+	it('should pull the values from an array of objects and null', () => {
+		const input = [{
+			level1: 'something'
+		}, {
+			level1: 'something2'
+		}, null];
+
+		const output = ['something', 'something2', undefined];
+
+		// @ts-expect-error needed for testing
+		assert.equal(pull(input, 'level1'), output);
+	});
+
+	it('should pull the values from an array of nested objects', () => {
+		const input = [{
+			level1: {
+				level2: [1, 2, 3]
+			}
+		}, {
+			level1: {
+				level2: [4, 5, 6]
+			}
+		}];
+
+		const output = [[1, 2, 3], [4, 5, 6]];
+
+		assert.equal(pull(input, 'level1.level2'), output);
+	});
+
+	it('should pull the values from an array of nested objects with arrays', () => {
+		const input = [{
+			level1: {
+				level2: [1, 2, 3]
+			}
+		}, {
+			level1: {
+				level2: [4, 5, 6]
+			}
+		}];
+
+		const output = [2, 5];
+
+		assert.equal(pull(input, 'level1.level2.1'), output);
+	});
+});

@@ -3,16 +3,31 @@
 		"node_modules"
 	],
 	"include": [
-		"index.js"
+		"index.ts",
+		"index.test.ts",
+		"bench/**/*.ts",
+		"src/**/*.ts"
 	],
+	"module": "esnext",
 	"compilerOptions": {
+		"outDir": "./dist/js",
+		"declaration": true,
+		"declarationDir": "./dist/types",
+		"emitDeclarationOnly": false,
 		"target": "esnext",
 		"module": "esnext",
 		"moduleResolution": "bundler",
-		"allowJs": true,
-		"declaration": true,
-		"emitDeclarationOnly": true,
-		"outDir": "types",
-		"declarationMap": true
+		"strict": true,
+		"alwaysStrict": true,
+		"exactOptionalPropertyTypes": true,
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strictFunctionTypes": true,
+		"strictNullChecks": true,
+		"skipLibCheck": true,
+		"allowSyntheticDefaultImports": true,
+		"removeComments": true,
+		"diagnostics": true
 	}
 }

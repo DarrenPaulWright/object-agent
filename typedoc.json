@@ -1,0 +1,25 @@
+{
+	"$schema": "https://typedoc-plugin-markdown.org/schema.json",
+	"plugin": [
+		"typedoc-plugin-markdown",
+		"typedoc-plugin-missing-exports"
+	],
+	"out": "docs",
+	"entryPoints": [
+		"index.ts"
+	],
+	"outputFileStrategy": "modules",
+	"readme": "./README.md",
+	"mergeReadme": true,
+	"enumMembersFormat": "table",
+	"parametersFormat": "table",
+	"propertiesFormat": "table",
+	"typeDeclarationFormat": "table",
+	"indexFormat": "table",
+	"interfacePropertiesFormat": "table",
+	"classPropertiesFormat": "table",
+	"useCodeBlocks": true,
+	"expandObjects": true,
+	"expandParameters": true,
+	"gitRevision": "main"
+}
